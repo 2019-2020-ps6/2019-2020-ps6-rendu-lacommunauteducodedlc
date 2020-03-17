@@ -1,14 +1,24 @@
 <div class="card">
-    <h2>
-      <i *ngIf="quiz.iconClass" class={{quiz.iconClass}}></i><i *ngIf="!quiz.iconClass" class="fab fa-leanpub"></i><br>
-      <span class="attrib-title">Nom: </span> <span class="attrib-value">{{quiz.name}}</span> <br>
-      <span class="attrib-title"> Theme: </span> <span class="attrib-value">{{quiz.theme}} </span><br>
-      <span class="attrib-title"> Nb de question: </span> <span class="attrib-value">{{quiz.questions.length}} </span><br>
-      <span *ngIf="quiz.date" id="date">Créé le: {{quiz.date | date:'d/MM/yy, H:mm'}}</span>
-    </h2>
+
+  <!--<i *ngIf="quiz.iconClass" class={{quiz.iconClass}}></i><i *ngIf="!quiz.iconClass" class="fab fa-leanpub"></i><br>-->
+  <!--<span class="attrib-title">Nom: </span>-->
+  <!--span *ngIf="quiz.date" id="date">Créé le: {{quiz.date | date:'d/MM/yy, H:mm'}}</!--span>-->
+
+  <h2><div class="attrib-title">{{quiz.name}}<br></div></h2>
+
+  <div class="attrib-value">{{quiz.questions.length}} questions<br></div>
+  <img src="https://img.icons8.com/material-sharp/24/000000/star.png" />
+  <img src="https://img.icons8.com/android/24/000000/star.png" />
+  <img src="https://img.icons8.com/android/24/000000/star.png" />
+  <img src="https://img.icons8.com/android/24/000000/star.png" />
+  <img src="https://img.icons8.com/android/24/000000/star.png" />
+
+  <!--<span class="attrib-title"> Thème: </span> <span class="attrib-value">{{quiz.theme}} </span><br>-->
+
   <div id="buttons">
-    <button id="edit-button" class="button-card"><a routerLink="/edit-quiz/{{quiz.id}}">Edit</a></button>
-    <button id="select-button" class="button-card" (click)="selectQuiz()">Select</button>
-    <button id="delete-button" class="button-card" (click)="rmQuiz()">Delete</button>
+    <button id="edit-button" class="button-card"><a routerLink="/edit-quiz/{{quiz.id}}">MODIFIER</a></button>
+    <button id="select-button" class="button-card" (click)="selectQuiz()">COMMENCER</button>
+    <!--<button id="delete-button" class="button-card" (click)="rmQuiz()">SUPPRIMER</button>-->
   </div>
+
 </div>

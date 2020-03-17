@@ -1,25 +1,25 @@
 <div class="card">
-  <h1>Create a new question</h1>
+  <h1>Créer une nouvelle question</h1>
   <form class="question-form" [formGroup]="questionForm">
     <label for="question-title">
-      What is the question :
+      La question est :
       <input class="input-custom" type="text" id="question-title" [formControlName]="'label'">
     </label>
     <br>
-    <button class="button-card" (click)="addAnswer()">Add answer</button>
+    <button class="button-card" (click)="addAnswer()">AJOUTER UNE RÉPONSE</button>
     <div class="answer" formArrayName="answers">
       <div *ngFor="let address of answers.controls; let i=index">
         <div class="answer-form" [formGroupName]="i">
           <label>
-            Answer
+            Réponse
             <input type="text" [formControlName]="'value'">
             <br>
-            Correct
+            Bonne réponse ?
             <input type="checkbox" [formControlName]="'isCorrect'">
           </label>
         </div>
       </div>
     </div>
-    <button type="submit" class="button-card" (click)="addQuestion()">Confirm</button>
+    <button type="submit" class="button-card" (click)="addQuestion()">CONFIRMER</button>
   </form>
 </div>
