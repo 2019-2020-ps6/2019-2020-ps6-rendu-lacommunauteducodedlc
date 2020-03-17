@@ -49,15 +49,22 @@ export class QuestionFormComponent implements OnInit {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const questionToCreat: Question = this.questionForm.getRawValue() as Question;
 
+    let maxId = 0;
+    this.quizService.quizzes$.getValue().forEach(quiz => {
+      quiz.questions.forEach(question =>{
+      if (question.id > maxId) { maxId = question.id; }
+    })});
+    questionToCreat.id = Math.round(maxId) + 1;
+
     // Do you need to log your object here in your class? Uncomment the code below
     // and open your console in your browser by pressing F12 and choose the tab "Console".
     // You will see your quiz object when you click on the create button.
     console.log('Add question: ', questionToCreat);
 
-    this.quiz.questions.push(questionToCreat);
+    // this.quiz.questions.push(questionToCreat);
 
     // Now, add your quiz in the list!
-    /// this.quizService.updateQuiz(this.quiz);
+    this.quizService.addQuestion(questionToCreat, this.quiz);
 
     this.initFormBuilder();
   }

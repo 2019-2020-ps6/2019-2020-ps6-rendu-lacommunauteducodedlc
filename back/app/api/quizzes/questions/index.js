@@ -6,8 +6,8 @@ const AnswerRouter = require('./answers')
 const router = new Router({ mergeParams: true })
 
 function getAnswerArray(question) {
-  const answerTab = Answer.get()
-  answerTab.filter((answer) => answer.questionId === question.id)
+  let answerTab = Answer.get()
+  answerTab = answerTab.filter(answer => answer.questionId === question.id)
   return answerTab
 }
 
@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
     if (!req.params.quizId === undefined) {
       questions = questions.filter((i) => i.quizId === parseInt(req.params.quizId, 10))
     }
+    questions.forEach((question) => question.answers = getAnswerArray(question))
     res.status(200).json(questions)
   } catch (err) {
     res.status(500).json(err)

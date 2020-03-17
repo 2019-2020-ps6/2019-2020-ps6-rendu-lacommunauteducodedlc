@@ -12,7 +12,8 @@ export const QUESTION_ACTOR: Question = {
       value: 'La grande illusion',
       isCorrect: true,
     }
-  ]
+  ],
+  id: 4
 };
 
 export const QUESTION_SPORT: Question = {
@@ -26,7 +27,8 @@ export const QUESTION_SPORT: Question = {
       value: 'TRES nul',
       isCorrect: true,
     }
-  ]
+  ],
+  id: 14
 };
 
 export const QUIZ_LIST: Quiz[] = [

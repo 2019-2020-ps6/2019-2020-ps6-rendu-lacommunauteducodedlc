@@ -1,56 +1,57 @@
-const { Router } = require('express')
+const { Router } = require('express');
 
-const { Quiz, Question, Answer } = require('../../models')
-const QuestionRouter = require('./questions')
+const { Quiz, Question, Answer } = require('../../models');
+const QuestionRouter = require('./questions');
 
-const router = new Router()
+const router = new Router();
 
 router.get('/', (req, res) => {
   try {
-    const quizzes = Quiz.get()
+    const quizzes = Quiz.get();
     quizzes.forEach((quiz) => {
-      let questions = Question.get()
-      questions = questions.filter((i) => i.quizId === quiz.id)
+      let questions = Question.get();
+      questions = questions.filter((i) => i.quizId === quiz.id);
       questions.forEach((question) => {
-        const answers = Answer.get()
-        answers.filter((answer) => answer.questionId === question.id)
+        let answers = Answer.get();
+        answers = answers.filter(answer => answer.questionId==(question.id));
         // eslint-disable-next-line no-param-reassign
         question.answers = answers
-      })
+      });
       // eslint-disable-next-line no-param-reassign
       quiz.questions = questions
-    })
+      Question.load()
+      Quiz.load()
+    });
     res.status(200).json(quizzes)
   } catch (err) {
     res.status(500).json(err)
   }
-})
+});
 
 router.get('/:quizId', (req, res) => {
   try {
-    const quiz = Quiz.getById(req.params.quizId)
+    const quiz = Quiz.getById(req.params.quizId);
 
-    let questions = Question.get()
-    questions = questions.filter((i) => i.quizId === quiz.id)
+    let questions = Question.get();
+    questions = questions.filter((i) => i.quizId === quiz.id);
     questions.forEach((question) => {
-      const answers = Answer.get()
-      answers.filter((answer) => answer.questionId === question.id)
-      // eslint-disable-next-line no-param-reassign
-      question.answers = answers
-    })
+      const answers = Answer.get();
+      question.answers = answers.filter((answer) => answer.questionId === question.id);
+    });
     // eslint-disable-next-line no-param-reassign
-    quiz.questions = questions
+    quiz.questions = questions;
 
-    res.status(200).json(quiz)
+    res.status(200).json(quiz);
+    Question.load()
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
-})
+});
 
 router.post('/', (req, res) => {
-  console.log({ ...req.body })
+  console.log({ ...req.body });
   try {
-    const quiz = Quiz.create({ ...req.body })
+    const quiz = Quiz.create({ ...req.body });
 
     res.status(201).json(quiz)
   } catch (err) {
@@ -60,7 +61,7 @@ router.post('/', (req, res) => {
       res.status(500).json(err)
     }
   }
-})
+});
 
 router.delete('/:quizId', (req, res) => {
   try {
@@ -68,7 +69,7 @@ router.delete('/:quizId', (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-})
+});
 
 router.put('/:quizId', (req, res) => {
   try {
@@ -76,8 +77,8 @@ router.put('/:quizId', (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-})
+});
 
-router.use('/:quizId/questions', QuestionRouter)
+router.use('/:quizId/questions', QuestionRouter);
 
-module.exports = router
+module.exports = router;

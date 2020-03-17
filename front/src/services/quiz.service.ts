@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of, throwError} from 'rxjs';
 import { Quiz } from '../models/quiz.model';
+import {Answer, Question} from "../models/question.model";
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, map} from 'rxjs/operators';
@@ -95,5 +96,36 @@ export class QuizService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
+  }
+
+  addQuestion(questionToCreat: Question, to: Quiz) {
+    const copy = JSON.parse(JSON.stringify(questionToCreat));
+    delete copy.answers;
+    console.log("question added : ");
+    console.log(questionToCreat);
+
+    const quizId = to.id;
+
+    this.httpClient.post<Question>(this.url + '/quizzes/'+quizId.toString()+'/questions', copy, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe((question) => this.quizzes.find((quiz) => quiz.id === to.id)
+                                                  .questions.push(questionToCreat));
+
+    questionToCreat.answers.forEach((answer) => this.addAnswer(answer, questionToCreat));
+  }
+
+  addAnswer(answerToCreat: Answer, to: Question) {
+    const copy = JSON.parse(JSON.stringify(answerToCreat));
+
+    const questionId = to.id;
+
+    this.httpClient.post<Question>(this.url + '/questions/'+questionId.toString()+'/answers', copy, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe((question) => this.quizzes.find((quiz) => quiz.id === to.id)
+                                                  .questions.find((question) => question.id === to.id)
+                                                      .answers.push(answerToCreat));
+
   }
 }
