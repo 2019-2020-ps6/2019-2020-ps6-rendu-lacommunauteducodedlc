@@ -13,6 +13,7 @@ import {AppRoutingModule} from './routing.module';
 import {QuestionComponent} from './questions/question/question.component';
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
+import {SettingComponent} from './settings/setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {QuestionListComponent} from './questions/question-list/question-list.com
     EditQuizComponent,
     QuestionComponent,
     QuestionFormComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,
