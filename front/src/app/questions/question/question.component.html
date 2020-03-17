@@ -1,0 +1,14 @@
+<div class="card">
+  <h2>
+    <i *ngIf="question.iconClass" class={{quiz.iconClass}}></i><i *ngIf="!question.iconClass" class="fab fa-leanpub"></i>
+    <span class="question-label">{{question.label}}</span><br>
+  </h2>
+  <ol>
+    <li *ngFor="let answer of question.answers">
+      {{answer.value}}<span *ngIf="answer.isCorrect"> &#9745;</span>
+    </li>
+  </ol>
+  <div id="buttons">
+    <button id="delete-button" class="button-card" (click)="rmQuestion()">Delete</button>
+  </div>
+</div>
