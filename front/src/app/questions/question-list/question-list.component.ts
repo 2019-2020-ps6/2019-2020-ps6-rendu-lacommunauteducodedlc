@@ -28,6 +28,6 @@ export class QuestionListComponent implements OnInit {
   deleteQuestion(question: Question) {
     this.quiz.questions.splice(this.quiz.questions.indexOf(question), 1);
     console.log('Was deleted : ', question);
-    this.quizService.updateQuiz(this.quiz);
+    this.quizService.deleteQuestion(question);
   }
 }

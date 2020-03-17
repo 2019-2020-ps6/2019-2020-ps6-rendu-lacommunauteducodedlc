@@ -5,6 +5,12 @@ const QuestionRouter = require('./questions');
 
 const router = new Router();
 
+function deleteQuestion(questionId){
+  let question = Question.getById(questionId);
+  Answer.get().filter((answer) => answer.questionId===question.id).forEach((answer) => Answer.delete(answer.id));
+  return Question.delete(questionId);
+}
+
 router.get('/', (req, res) => {
   try {
     const quizzes = Quiz.get();
@@ -13,7 +19,7 @@ router.get('/', (req, res) => {
       questions = questions.filter((i) => i.quizId === quiz.id);
       questions.forEach((question) => {
         let answers = Answer.get();
-        answers = answers.filter(answer => answer.questionId==(question.id));
+        answers = answers.filter(answer => answer.questionId===(question.id));
         // eslint-disable-next-line no-param-reassign
         question.answers = answers
       });
@@ -66,8 +72,13 @@ router.post('/', (req, res) => {
 
 router.delete('/:quizId', (req, res) => {
   try {
+    let id = req.params.quizId;
+    if (typeof id === 'string') id = parseInt(id, 10);
+    let questions = Question.get().filter((question)=>question.quizId===id)
+    questions.forEach((question)=>deleteQuestion(question.id));
     res.status(200).json(Quiz.delete(req.params.quizId))
   } catch (err) {
+    console.log(err);
     res.status(500).json(err)
   }
 });

@@ -11,6 +11,12 @@ function getAnswerArray(question) {
   return answerTab
 }
 
+function deleteQuestion(questionId){
+  let question = Question.getById(questionId);
+  Answer.get().filter((answer) => answer.questionId===question.id).forEach((answer) => Answer.delete(answer.id));
+  return Question.delete(questionId)
+}
+
 router.get('/', (req, res) => {
   try {
     let questions = Question.get()
@@ -23,6 +29,7 @@ router.get('/', (req, res) => {
   } catch (err) {
     res.status(500).json(err)
     Question.load()
+
   }
 })
 
@@ -31,6 +38,7 @@ router.get('/:questionId', (req, res) => {
     const question = Question.getById(req.params.questionId)
     question.answers = getAnswerArray(question)
     res.status(200).json(question)
+    Question.load()
   } catch (err) {
     res.status(500).json(err)
   }
@@ -56,7 +64,7 @@ router.delete('/', (req, res) => {
     if (!req.params.quizId === undefined) {
       questions = questions.filter((i) => i.quizId === parseInt(req.params.quizId, 10))
     }
-    questions.forEach((question) => Question.delete(question.id))
+    questions.forEach((question) => deleteQuestion(question.id));
     res.status(200).json()
   } catch (err) {
     res.status(500).json(err)
@@ -65,7 +73,7 @@ router.delete('/', (req, res) => {
 
 router.delete('/:questionId', (req, res) => {
   try {
-    res.status(200).json(Question.delete(req.params.questionId))
+    res.status(200).json(deleteQuestion(req.params.questionId))
   } catch (err) {
     res.status(500).json(err)
   }

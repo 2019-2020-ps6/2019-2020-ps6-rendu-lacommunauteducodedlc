@@ -56,6 +56,12 @@ export class QuizService {
   deleteQuiz(quiz: Quiz) {
     this.quizzes.splice(this.quizzes.indexOf(quiz), 1);
     this.quizzes$.next(this.quizzes);
+    this.httpClient.delete<Question>(this.url + '/quizzes/'+quiz.id, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe((question) => {
+
+    });
   }
 
   getQuizzes() {
@@ -75,12 +81,6 @@ export class QuizService {
     );
   }
 
-  updateQuiz(quiz: Quiz) {
-    const currentQuiz = this.quizzes.find(quizToCompare => quizToCompare.id === quiz.id);
-    this.deleteQuiz(currentQuiz);
-    this.quizzes.push(quiz);
-    this.quizzes$.next(this.quizzes);
-  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -112,10 +112,10 @@ export class QuizService {
       ).subscribe((question) => this.quizzes.find((quiz) => quiz.id === to.id)
                                                   .questions.push(questionToCreat));
 
-    questionToCreat.answers.forEach((answer) => this.addAnswer(answer, questionToCreat));
+    questionToCreat.answers.forEach((answer) => this.addAnswer(answer, questionToCreat, to));
   }
 
-  addAnswer(answerToCreat: Answer, to: Question) {
+  addAnswer(answerToCreat: Answer, to: Question, inQuiz: Quiz) {
     const copy = JSON.parse(JSON.stringify(answerToCreat));
 
     const questionId = to.id;
@@ -123,9 +123,20 @@ export class QuizService {
     this.httpClient.post<Question>(this.url + '/questions/'+questionId.toString()+'/answers', copy, httpOptions)
       .pipe(
         catchError(this.handleError)
-      ).subscribe((question) => this.quizzes.find((quiz) => quiz.id === to.id)
+      ).subscribe((question) => this.quizzes.find((quiz) => quiz.id === inQuiz.id)
                                                   .questions.find((question) => question.id === to.id)
                                                       .answers.push(answerToCreat));
+
+  }
+
+  deleteQuestion(questionToDelete: Question) {
+
+    this.httpClient.delete<Question>(this.url + '/questions/'+questionToDelete.id, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe((question) => {
+
+    });
 
   }
 }
