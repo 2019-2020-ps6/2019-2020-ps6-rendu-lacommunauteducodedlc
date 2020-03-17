@@ -109,8 +109,11 @@ export class QuizService {
     this.httpClient.post<Question>(this.url + '/quizzes/'+quizId.toString()+'/questions', copy, httpOptions)
       .pipe(
         catchError(this.handleError)
-      ).subscribe((question) => this.quizzes.find((quiz) => quiz.id === to.id)
-                                                  .questions.push(questionToCreat));
+      ).subscribe((question) => {
+          if (copy.answers === undefined) copy.answers = [];
+          this.quizzes.find((quiz) => quiz.id === to.id)
+            .questions.push(copy)
+      });
 
     questionToCreat.answers.forEach((answer) => this.addAnswer(answer, questionToCreat, to));
   }
