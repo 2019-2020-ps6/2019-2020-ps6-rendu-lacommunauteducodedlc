@@ -43,6 +43,7 @@ router.get('/:quizId', (req, res) => {
 
     res.status(200).json(quiz);
     Question.load()
+    Quiz.load()
   } catch (err) {
     res.status(500).json(err);
   }

@@ -19,8 +19,10 @@ router.get('/', (req, res) => {
     }
     questions.forEach((question) => question.answers = getAnswerArray(question))
     res.status(200).json(questions)
+    Question.load()
   } catch (err) {
     res.status(500).json(err)
+    Question.load()
   }
 })
 
