@@ -7,10 +7,12 @@ export const QUESTION_ACTOR: Question = {
     {
       value: 'Les tuches II',
       isCorrect: false,
+      id: 0
     },
     {
       value: 'La grande illusion',
       isCorrect: true,
+      id: 1
     }
   ],
   id: 4
@@ -22,10 +24,12 @@ export const QUESTION_SPORT: Question = {
     {
       value: 'Nul',
       isCorrect: false,
+      id: 0
     },
     {
       value: 'TRES nul',
       isCorrect: true,
+      id: 1
     }
   ],
   id: 14

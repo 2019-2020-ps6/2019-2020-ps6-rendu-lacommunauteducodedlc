@@ -14,6 +14,7 @@ import {QuestionComponent} from './questions/question/question.component';
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
 import {SettingComponent} from './settings/setting/setting.component';
+import {StarterComponent} from './quizzes/starter-quiz/starter-quiz.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {SettingComponent} from './settings/setting/setting.component';
     QuestionComponent,
     QuestionFormComponent,
     QuestionListComponent,
-    SettingComponent
+    SettingComponent,
+    StarterComponent
   ],
   imports: [
     BrowserModule,

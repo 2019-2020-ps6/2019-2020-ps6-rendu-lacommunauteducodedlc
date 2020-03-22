@@ -1,0 +1,64 @@
+@import '../../../styles/card.scss';
+
+.button-card{
+    width: min-content;
+    font-size: $font-size;
+}
+
+#button-return {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+#button-start {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#button-restart {
+    margin-right: 0.5em;
+}
+
+#button-new-quiz {
+    margin-left: 0.5em;
+}
+
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.starter-quiz {
+    margin-top: 10%;
+    border: solid 1.5px #000000;
+}
+
+.center {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.normal-font-size {
+    font-size: $font-size;
+}
+
+.large-font-size {
+    font-size: $font-size + 1.0em;
+    font-weight: bold;
+}
+
+.space {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.anwser-correct {
+    background-color: lightgreen;
+}
+
+.selected-anwser-incorrect {
+    background-color: lightcoral;
+}

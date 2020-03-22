@@ -1,0 +1,50 @@
+<div class="starter-quiz">
+    <div *ngIf="!started" >
+        <button id="button-return" class="button-card"><a routerLink="/"> RETOUR </a></button>
+        <div class="center">
+            <div class="grid">
+                <span class="large-font-size space"> {{ quiz.name }} </span>
+                <span *ngIf="quiz.questions.length == 1" class="normal-font-size space"> {{ quiz.questions.length }} Question</span>
+                <span *ngIf="quiz.questions.length > 1" class="normal-font-size space"> {{ quiz.questions.length }} Questions</span>
+                <span class="normal-font-size space"> Difficulté : </span>
+                <div>
+                    <img src="https://img.icons8.com/material-sharp/24/000000/star.png" />
+                    <img src="https://img.icons8.com/android/24/000000/star.png" />
+                    <img src="https://img.icons8.com/android/24/000000/star.png" />
+                    <img src="https://img.icons8.com/android/24/000000/star.png" />
+                    <img src="https://img.icons8.com/android/24/000000/star.png" />
+                </div>
+            </div>
+            <button id="button-start" class="button-card" (click)="startQuiz()">COMMENCER</button>
+        </div>
+    </div>
+    <div *ngIf="started">
+        <div *ngIf="!finished" class="grid center">
+            <span class="large-font-size space">{{quiz.questions[index].label}}</span>
+            <div *ngIf="!questionAnswered">
+                <div *ngFor="let answer of quiz.questions[index].answers">
+                    <button class="button-card space" (click)="questionAnswer(answer.id)"> {{ answer.value }} </button>
+                </div>
+            </div>
+            <div *ngIf="questionAnswered">
+                <div *ngFor="let answer of quiz.questions[index].answers">
+                    <button *ngIf="answer.isCorrect" class="button-card space anwser-correct"> <i class="fas fa-check"></i> {{ answer.value }} </button>
+                    <button *ngIf="!answer.isCorrect && checkAnswer(answer.id)" class="button-card space anwser-incorrect"> <i class="fas fa-times"></i> {{ answer.value }} </button>
+                    <button *ngIf="!answer.isCorrect && !checkAnswer(answer.id)" class="button-card space selected-anwser-incorrect"> <i class="fas fa-times"></i> {{ answer.value }} </button>
+                </div>
+                <span class="normal-font-size space">{{ index + 1 }} / {{ quiz.questions.length }} <i class="fas fa-arrow-right" (click)="getNext()"></i></span>
+            </div>
+        </div>
+        <div *ngIf="finished">
+            <div class="grid center">
+                <span class="large-font-size space">Bien joué !</span>
+                <span class="normal-font-size space">Fin du quiz "{{quiz.name}}"</span>
+                <span class="normal-font-size space">Votre score : {{ score }}/{{ quiz.questions.length }}</span>
+            </div>
+            <div class="center">
+                <button id="button-restart" class="button-card space" (click)="restart()">Recommencer</button>
+                <button id="button-new-quiz" class="button-card space"><a routerLink="/">Nouveau Quiz</a></button>
+            </div>
+        </div>
+    </div>
+</div>
