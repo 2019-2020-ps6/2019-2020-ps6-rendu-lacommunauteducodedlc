@@ -3,6 +3,26 @@
 .button-card{
     width: min-content;
     font-size: $font-size;
+    border-radius: 5px;
+    border: none;
+    box-shadow:2px 2px 5px #aaa;
+}
+
+.button-card:hover {
+    background-color: #f1e2b8;
+}
+
+.answer {
+    width: 20%;
+}
+
+.next {
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.fa-arrow-right {
+    size: 5px;
 }
 
 #button-return {
@@ -17,10 +37,16 @@
 
 #button-restart {
     margin-right: 0.5em;
+    width: 20%;
 }
 
 #button-new-quiz {
     margin-left: 0.5em;
+    width: 20%;
+}
+
+#button-next {
+    width: 15%;
 }
 
 a{
@@ -29,8 +55,7 @@ a{
 }
 
 .starter-quiz {
-    margin-top: 10%;
-    border: solid 1.5px #000000;
+    margin-top: 5%;
 }
 
 .center {
@@ -55,10 +80,45 @@ a{
     margin-bottom: 0.3em;
 }
 
-.anwser-correct {
+.right {
+    text-align: right;
+}
+
+.margin-top {
+    margin-top: 2%;
+}
+
+.anwser-correct, .anwser-correct:hover {
     background-color: lightgreen;
 }
 
-.selected-anwser-incorrect {
+.anwser-incorrect:hover {
+    background-color: $white;
+}
+
+.selected-anwser-incorrect, .selected-anwser-incorrect:hover {
     background-color: lightcoral;
+}
+
+.progress {
+    width: 100%;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70%;
+    height: 10px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 15px;
+}
+
+progress::-webkit-progress-value {
+      border-radius: 15px;
+      background-color: $blue;
 }

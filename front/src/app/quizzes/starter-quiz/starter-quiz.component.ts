@@ -29,6 +29,7 @@ export class StarterComponent implements OnInit {
       this.finished = false;
       this.score = 0;
       this.questionAnswered = false;
+      this.answer = null;
     }
 
     ngOnInit() {
@@ -43,9 +44,7 @@ export class StarterComponent implements OnInit {
 
     getNext() {
       this.questionAnswered = false;
-      if(this.quiz.questions.length > this.index + 1) {
-          this.index ++;
-      } else {
+      if(this.quiz.questions.length <= this.index) {
         this.finished = true;
       }
     }
@@ -64,6 +63,7 @@ export class StarterComponent implements OnInit {
               this.questionAnswered = true;
           }
       })
+      this.index++;
     }
 
     checkAnswer(id: number): boolean {
@@ -79,5 +79,6 @@ export class StarterComponent implements OnInit {
       this.finished = false;
       this.score = 0;
       this.questionAnswered = false;
+      this.answer = null;
     }
 }

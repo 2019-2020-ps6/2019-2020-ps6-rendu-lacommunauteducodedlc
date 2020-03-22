@@ -1,6 +1,6 @@
 <div class="starter-quiz">
     <div *ngIf="!started" >
-        <button id="button-return" class="button-card"><a routerLink="/"> RETOUR </a></button>
+        <button id="button-return" class="button-card"><a routerLink="/"> Retour </a></button>
         <div class="center">
             <div class="grid">
                 <span class="large-font-size space"> {{ quiz.name }} </span>
@@ -15,24 +15,27 @@
                     <img src="https://img.icons8.com/android/24/000000/star.png" />
                 </div>
             </div>
-            <button id="button-start" class="button-card" (click)="startQuiz()">COMMENCER</button>
+            <button id="button-start" class="button-card" (click)="startQuiz()">Commencer</button>
         </div>
     </div>
     <div *ngIf="started">
         <div *ngIf="!finished" class="grid center">
-            <span class="large-font-size space">{{quiz.questions[index].label}}</span>
             <div *ngIf="!questionAnswered">
+                <span class="large-font-size space">{{quiz.questions[index].label}}</span>
                 <div *ngFor="let answer of quiz.questions[index].answers">
-                    <button class="button-card space" (click)="questionAnswer(answer.id)"> {{ answer.value }} </button>
+                    <button class="button-card space answer" (click)="questionAnswer(answer.id)"> {{ answer.value }} </button>
                 </div>
             </div>
             <div *ngIf="questionAnswered">
-                <div *ngFor="let answer of quiz.questions[index].answers">
-                    <button *ngIf="answer.isCorrect" class="button-card space anwser-correct"> <i class="fas fa-check"></i> {{ answer.value }} </button>
-                    <button *ngIf="!answer.isCorrect && checkAnswer(answer.id)" class="button-card space anwser-incorrect"> <i class="fas fa-times"></i> {{ answer.value }} </button>
-                    <button *ngIf="!answer.isCorrect && !checkAnswer(answer.id)" class="button-card space selected-anwser-incorrect"> <i class="fas fa-times"></i> {{ answer.value }} </button>
+                <span class="large-font-size space">{{quiz.questions[index - 1].label}}</span>
+                <div *ngFor="let answer of quiz.questions[index - 1].answers">
+                    <button *ngIf="answer.isCorrect" class="button-card space anwser-correct answer"> <i class="fas fa-check"></i> {{ answer.value }} </button>
+                    <button *ngIf="!answer.isCorrect && checkAnswer(answer.id)" class="button-card space anwser-incorrect answer"> <i class="fas fa-times"></i> {{ answer.value }} </button>
+                    <button *ngIf="!answer.isCorrect && !checkAnswer(answer.id)" class="button-card space selected-anwser-incorrect answer"> <i class="fas fa-times"></i> {{ answer.value }} </button>
                 </div>
-                <span class="normal-font-size space">{{ index + 1 }} / {{ quiz.questions.length }} <i class="fas fa-arrow-right" (click)="getNext()"></i></span>
+                <div class="right">
+                    <button id="button-next" class="button-card normal-font-size space" (click)="getNext()"> Suivant <i class="fas fa-arrow-right next"></i></button>
+                </div>
             </div>
         </div>
         <div *ngIf="finished">
@@ -44,6 +47,17 @@
             <div class="center">
                 <button id="button-restart" class="button-card space" (click)="restart()">Recommencer</button>
                 <button id="button-new-quiz" class="button-card space"><a routerLink="/">Nouveau Quiz</a></button>
+            </div>
+        </div>
+        <div *ngIf="!finished" class="grid center margin-top">
+            <div *ngIf="!questionAnswered">
+                <span>Question : {{ index + 1 }}/{{ quiz.questions.length }}</span>
+            </div>
+            <div *ngIf="questionAnswered">
+                <span>Question : {{ index }}/{{ quiz.questions.length }}</span>
+            </div>
+            <div class="progress">
+                <progress id="progress" value={{index}} min="0" max={{quiz.questions.length}}></progress>
             </div>
         </div>
     </div>
