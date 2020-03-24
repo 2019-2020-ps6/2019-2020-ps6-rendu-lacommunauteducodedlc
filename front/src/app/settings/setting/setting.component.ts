@@ -5,6 +5,14 @@ import { Location } from '@angular/common';
 import {Observable} from 'rxjs';
 import {Setting} from '../../../models/setting.model';
 
+
+enum checkbox {
+  presbytie,
+  myopie,
+  astigmatie,
+  hypermetropie
+}
+
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
@@ -12,14 +20,28 @@ import {Setting} from '../../../models/setting.model';
 })
 export class SettingComponent implements OnInit {
   public setting: Setting;
+  public fontSize: String;
 
   constructor(
     private settingService: SettingService,
     private route: ActivatedRoute,
     private location: Location
-  ) {}
+  ) {
+    this.fontSize = "font-size-small"
+  }
 
   ngOnInit() {
+    this.fontSize = this.settingService.getFontSize();
+  }
+
+  public setFontSize(fontSize: String, checked: boolean) {
+    if(checked){
+      this.settingService.changeFontSize(fontSize);
+    }
+    else {
+      this.settingService.changeFontSize("font-size-small");
+    }
+    this.ngOnInit();
   }
 
 }

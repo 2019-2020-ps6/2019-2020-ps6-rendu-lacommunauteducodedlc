@@ -4,6 +4,7 @@ import { Setting } from '../models/setting.model';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, map} from 'rxjs/operators';
 import {subscribeToIterable} from 'rxjs/internal-compatibility';
+import { SettingComponent } from 'src/app/settings/setting/setting.component';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -23,7 +24,7 @@ export class SettingService {
    */
 
   private setting : Setting;
-  private url = 'http://localhost:9428/api';
+ // private url = 'http://localhost:9428/api';
 
   /**
    * Observable which contains the list of the quiz.
@@ -31,20 +32,29 @@ export class SettingService {
    */
   public settings$: BehaviorSubject<Setting> = new BehaviorSubject(this.setting);
 
-  constructor(private httpClient: HttpClient) {
-    this.getSettings();
+  constructor(private httpClient: HttpClient) { 
+    this.setting = {fontSize : "font-size-small"}
   }
 
-  getSettings() {
+  /*getSettings() {
     this.httpClient.get<Setting>(this.url + '/settings').subscribe((settings) => {
       this.setting = settings;
       this.settings$.next(this.setting);
       console.log(this.setting);
     });
-  }
+  }*/
 
   updateSettings(setting: Setting) {
     this.settings$.next(this.setting);
+  }
+
+  changeFontSize(fontSize: String){
+    this.setting.fontSize = fontSize;
+    this.updateSettings(this.setting);
+  }
+
+  public getFontSize() {
+    return this.setting.fontSize;
   }
 
   private handleError(error: HttpErrorResponse) {

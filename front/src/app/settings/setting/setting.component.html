@@ -3,40 +3,40 @@
 <div> 
   <br><br>
 <div>
-<label class="container">Presbytie
-    <input type="checkbox" checked="checked">
+<label class="container {{fontSize}}">Presbytie
+    <input type="checkbox" (change)="setFontSize('font-size-large',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
   
 <div>
-  <label class="container">Myopie
-    <input type="checkbox">
+  <label class="container {{fontSize}}">Myopie
+    <input type="checkbox" (change)="setFontSize('font-size-medium',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
 
   <div>
-  <label class="container">Astigmatie
-    <input type="checkbox">
+  <label class="container {{fontSize}}">Astigmatie
+    <input type="checkbox" (change)="setFontSize('font-size-large',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
   
   <div>
-  <label class="container">Hypermétropie
-    <input type="checkbox">
+  <label class="container {{fontSize}}">Hypermétropie
+    <input type="checkbox" (change)="setFontSize('font-size-large',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
 
-<div class ="daltonisme">
+<div class ="daltonisme {{fontSize}}">
   <br>
 <label>Choisissez un type de Daltonisme : </label>
 <select id="values">
-  <option class = daltonisme value="Monochromate">Monochromate</option>
-  <option class = daltonisme value="Dichromate">Dichromate</option>
-  <option class = daltonisme value="Trichromate Anormal">Trichromate Anormal</option>
+  <option class = "daltonisme {{fontSize}}" value="Monochromate">Monochromate</option>
+  <option class = "daltonisme {{fontSize}}" value="Dichromate">Dichromate</option>
+  <option class = "daltonisme {{fontSize}}" value="Trichromate Anormal">Trichromate Anormal</option>
 </select>
 </div>
 </div>

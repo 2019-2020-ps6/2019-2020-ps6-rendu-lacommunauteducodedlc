@@ -1,4 +1,5 @@
 /* @author : https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+@import "../../../styles/central.style.scss";
 
 /* Customize the label (the container) */
 .container {
@@ -8,7 +9,6 @@
     margin-bottom: 12px;
     top : 5px;
     cursor: pointer;
-    font-size: 22px;
     
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    /* -webkit-user-select: none;
@@ -85,5 +85,5 @@
   .daltonisme{
     
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 22px;
+
   }

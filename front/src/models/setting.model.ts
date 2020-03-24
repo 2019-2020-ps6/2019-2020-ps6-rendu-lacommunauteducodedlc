@@ -1,8 +1,8 @@
 export interface Setting {
     type?: string;
     name?: string;
-    fontSize: number;
-    fontType: string;
+    fontSize: String;
+    fontType?: string;
 }
 
 export enum SettingType {
