@@ -84,9 +84,11 @@ router.delete('/:quizId', (req, res) => {
 });
 
 router.put('/:quizId', (req, res) => {
+  console.log({ ...req.body });
   try {
     res.status(200).json(Quiz.update(req.params.quizId, { ...req.body }))
   } catch (err) {
+    console.log(err);
     res.status(500).json(err)
   }
 });

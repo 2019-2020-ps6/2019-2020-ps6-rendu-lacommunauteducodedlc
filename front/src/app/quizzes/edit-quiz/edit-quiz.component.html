@@ -1,5 +1,32 @@
-<div class="edit-quiz">
-  <button><a routerLink="/quiz-list">Retour</a></button>
-  <app-question-form [quiz]="quiz"></app-question-form>
-  <app-question-list [quiz]="quiz"></app-question-list>
-</div>
+<!--<div class="edit-quiz">-->
+  <div id="edit-bar">
+    <button class="button-card" id="button-return"><a routerLink="/quiz-list">Retour</a></button>
+    <div id="edit-quiz-form">
+      <form class="quiz-form" [formGroup]="quizForm">
+        <label for="title">
+          Titre&nbsp;&nbsp;&nbsp;&nbsp;
+          <input class="input-custom" type="text" id="title" [formControlName]="'name'" value="{{this.quiz.name}}">
+        </label>
+        <br>
+        <label for="theme">
+          Thème
+          <select name="theme-field" id="theme" [formControlName]="'theme'">
+            <option value="{{this.quiz.theme}}" [selected]="true">{{this.quiz.theme}}</option>
+            <ng-container *ngFor="let currentTheme of THEME_LIST">
+              <option *ngIf="currentTheme.toString()!=this.quiz.theme.toString()"  [value]="currentTheme" >{{currentTheme}}</option>
+            </ng-container>
+          </select>
+        </label>
+        <br>
+        <p id="msg"></p>
+        <a routerLink="/quiz-list"><button type="submit" class="button-card" (click)="upQuiz()">Enregistrer</button></a>
+        <a routerLink="/quiz-list"><button type="submit" class="button-card" (click)="deleteQuiz()">Supprimer</button></a>
+      </form>
+    </div>
+  </div>
+  <div id="edit-body">
+    <app-question-form *ngIf="this.question != null" [quiz]="quiz" [question]="question"></app-question-form>
+    <app-question-list [quiz]="quiz" (questionSelected)="selectQuestion($event)"></app-question-list>
+    <button type="submit" class="button-card" (click)="newQuestion()">Nouvelle question</button>
+  </div>
+<!--</div>-->

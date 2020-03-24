@@ -12,7 +12,7 @@ export class QuestionComponent implements OnInit {
   question: Question;
 
   @Output()
-  questionSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
+  questionSelected: EventEmitter<Question> = new EventEmitter<Question>();
 
   @Output()
   questionToDeleted: EventEmitter<Question> = new EventEmitter<Question>();
@@ -24,7 +24,7 @@ export class QuestionComponent implements OnInit {
   }
 
   selectQuestion() {
-    this.questionSelected.emit(true);
+    this.questionSelected.emit(this.question);
   }
 
   rmQuestion() {

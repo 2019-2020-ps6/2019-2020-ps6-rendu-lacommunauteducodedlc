@@ -1,1 +1,35 @@
 @import '../../../styles/card.scss';
+
+.edit-quiz div{
+  display: inline;
+  height: 100%;
+}
+#edit-bar form {
+  margin: auto;
+}
+
+#edit-bar {
+  margin-top: 4em;
+  padding: 2em;
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#edit-body {
+  margin-left: 30%; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+#edit-quiz-form{
+  margin : auto;
+}
+
+#button-return{
+  margin-bottom: 3em;
+}

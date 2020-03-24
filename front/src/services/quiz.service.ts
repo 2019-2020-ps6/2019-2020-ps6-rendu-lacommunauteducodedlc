@@ -65,7 +65,7 @@ export class QuizService {
   }
 
   getQuizzes() {
-    this.httpClient.get<Quiz[]>(this.url + '/quizzes').subscribe((quizzes) => {
+     this.httpClient.get<Quiz[]>(this.url + '/quizzes').subscribe((quizzes) => {
       this.quizzes = quizzes;
       this.quizzes$.next(this.quizzes);
       console.log(this.quizzes);
@@ -119,6 +119,7 @@ export class QuizService {
   }
 
   addAnswer(answerToCreat: Answer, to: Question, inQuiz: Quiz) {
+    answerToCreat.id = Date.now();
     const copy = JSON.parse(JSON.stringify(answerToCreat));
 
     const questionId = to.id;
@@ -141,5 +142,39 @@ export class QuizService {
 
     });
 
+  }
+
+  upQuiz(quiz: Quiz) {
+    let quizBeforModif = this.quizzes.find((quiz1)=>quiz1.id === quiz.id)
+    this.quizzes[this.quizzes.indexOf(quizBeforModif)] = quiz;
+    this.quizzes$.next(this.quizzes);
+    const copy = JSON.parse(JSON.stringify(quiz));
+    delete copy.questions;
+    console.log(quiz);
+    this.httpClient.put<Quiz>(this.url + '/quizzes/'+quiz.id, copy, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe();
+  }
+
+  upQuestion(question: Question, inQuiz: Quiz) {
+    const copy = JSON.parse(JSON.stringify(question));
+    delete copy.answers;
+    this.httpClient.put<Question>(this.url + '/questions/'+question.id, copy, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe();
+    this.deleteAnswers(question, inQuiz);
+    question.answers.forEach((answer) => this.addAnswer(answer, question, inQuiz));
+  }
+
+  private deleteAnswers(question: Question, inQuiz: Quiz) {
+    let questionBeforeDelete = this.quizzes.find((quiz) => quiz.id === inQuiz.id)
+      .questions.find((question1)=>question1.id === question.id);
+    questionBeforeDelete.answers.forEach((answer) => this.httpClient.delete<Array<Answer>>(this.url + '/answers/'+answer.id, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe());
+    questionBeforeDelete.answers = [];
   }
 }
