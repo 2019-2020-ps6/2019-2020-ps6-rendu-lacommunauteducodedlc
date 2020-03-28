@@ -12,7 +12,7 @@
         <div class="answer-form" [formGroupName]="i">
           <label>
             Réponse
-            <input type="text" [formControlName]="'value'">
+            <input type="text" [formControlName]="'value'"> <i class="fas fa-trash-alt" (click)="delAnswer(i)"></i>
             <br>
             Bonne réponse ?
             <input type="checkbox" [formControlName]="'isCorrect'">
