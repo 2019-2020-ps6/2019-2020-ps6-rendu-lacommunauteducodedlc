@@ -3,3 +3,6 @@
   <!--More information: https://angular.io/guide/component-interaction-->
   <app-question [question]="question" (questionSelected)="transferSelection($event)" (questionToDeleted)="deleteQuestion($event)"></app-question>
 </div>
+<select size="3" *ngFor="let question of quiz.question">
+  <option (click)="transferSelection($true)">question.label</option>
+</select>
