@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import { QuizService } from '../../../services/quiz.service';
 import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {Answer, Question} from '../../../models/question.model';
@@ -16,6 +16,9 @@ export class QuestionFormComponent implements OnChanges {
 
   @Input()
   question: Question;
+
+  @Output()
+  modificationEnded: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private questionForm: FormGroup;
 
@@ -51,6 +54,10 @@ export class QuestionFormComponent implements OnChanges {
     this.answers.push(this.createAnswer());
   }
 
+  delAnswer(ansIndex: number) {
+    this.answers.removeAt(ansIndex);
+  }
+
   private createAnswer() {
     return this.formBuilder.group({
       value: 'Reponse '+this.answers.length,
@@ -75,6 +82,7 @@ export class QuestionFormComponent implements OnChanges {
 
     this.question.label = questionFromForm.label;
 
+    this.modificationEnded.emit(true);
     this.initFormBuilder();
   }
 

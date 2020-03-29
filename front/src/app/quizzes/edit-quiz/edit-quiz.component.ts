@@ -75,4 +75,8 @@ export class EditQuizComponent implements OnInit {
     console.log('Was deleted : ', this.quiz);
     this.quizService.deleteQuiz(this.quiz);
   }
+
+  resetQuestion($event: boolean) {
+    this.question = null;
+  }
 }
