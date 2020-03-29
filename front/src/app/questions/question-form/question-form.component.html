@@ -1,5 +1,5 @@
 <div class="card">
-  <h1>Créer une nouvelle question</h1>
+  <h1>Modification de la question</h1>
   <form class="question-form" [formGroup]="questionForm">
     <label for="question-title">
       La question est :
@@ -21,5 +21,6 @@
       </div>
     </div>
     <button type="submit" class="button-card" (click)="upQuestion()">CONFIRMER</button>
+    <button class="button-card" (click)="deleteQuestion()">SUPPRIMER</button>
   </form>
 </div>

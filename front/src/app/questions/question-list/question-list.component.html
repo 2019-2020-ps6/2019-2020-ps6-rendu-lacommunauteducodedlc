@@ -1,8 +1,3 @@
-<div class="question" *ngFor="let question of quiz.questions">
-  <!--Inputs & Output allow communication between parent & child components.-->
-  <!--More information: https://angular.io/guide/component-interaction-->
-  <app-question [question]="question" (questionSelected)="transferSelection($event)" (questionToDeleted)="deleteQuestion($event)"></app-question>
-</div>
 <select size="3">
   <option *ngFor="let question of quiz.questions" (click)="transferSelection(question)">
     {{question.label}}</option>

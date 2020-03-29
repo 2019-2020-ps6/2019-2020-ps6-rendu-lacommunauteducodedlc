@@ -82,6 +82,19 @@ export class QuestionFormComponent implements OnChanges {
 
     this.question.label = questionFromForm.label;
 
+    this.reset();
+  }
+
+
+  deleteQuestion() {
+    this.quiz.questions.splice(this.quiz.questions.indexOf(this.question), 1);
+    console.log('Was deleted : ', this.question);
+    this.quizService.deleteQuestion(this.question);
+
+    this.reset();
+  }
+
+  reset() {
     this.modificationEnded.emit(true);
     this.initFormBuilder();
   }

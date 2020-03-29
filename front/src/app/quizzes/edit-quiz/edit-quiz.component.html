@@ -24,7 +24,7 @@
       </form>
     </div>
   </div>
-  <div id="edit-body">
+  <div *ngIf="this.quiz != null" id="edit-body">
     <app-question-form *ngIf="this.question != null" [quiz]="quiz" [question]="question" (modificationEnded)="resetQuestion($event)"></app-question-form>
     <app-question-list [quiz]="quiz" (questionSelected)="selectQuestion($event)"></app-question-list>
     <button type="submit" class="button-card" (click)="newQuestion()">Nouvelle question</button>
