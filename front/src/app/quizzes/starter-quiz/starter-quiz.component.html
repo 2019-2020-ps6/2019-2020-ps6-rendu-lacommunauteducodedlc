@@ -3,10 +3,10 @@
         <button id="button-return" class="button-card"><a routerLink="/"> Retour </a></button>
         <div class="center">
             <div class="grid">
-                <span class="large-font-size space"> {{ quiz.name }} </span>
-                <span *ngIf="quiz.questions.length == 1" class="normal-font-size space"> {{ quiz.questions.length }} Question</span>
-                <span *ngIf="quiz.questions.length > 1" class="normal-font-size space"> {{ quiz.questions.length }} Questions</span>
-                <span class="normal-font-size space"> Difficulté : </span>
+                <span class="space"> {{ quiz.name }} </span>
+                <span *ngIf="quiz.questions.length == 1" class="space"> {{ quiz.questions.length }} Question</span>
+                <span *ngIf="quiz.questions.length > 1" class="space"> {{ quiz.questions.length }} Questions</span>
+                <span class="space"> Difficulté : </span>
                 <div>
                     <img src="https://img.icons8.com/material-sharp/24/000000/star.png" />
                     <img src="https://img.icons8.com/android/24/000000/star.png" />
@@ -21,32 +21,21 @@
     <div *ngIf="started">
         <div *ngIf="!finished" class="grid center">
             <div *ngIf="!questionAnswered">
-                <span class="large-font-size space">{{quiz.questions[index].label}}</span>
+                <span class="space">{{quiz.questions[index].label}}</span>
                 <div *ngFor="let answer of quiz.questions[index].answers">
                     <button class="button-card space answer" (click)="questionAnswer(answer.id)"> {{ answer.value }} </button>
                 </div>
             </div>
             <div *ngIf="questionAnswered">
-                <span class="large-font-size space">{{quiz.questions[index - 1].label}}</span>
+                <span class="space">{{quiz.questions[index - 1].label}}</span>
                 <div *ngFor="let answer of quiz.questions[index - 1].answers">
                     <button *ngIf="answer.isCorrect" class="button-card space anwser-correct answer"> <i class="fas fa-check"></i> {{ answer.value }} </button>
                     <button *ngIf="!answer.isCorrect && checkAnswer(answer.id)" class="button-card space anwser-incorrect answer"> <i class="fas fa-times"></i> {{ answer.value }} </button>
                     <button *ngIf="!answer.isCorrect && !checkAnswer(answer.id)" class="button-card space selected-anwser-incorrect answer"> <i class="fas fa-times"></i> {{ answer.value }} </button>
                 </div>
                 <div class="right">
-                    <button id="button-next" class="button-card normal-font-size space" (click)="getNext()"> Suivant <i class="fas fa-arrow-right next"></i></button>
+                    <button id="button-next" class="button-card space" (click)="getNext()"> Suivant <i class="fas fa-arrow-right next"></i></button>
                 </div>
-            </div>
-        </div>
-        <div *ngIf="finished">
-            <div class="grid center">
-                <span class="large-font-size space">Bien joué !</span>
-                <span class="normal-font-size space">Fin du quiz "{{quiz.name}}"</span>
-                <span class="normal-font-size space">Votre score : {{ score }}/{{ quiz.questions.length }}</span>
-            </div>
-            <div class="center">
-                <button id="button-restart" class="button-card space" (click)="restart()">Recommencer</button>
-                <button id="button-new-quiz" class="button-card space"><a routerLink="/">Nouveau Quiz</a></button>
             </div>
         </div>
         <div *ngIf="!finished" class="grid center margin-top">
@@ -58,6 +47,17 @@
             </div>
             <div class="progress">
                 <progress id="progress" value={{index}} min="0" max={{quiz.questions.length}}></progress>
+            </div>
+        </div>
+        <div *ngIf="finished">
+            <div class="grid center">
+                <span class="space">Bien joué !</span>
+                <span class="space">Fin du quiz "{{quiz.name}}"</span>
+                <span class="space">Votre score : {{ score }}/{{ quiz.questions.length }}</span>
+            </div>
+            <div class="center">
+                <button id="button-restart" class="button-card space" (click)="restart()">Recommencer</button>
+                <button id="button-new-quiz" class="button-card space"><a routerLink="/">Nouveau Quiz</a></button>
             </div>
         </div>
     </div>

@@ -13,12 +13,17 @@
 
 .button-card {
   background-color: $white;
-  border: solid 1px #000000;
   color: #000000;
   font-weight: bold;
   padding: 0.5em 1em;
-}
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow:2px 2px 5px #aaa;
+  margin: 2px;
+}   
 
 .button-card:hover {
   cursor: pointer;
+  background-color: #f1e2b8;
 }

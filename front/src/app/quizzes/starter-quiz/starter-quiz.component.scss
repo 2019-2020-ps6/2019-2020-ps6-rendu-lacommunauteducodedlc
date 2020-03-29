@@ -1,16 +1,4 @@
-@import '../../../styles/card.scss';
-
-.button-card{
-    width: min-content;
-    font-size: $font-size;
-    border-radius: 5px;
-    border: none;
-    box-shadow:2px 2px 5px #aaa;
-}
-
-.button-card:hover {
-    background-color: #f1e2b8;
-}
+@import '../../../styles/central.style.scss';
 
 .answer {
     width: 20%;
@@ -49,11 +37,6 @@
     width: 15%;
 }
 
-a{
-    text-decoration: inherit;
-    color: inherit;
-}
-
 .starter-quiz {
     margin-top: 5%;
 }
@@ -64,15 +47,6 @@ a{
 
 .grid {
     display: grid;
-}
-
-.normal-font-size {
-    font-size: $font-size;
-}
-
-.large-font-size {
-    font-size: $font-size + 1.0em;
-    font-weight: bold;
 }
 
 .space {
@@ -121,4 +95,10 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
       border-radius: 15px;
       background-color: $blue;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
