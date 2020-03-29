@@ -19,6 +19,7 @@ export class StarterComponent implements OnInit {
     public score: number;
     public questionAnswered: boolean;
     public answer: Answer;
+    public police: string;
 
     constructor(
         private quizService: QuizService,
@@ -80,5 +81,12 @@ export class StarterComponent implements OnInit {
       this.score = 0;
       this.questionAnswered = false;
       this.answer = null;
+    }
+
+    half(): boolean {
+      if (this.index < this.quiz.questions.length / 2) {
+        return true;
+      }
+      return false;
     }
 }
