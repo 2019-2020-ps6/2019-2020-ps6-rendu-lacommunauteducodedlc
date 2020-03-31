@@ -20,18 +20,27 @@ enum checkbox {
 })
 export class SettingComponent implements OnInit {
   public setting: Setting;
-  public fontSize: String;
+  public fontSizeText: String;
+  public fontSizeSubtitle: String;
+  public fontSizeTitle: String;
+  public fontSizeButton: String;
 
   constructor(
     private settingService: SettingService,
     private route: ActivatedRoute,
     private location: Location
   ) {
-    this.fontSize = "font-size-small"
+    this.fontSizeText = "font-size-basic-text";
+    this.fontSizeSubtitle = "font-size-basic-subtitle";
+    this.fontSizeTitle = "font-size-basic-title";
+    this.fontSizeButton = "font-size-basic-button";
   }
 
   ngOnInit() {
-    this.fontSize = this.settingService.getFontSize();
+    this.fontSizeText = this.settingService.getFontSizeText();
+    this.fontSizeSubtitle = this.settingService.getFontSizeSubtitle();
+    this.fontSizeTitle = this.settingService.getFontSizeTitle();
+    this.fontSizeButton = this.settingService.getFontSizeButton();
   }
 
   public setFontSize(fontSize: String, checked: boolean) {
@@ -39,7 +48,7 @@ export class SettingComponent implements OnInit {
       this.settingService.changeFontSize(fontSize);
     }
     else {
-      this.settingService.changeFontSize("font-size-small");
+      this.settingService.changeFontSize("font-size-basic");
     }
     this.ngOnInit();
   }

@@ -1,12 +1,69 @@
-
-.font-size-small {
+//FONT SIZE BASIC
+.font-size-basic-text {
     font-size: 22px;
 }
+.font-size-basic-subtitle {
+    font-size: 30px;
+}
+.font-size-basic-title {
+    font-size: 40px;
+}
+.font-size-basic-button {
+    font-size: 25px;
+}
 
-.font-size-medium {
+//FONT SIZE PRESBYOPIA
+.font-size-presbyopia-text{
+    font-size: 27px;
+}
+.font-size-presbyopia-subtitle {
+    font-size: 35px;
+}
+.font-size-presbyopia-title {
+    font-size: 45px;
+}
+.font-size-presbyopia-button {
+    font-size: 30px;
+}
+
+//FONT SIZE MYOPIA
+.font-size-myopia-text{
+    font-size: 32px
+}
+.font-size-myopia-subtitle {
+    font-size: 40px;
+}
+.font-size-myopia-title {
+    font-size: 50px;
+}
+.font-size-myopia-button {
     font-size: 35px;
 }
 
-.font-size-large {
+//FONT SIZE ASTIGMATISM
+.font-size-astigmatism-text{
+    font-size: 37px
+}
+.font-size-astigmatism-subtitle {
+    font-size: 45px;
+}
+.font-size-astigmatism-title {
+    font-size: 55px;
+}
+.font-size-astigmatism-button {
+    font-size: 30px;
+}
+
+//FONT SIZE HYPERYOPIA
+.font-size-hyperopia-text{
+    font-size: 42px
+}
+.font-size-hyperopia-subtitle {
     font-size: 50px;
+}
+.font-size-hyperopia-title {
+    font-size: 60px;
+}
+.font-size-hyperopia-button {
+    font-size: 35px;
 }

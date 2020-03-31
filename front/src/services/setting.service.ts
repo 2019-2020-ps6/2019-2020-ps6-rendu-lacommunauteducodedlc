@@ -17,6 +17,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class SettingService {
   /**
    * Services Documentation:
@@ -33,43 +34,49 @@ export class SettingService {
   public settings$: BehaviorSubject<Setting> = new BehaviorSubject(this.setting);
 
   constructor(private httpClient: HttpClient) { 
-    this.setting = {fontSize : "font-size-small"}
+    this.setting = {fontSizeText : "font-size-basic-text",
+                    fontSizeSubtitle : "font-size-basic-subtitle",
+                    fontSizeTitle : "font-size-basic-title",
+                    fontSizeButton : "font-size-basic-button"}
   }
-
-  /*getSettings() {
-    this.httpClient.get<Setting>(this.url + '/settings').subscribe((settings) => {
-      this.setting = settings;
-      this.settings$.next(this.setting);
-      console.log(this.setting);
-    });
-  }*/
 
   updateSettings(setting: Setting) {
     this.settings$.next(this.setting);
   }
 
+  //argument : font-size-laMaladie
   changeFontSize(fontSize: String){
-    this.setting.fontSize = fontSize;
+
+    let fontText:String = fontSize+"-text";
+    let fontSubtitle:String = fontSize+"-subtitle";
+    let fontTitle:String = fontSize+"-title";
+    let fontButton:String = fontSize+"-button";
+    
+    this.setting.fontSizeText = fontText;
+    this.setting.fontSizeSubtitle = fontSubtitle;
+    this.setting.fontSizeTitle = fontTitle;
+    this.setting.fontSizeButton = fontButton;
+
     this.updateSettings(this.setting);
   }
 
-  public getFontSize() {
-    return this.setting.fontSize;
+
+
+  //Les getters pour les fontSize
+  public getFontSizeText() {
+    return this.setting.fontSizeText;
   }
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    // return an observable with a user-facing error message
-    return throwError(
-      'Something bad happened; please try again later.');
+  public getFontSizeSubtitle() {
+    return this.setting.fontSizeSubtitle;
   }
+
+  public getFontSizeTitle() {
+    return this.setting.fontSizeTitle;
+  }
+
+  public getFontSizeButton() {
+    return this.setting.fontSizeButton;
+  }
+
 }

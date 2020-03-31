@@ -1,42 +1,43 @@
-<h1 class = "title">Réglages Particuliers</h1>
+<h1 class = "title {{fontSizeTitle}}">Réglages Particuliers</h1>
+<div class = "title {{fontSizeSubtitle}}">Sous-titre</div>
 
 <div> 
   <br><br>
 <div>
-<label class="container {{fontSize}}">Presbytie
-    <input type="checkbox" (change)="setFontSize('font-size-large',$event.target.checked)">
+<label class="container {{fontSizeText}}">Presbytie
+    <input type="checkbox" (change)="setFontSize('font-size-presbyopia',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
   
 <div>
-  <label class="container {{fontSize}}">Myopie
-    <input type="checkbox" (change)="setFontSize('font-size-medium',$event.target.checked)">
+  <label class="container {{fontSizeText}}">Myopie
+    <input type="checkbox" (change)="setFontSize('font-size-myopia',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
 
   <div>
-  <label class="container {{fontSize}}">Astigmatie
-    <input type="checkbox" (change)="setFontSize('font-size-large',$event.target.checked)">
+  <label class="container {{fontSizeText}}">Astigmatie
+    <input type="checkbox" (change)="setFontSize('font-size-astigmatism',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
   
   <div>
-  <label class="container {{fontSize}}">Hypermétropie
-    <input type="checkbox" (change)="setFontSize('font-size-large',$event.target.checked)">
+  <label class="container {{fontSizeText}}">Hypermétropie
+    <input type="checkbox" (change)="setFontSize('font-size-hyperopia',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
 
-<div class ="daltonisme {{fontSize}}">
+<div class ="daltonisme {{fontSizeButton}}">
   <br>
 <label>Choisissez un type de Daltonisme : </label>
 <select id="values" disabled>
-  <option class = "daltonisme {{fontSize}}" value="Monochromate">Monochromate</option>
-  <option class = "daltonisme {{fontSize}}" value="Dichromate">Dichromate</option>
-  <option class = "daltonisme {{fontSize}}" value="Trichromate Anormal">Trichromate Anormal</option>
+  <option class = "daltonisme {{fontSizeButton}}" value="Monochromate">Monochromate</option>
+  <option class = "daltonisme {{fontSizeButton}}" value="Dichromate">Dichromate</option>
+  <option class = "daltonisme {{fontSizeButton}}" value="Trichromate Anormal">Trichromate Anormal</option>
 </select>
 </div>
 </div>
