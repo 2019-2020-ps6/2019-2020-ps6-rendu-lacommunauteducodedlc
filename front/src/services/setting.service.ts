@@ -37,7 +37,14 @@ export class SettingService {
     this.setting = {fontSizeText : "font-size-basic-text",
                     fontSizeSubtitle : "font-size-basic-subtitle",
                     fontSizeTitle : "font-size-basic-title",
-                    fontSizeButton : "font-size-basic-button"}
+                    fontSizeButton : "font-size-basic-button",
+                    fontStyle : "font-style-basic",
+                    colorBackground : "color-basic-background",
+                    colorHeader : "color-basic-header",
+                    colorYes : "color-basic-yes",
+                    colorNo : "color-basic-no",
+                    colorButton : "color-basic-button",
+                  }
   }
 
   updateSettings(setting: Setting) {
@@ -60,6 +67,28 @@ export class SettingService {
     this.updateSettings(this.setting);
   }
 
+  changeFontStyle(fontStyle : String) {
+    this.setting.fontStyle = fontStyle;
+    this.updateSettings(this.setting);
+  }
+
+  //argument : color-laMaladie
+  changeColors(color: String){
+
+    let colorBackground:String = color+"-background";
+    let colorHeader:String = color+"-header";
+    let colorYes:String = color+"-yes";
+    let colorNo:String = color+"-no";
+    let colorButton:String = color+"-button";
+    
+    this.setting.colorBackground = colorBackground;
+    this.setting.colorHeader = colorHeader;
+    this.setting.colorYes = colorYes;
+    this.setting.colorNo = colorNo;
+    this.setting.colorButton = colorButton;
+
+    this.updateSettings(this.setting);
+  }
 
 
   //Les getters pour les fontSize
@@ -79,4 +108,29 @@ export class SettingService {
     return this.setting.fontSizeButton;
   }
 
+  //Getter pour la font style
+  public getFontStyle(){
+    return this.setting.fontStyle;
+  }
+
+  //Getters pour les couleurs
+  public getColorBackground() {
+    return this.setting.colorBackground;
+  }
+
+  public getColorHeader() {
+    return this.setting.colorHeader;
+  }
+
+  public getColorYes() {
+    return this.setting.colorYes;
+  }
+
+  public getColorNo() {
+    return this.setting.colorNo;
+  }
+
+  public getColorButton() {
+    return this.setting.colorButton;
+  }
 }

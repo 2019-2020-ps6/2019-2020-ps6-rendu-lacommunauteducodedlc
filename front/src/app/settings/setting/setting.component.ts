@@ -25,6 +25,14 @@ export class SettingComponent implements OnInit {
   public fontSizeTitle: String;
   public fontSizeButton: String;
 
+  public fontStyle : String;
+
+  public colorBackground : String;
+  public colorHeader : String;
+  public colorYes : String;
+  public colorNo : String;
+  public colorButton : String;
+
   constructor(
     private settingService: SettingService,
     private route: ActivatedRoute,
@@ -34,6 +42,14 @@ export class SettingComponent implements OnInit {
     this.fontSizeSubtitle = "font-size-basic-subtitle";
     this.fontSizeTitle = "font-size-basic-title";
     this.fontSizeButton = "font-size-basic-button";
+
+    this.fontStyle = "font-style-basic";
+
+    this.colorBackground = "color-basic-background";
+    this.colorHeader = "color-basic-header";
+    this.colorYes = "color-basic-yes";
+    this.colorNo = "color-basic-no";
+    this.colorButton = "color-basic-button";
   }
 
   ngOnInit() {
@@ -41,15 +57,29 @@ export class SettingComponent implements OnInit {
     this.fontSizeSubtitle = this.settingService.getFontSizeSubtitle();
     this.fontSizeTitle = this.settingService.getFontSizeTitle();
     this.fontSizeButton = this.settingService.getFontSizeButton();
+
+    this.fontStyle = this.settingService.getFontStyle();
+
+    this.colorBackground = this.settingService.getColorBackground();
+    this.colorHeader = this.settingService.getColorHeader();
+    this.colorYes = this.settingService.getColorYes();
+    this.colorNo = this.settingService.getColorNo();
+    this.colorButton = this.settingService.getColorButton();
   }
 
-  public setFontSize(fontSize: String, checked: boolean) {
+  public setFont(sickness: String, checked: boolean) {
     if(checked){
-      this.settingService.changeFontSize(fontSize);
+      this.settingService.changeFontSize("font-size-"+sickness);
+      this.settingService.changeFontStyle("font-style-"+sickness);
     }
     else {
-      this.settingService.changeFontSize("font-size-basic");
+      this.setFont("basic",true);
     }
+    this.ngOnInit();
+  }
+
+  public setColors(sickness : String) {
+    this.settingService.changeColors("color-"+sickness);
     this.ngOnInit();
   }
 

@@ -11,6 +11,9 @@
 .font-size-basic-button {
     font-size: 25px;
 }
+.font-style-basic{
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 //FONT SIZE PRESBYOPIA
 .font-size-presbyopia-text{
@@ -24,6 +27,9 @@
 }
 .font-size-presbyopia-button {
     font-size: 30px;
+}
+.font-style-presbyopia{
+    font-family: fantasy;
 }
 
 //FONT SIZE MYOPIA
@@ -39,6 +45,9 @@
 .font-size-myopia-button {
     font-size: 35px;
 }
+.font-style-myopia {
+    font-family: cursive;
+}
 
 //FONT SIZE ASTIGMATISM
 .font-size-astigmatism-text{
@@ -52,6 +61,9 @@
 }
 .font-size-astigmatism-button {
     font-size: 30px;
+}
+.font-style-astigmatism {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 //FONT SIZE HYPERYOPIA
@@ -67,3 +79,7 @@
 .font-size-hyperopia-button {
     font-size: 35px;
 }
+.font-style-hyperopia {
+    font-family: monospace;
+}
+

@@ -4,40 +4,41 @@
 <div> 
   <br><br>
 <div>
-<label class="container {{fontSizeText}}">Presbytie
-    <input type="checkbox" (change)="setFontSize('font-size-presbyopia',$event.target.checked)">
+<label class="container {{fontSizeText}} {{fontStyle}}">Presbytie
+    <input type="checkbox" (change)="setFont('presbyopia',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
   
 <div>
-  <label class="container {{fontSizeText}}">Myopie
-    <input type="checkbox" (change)="setFontSize('font-size-myopia',$event.target.checked)">
+  <label class="container {{fontSizeText}} {{fontStyle}}">Myopie
+    <input type="checkbox" (change)="setFont('myopia',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
 
   <div>
-  <label class="container {{fontSizeText}}">Astigmatie
-    <input type="checkbox" (change)="setFontSize('font-size-astigmatism',$event.target.checked)">
+  <label class="container {{fontSizeText}} {{fontStyle}}">Astigmatie
+    <input type="checkbox" (change)="setFont('astigmatism',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
   
   <div>
-  <label class="container {{fontSizeText}}">Hypermétropie
-    <input type="checkbox" (change)="setFontSize('font-size-hyperopia',$event.target.checked)">
+  <label class="container {{fontSizeText}} {{fontStyle}}">Hypermétropie
+    <input type="checkbox" (change)="setFont('hyperopia',$event.target.checked)">
     <span class="checkmark"></span>
   </label>
 </div>
 
-<div class ="daltonisme {{fontSizeButton}}">
+<div class ="daltonisme {{fontSizeText}}">
   <br>
 <label>Choisissez un type de Daltonisme : </label>
-<select id="values" disabled>
-  <option class = "daltonisme {{fontSizeButton}}" value="Monochromate">Monochromate</option>
-  <option class = "daltonisme {{fontSizeButton}}" value="Dichromate">Dichromate</option>
-  <option class = "daltonisme {{fontSizeButton}}" value="Trichromate Anormal">Trichromate Anormal</option>
+<select id="values" (change) = "setColors($event.target.value)">
+  <option class = "daltonisme {{fontSizeButton}}" value="basic">Pas de troubles</option>
+  <option class = "daltonisme {{fontSizeButton}}" value="tritanomal">Tritanomal</option>
+  <option class = "daltonisme {{fontSizeButton}}" value="deuteranomal">Deutéranomal</option>
+  <option class = "daltonisme {{fontSizeButton}}" value ="protanomal">Protanomal</option>
 </select>
 </div>
 </div>
