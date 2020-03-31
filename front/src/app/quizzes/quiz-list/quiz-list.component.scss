@@ -1,3 +1,14 @@
+@import '../../../styles/central.style.scss';
+
 .quiz-list {
   display: flex;
+}
+
+.container {
+  display: flex;
+  flex-flow: wrap row;
+}
+
+.block {
+  width: auto;
 }

@@ -1,8 +1,12 @@
 <div class="quiz-list">
-    <app-quiz-form class="block"></app-quiz-form>
-    <div class="quiz" class="block" *ngFor="let quiz of quizList">
-        <!--Inputs & Output allow communication between parent & child components.-->
-        <!--More information: https://angular.io/guide/component-interaction-->
-        <app-quiz [quiz]="quiz" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
+    <div class="block">
+        <app-quiz-form></app-quiz-form>
+    </div>
+    <div class="container">
+        <div class="quiz" *ngFor="let quiz of quizList">
+            <!--Inputs & Output allow communication between parent & child components.-->
+            <!--More information: https://angular.io/guide/component-interaction-->
+            <app-quiz [quiz]="quiz" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
+        </div>
     </div>
 </div>
