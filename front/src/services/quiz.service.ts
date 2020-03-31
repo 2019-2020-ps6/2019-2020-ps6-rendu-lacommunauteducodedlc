@@ -30,6 +30,7 @@ export class QuizService {
     */
   private quizzes: Quiz[] = [];
   private url = 'http://localhost:9428/api';
+  private answerId = 0;
 
   /**
    * Observable which contains the list of the quiz.
@@ -119,7 +120,8 @@ export class QuizService {
   }
 
   addAnswer(answerToCreat: Answer, to: Question, inQuiz: Quiz) {
-    answerToCreat.id = Date.now();
+    answerToCreat.id = Date.now() + this.answerId;
+    this.answerId ++;
     const copy = JSON.parse(JSON.stringify(answerToCreat));
 
     const questionId = to.id;
