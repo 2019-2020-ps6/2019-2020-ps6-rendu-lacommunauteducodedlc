@@ -1,8 +1,8 @@
 <!--<div class="edit-quiz">-->
   <div id="edit-bar">
-    <button class="button-card" id="button-return"><a routerLink="/quiz-list">Retour</a></button>
+    <a routerLink="/quiz-list"><button class="button-card" id="button-return">Retour</button></a>
     <div id="edit-quiz-form">
-      <form class="quiz-form" [formGroup]="quizForm">
+      <form class="quiz-form" *ngIf="quizForm" [formGroup]="quizForm">
         <label for="title">
           Titre&nbsp;&nbsp;&nbsp;&nbsp;
           <input class="input-custom" type="text" id="title" [formControlName]="'name'" value="{{this.quiz.name}}">

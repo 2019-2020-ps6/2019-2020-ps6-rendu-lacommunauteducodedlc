@@ -27,18 +27,20 @@ export class EditQuizComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getQuiz();
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.quizService.getQuiz(id).subscribe(quiz => {
+      if(!quiz) return;
+      this.quiz = quiz;
+      this.initForm();
+    });
+  }
+
+  initForm(): void {
     // Form creation
     this.quizForm = this.formBuilder.group({
       name: [this.quiz.name],
       theme: [this.quiz.theme]
     });
-  }
-
-  getQuiz(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.quizService.getQuiz(id).subscribe(quiz => this.quiz = quiz);
-    console.log('test' + this.quiz);
   }
 
   upQuiz(): void {
