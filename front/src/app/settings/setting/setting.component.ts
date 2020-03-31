@@ -20,6 +20,7 @@ enum checkbox {
 })
 export class SettingComponent implements OnInit {
   public setting: Setting;
+  public checked: String;
 
 
   constructor(
@@ -28,6 +29,7 @@ export class SettingComponent implements OnInit {
     private location: Location
   ) {
     this.settingService.settings$.subscribe((setting) => this.setting = setting);
+    this.checked = "basic";
   }
 
   ngOnInit() {
@@ -35,6 +37,7 @@ export class SettingComponent implements OnInit {
 
   public setFont(sickness: String, checked: boolean) {
     if(checked){
+      this.checked = sickness;
       this.settingService.changeFontSize("font-size-"+sickness);
       this.settingService.changeFontStyle("font-style-"+sickness);
     }
@@ -49,5 +52,9 @@ export class SettingComponent implements OnInit {
 
   compareSickness(sickness : String): boolean {
     return this.setting.colorBackground.toString()==="color-"+sickness+"-background";
+  }
+
+  anotherIsChecked(sickness: String): boolean {
+    return this.checked!==sickness && this.checked!=="basic";
   }
 }

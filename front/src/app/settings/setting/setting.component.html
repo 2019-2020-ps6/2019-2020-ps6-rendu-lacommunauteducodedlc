@@ -1,44 +1,44 @@
-<h1 class = "title {{setting.fontSizeTitle}}">Réglages Particuliers</h1>
-<div class = "title {{setting.fontSizeSubtitle}}">Sous-titre</div>
+<h1 class = "title {{setting.fontSizeTitle}} {{setting.fontStyle}}">Réglages Particuliers</h1>
+<div class = "title {{setting.fontSizeSubtitle}} {{setting.fontStyle}}">Sous-titre</div>
 
 <div>
   <br><br>
 <div>
 <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Presbytie
-    <input type="checkbox" (change)="setFont('presbyopia',$event.target.checked)">
-    <span class="checkmark"></span>
+    <input type="checkbox" [disabled]="anotherIsChecked('presbyopia')" (change)="setFont('presbyopia',$event.target.checked)">
+    <span class="checkmark {{setting.colorButton}}"></span>
   </label>
 </div>
 
 <div>
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Myopie
-    <input type="checkbox" (change)="setFont('myopia',$event.target.checked)">
-    <span class="checkmark"></span>
+    <input type="checkbox" [disabled]="anotherIsChecked('myopia')" (change)="setFont('myopia',$event.target.checked)">
+    <span class="checkmark {{setting.colorButton}}"></span>
   </label>
 </div>
 
   <div>
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Astigmatie
-    <input type="checkbox" (change)="setFont('astigmatism',$event.target.checked)">
-    <span class="checkmark"></span>
+    <input type="checkbox" [disabled]="anotherIsChecked('astigmatism')" (change)="setFont('astigmatism',$event.target.checked)">
+    <span class="checkmark {{setting.colorButton}}"></span>
   </label>
 </div>
 
   <div>
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Hypermétropie
-    <input type="checkbox" (change)="setFont('hyperopia',$event.target.checked)">
-    <span class="checkmark"></span>
+    <input type="checkbox" [disabled]="anotherIsChecked('hyperopia')" (change)="setFont('hyperopia',$event.target.checked)">
+    <span class="checkmark {{setting.colorButton}}"></span>
   </label>
 </div>
 
-<div class ="daltonisme {{setting.fontSizeText}}">
+<div class ="daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}">
   <br>
 <label>Choisissez un type de Daltonisme : </label>
-<select id="values" (change) = "setColors($event.target.value)">
-  <option class = "daltonisme {{setting.fontSizeButton}}" value="basic" [selected]="compareSickness('basic')">Pas de troubles</option>
-  <option class = "daltonisme {{setting.fontSizeButton}}" value="tritanomal" [selected]="compareSickness('tritanomal')">Tritanomal</option>
-  <option class = "daltonisme {{setting.fontSizeButton}}" value="deuteranomal" [selected]="compareSickness('deuteranomal')">Deutéranomal</option>
-  <option class = "daltonisme {{setting.fontSizeButton}}" value ="protanomal" [selected]="compareSickness('protanomal')">Protanomal</option>
+<select class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}}" id="values" (change)="setColors($event.target.value)">
+  <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="basic" [selected]="compareSickness('basic')">Pas de troubles</option>
+  <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="tritanomal" [selected]="compareSickness('tritanomal')">Tritanomal</option>
+  <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="deuteranomal" [selected]="compareSickness('deuteranomal')">Deutéranomal</option>
+  <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value ="protanomal" [selected]="compareSickness('protanomal')">Protanomal</option>
 </select>
 </div>
 </div>

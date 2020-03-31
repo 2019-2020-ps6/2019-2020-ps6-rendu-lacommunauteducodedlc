@@ -31,20 +31,19 @@
     left: 380px;
     height: 25px;
     width: 25px;
-    background-color: rgba(167, 161, 161, 0.911);
     border: 2px solid black;
     border-radius: 6px;
-}
+ }
   
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
+//   /* On mouse-over, add a grey background color */
+//   .container:hover input ~ .checkmark {
+//     background-color: #ccc;
+//   }
   
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
+//   /* When the checkbox is checked, add a blue background */
+//   .container input:checked ~ .checkmark {
+//     background-color: #2196F3;
+//   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
   .checkmark:after {
