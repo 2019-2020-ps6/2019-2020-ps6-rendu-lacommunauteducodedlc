@@ -1,4 +1,4 @@
-<select size="3">
+<select size="3" class="card">
   <option *ngFor="let question of quiz.questions" (click)="transferSelection(question)">
     {{question.label}}</option>
 </select> <br />
