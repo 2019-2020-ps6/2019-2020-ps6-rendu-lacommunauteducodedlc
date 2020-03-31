@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "../../styles/central.style.scss";
 
 /**
  Use :host to apply some style to your entire component #24c6dc, #514a9d
@@ -9,7 +9,6 @@
 }
 
 .header {
-  background: #0052F6;
   padding: 0.5em;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   border: solid 1px #000000;
@@ -27,7 +26,6 @@
   left: 40px;
   margin: 10px;
   //border: 3px solid black;
-  background: #0052F6;
 }
 
 .home_button {
@@ -35,11 +33,9 @@
   left: 40px;
   margin: 10px;
   //border: 3px solid black;
-  background: #0052F6;
 }
 
 .button_txt {
-  font-size: 20px;
   color: black;
 }
 
@@ -51,6 +47,3 @@
   width: 250px;
 }
 
-.title {
-  font-family:arial, sans-serif;
-}

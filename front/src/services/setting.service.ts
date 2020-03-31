@@ -44,7 +44,8 @@ export class SettingService {
                     colorYes : "color-basic-yes",
                     colorNo : "color-basic-no",
                     colorButton : "color-basic-button",
-                  }
+                  };
+    this.updateSettings(this.setting);
   }
 
   updateSettings(setting: Setting) {

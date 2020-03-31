@@ -1,13 +1,13 @@
-<div class="header">
+<div class="header {{setting.colorHeader}}">
 
-    <h1 class="title">PolyQuiz</h1>
+    <h1 class="title {{setting.fontSizeTitle}} {{setting.fontStyle}}">PolyQuiz</h1>
     
     <div class="buttons">
-        <button class="settings_button"><a routerLink="/settings">
+        <button class="settings_button {{setting.colorButton}}"><a routerLink="/settings">
             <img src="https://img.icons8.com/material-sharp/24/000000/settings.png" />
             <!--<div class="button_txt">Réglages</div>-->
         </a></button>
-        <button class="home_button"><a routerLink="/quiz-list">
+        <button class="home_button {{setting.colorButton}}"><a routerLink="/quiz-list">
             <img src="https://img.icons8.com/material-rounded/24/000000/home-page.png" />
           <!--<div class="button_txt">Accueil</div>-->
         </a></button>
