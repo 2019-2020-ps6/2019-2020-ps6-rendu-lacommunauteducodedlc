@@ -47,4 +47,7 @@ export class SettingComponent implements OnInit {
     this.settingService.changeColors("color-"+sickness);
   }
 
+  compareSickness(sickness : String): boolean {
+    return this.setting.colorBackground.toString()==="color-"+sickness+"-background";
+  }
 }

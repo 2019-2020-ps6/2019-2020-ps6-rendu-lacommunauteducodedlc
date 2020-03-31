@@ -1,7 +1,7 @@
 <h1 class = "title {{setting.fontSizeTitle}}">Réglages Particuliers</h1>
 <div class = "title {{setting.fontSizeSubtitle}}">Sous-titre</div>
 
-<div> 
+<div>
   <br><br>
 <div>
 <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Presbytie
@@ -9,7 +9,7 @@
     <span class="checkmark"></span>
   </label>
 </div>
-  
+
 <div>
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Myopie
     <input type="checkbox" (change)="setFont('myopia',$event.target.checked)">
@@ -23,7 +23,7 @@
     <span class="checkmark"></span>
   </label>
 </div>
-  
+
   <div>
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Hypermétropie
     <input type="checkbox" (change)="setFont('hyperopia',$event.target.checked)">
@@ -35,10 +35,10 @@
   <br>
 <label>Choisissez un type de Daltonisme : </label>
 <select id="values" (change) = "setColors($event.target.value)">
-  <option class = "daltonisme {{setting.fontSizeButton}}" value="basic">Pas de troubles</option>
-  <option class = "daltonisme {{setting.fontSizeButton}}" value="tritanomal">Tritanomal</option>
-  <option class = "daltonisme {{setting.fontSizeButton}}" value="deuteranomal">Deutéranomal</option>
-  <option class = "daltonisme {{setting.fontSizeButton}}" value ="protanomal">Protanomal</option>
+  <option class = "daltonisme {{setting.fontSizeButton}}" value="basic" [selected]="compareSickness('basic')">Pas de troubles</option>
+  <option class = "daltonisme {{setting.fontSizeButton}}" value="tritanomal" [selected]="compareSickness('tritanomal')">Tritanomal</option>
+  <option class = "daltonisme {{setting.fontSizeButton}}" value="deuteranomal" [selected]="compareSickness('deuteranomal')">Deutéranomal</option>
+  <option class = "daltonisme {{setting.fontSizeButton}}" value ="protanomal" [selected]="compareSickness('protanomal')">Protanomal</option>
 </select>
 </div>
 </div>
