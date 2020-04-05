@@ -1,6 +1,7 @@
 <div class="quiz-list">
     <div class="block">
         <app-quiz-form></app-quiz-form>
+        <app-quiz-sort [quizList]="quizList"></app-quiz-sort>
     </div>
     <div class="container">
         <div class="quiz" *ngFor="let quiz of quizList">

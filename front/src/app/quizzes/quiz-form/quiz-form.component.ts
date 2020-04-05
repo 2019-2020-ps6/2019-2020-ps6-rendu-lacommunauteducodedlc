@@ -43,6 +43,7 @@ export class QuizFormComponent implements OnInit {
       if (quiz.id > maxId) { maxId = quiz.id; }
     });
     quizToCreate.id = Math.round(maxId) + 1;
+    quizToCreate.difficulty = 1;
 
     // Do you need to log your object here in your class? Uncomment the code below
     // and open your console in your browser by pressing F12 and choose the tab "Console".

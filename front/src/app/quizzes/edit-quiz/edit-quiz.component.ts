@@ -17,6 +17,7 @@ export class EditQuizComponent implements OnInit {
   public question: Question;
   public THEME_LIST = Object.keys(QuizTheme).filter(k => typeof QuizTheme[k as any] === 'number');
   public quizForm: FormGroup;
+  public diffSave: number;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -41,10 +42,12 @@ export class EditQuizComponent implements OnInit {
       name: [this.quiz.name],
       theme: [this.quiz.theme]
     });
+    this.diffSave=this.quiz.difficulty;
   }
 
   upQuiz(): void {
     this.quiz = { ...this.quiz, ...this.quizForm.getRawValue() } as Quiz;
+    this.quiz.difficulty=this.diffSave;
     document.getElementById("msg").innerHTML = "Enregistré !";
     this.quizService.upQuiz(this.quiz);
   }
@@ -80,5 +83,9 @@ export class EditQuizComponent implements OnInit {
 
   resetQuestion($event: boolean) {
     this.question = null;
+  }
+
+  log(value: any) {
+    console.log(value);
   }
 }
