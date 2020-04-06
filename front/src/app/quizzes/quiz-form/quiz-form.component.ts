@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz, QuizTheme } from '../../../models/quiz.model';
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-quiz-form',
@@ -20,10 +22,12 @@ export class QuizFormComponent implements OnInit {
    */
   public quizForm: FormGroup;
   public THEME_LIST = Object.keys(QuizTheme).filter(k => typeof QuizTheme[k as any] === 'number');
+  public setting: Setting;
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService, private settingService: SettingService) {
     // Form creation
     this.initFormBuilder();
+    this.settingService.settings$.subscribe((setting) => this.setting = setting);
     // You can also add validators to your inputs such as required, maxlength or even create your own validator!
     // More information: https://angular.io/guide/reactive-forms#simple-form-validation
     // Advanced validation: https://angular.io/guide/form-validation#reactive-form-validation

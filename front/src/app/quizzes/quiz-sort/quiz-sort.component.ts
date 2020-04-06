@@ -1,5 +1,7 @@
  import {Component, Input, OnInit} from '@angular/core';
 import {Quiz, QuizTheme} from '../../../models/quiz.model';
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-quiz-sort',
@@ -9,11 +11,13 @@ import {Quiz, QuizTheme} from '../../../models/quiz.model';
 export class QuizSortComponent implements OnInit {
 
   public SORT_LIST = Object.keys(QuizSort).filter(k => typeof QuizSort[k as any] === 'number');
+  public setting: Setting;
 
   @Input()
   quizList: Quiz[];
 
-  constructor() {
+  constructor(private settingService: SettingService) {
+    this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
 
   ngOnInit() {

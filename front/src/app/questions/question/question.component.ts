@@ -21,7 +21,7 @@ export class QuestionComponent implements OnInit {
   
   public setting: Setting;
 
-  constructor() {
+  constructor(private settingService: SettingService) {
     this.settingService.settings$.subscribe((setting) => this.setting = setting);
    }
 

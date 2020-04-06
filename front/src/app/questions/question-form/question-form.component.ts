@@ -25,7 +25,9 @@ export class QuestionFormComponent implements OnChanges {
   private questionForm: FormGroup;
   public setting: Setting;
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {}
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService, private settingService: SettingService) {
+    this.settingService.settings$.subscribe((setting) => this.setting = setting);
+  }
 
   ngOnInit() {
     this.initFormBuilder();

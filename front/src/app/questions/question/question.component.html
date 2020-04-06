@@ -4,12 +4,12 @@
     <span class="question-label {{setting.fontSizeText}} {{setting.fontStyle}}">{{question.label}}</span><br>
   </h2>
   <ol>
-    <li *ngFor="let answer of question.answers">
+    <li *ngFor="let answer of question.answers" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       {{answer.value}}<span *ngIf="answer.isCorrect"> &#9745;</span>
     </li>
   </ol>
   <div id="buttons">
-    <button id="delete-button" class="button-card" (click)="rmQuestion()">SUPPRIMER</button>
-    <button id="select-button" class="button-card" (click)="selectQuestion()">SELECT</button>
+    <button id="delete-button" class="button-card {{setting.fontSizeText}} {{setting.fontStyle}}" (click)="rmQuestion()">SUPPRIMER</button>
+    <button id="select-button" class="button-card {{setting.fontSizeText}} {{setting.fontStyle}}" (click)="selectQuestion()">SELECT</button>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="quiz-sort">
-  Trier par :
+  <h2 class="{{setting.fontSizeText}} {{setting.fontStyle}}">Trier par :</h2>
   <select id="theme" (change)="sortBy($event.target.value)">
-    <option *ngFor="let currentSorter of SORT_LIST" [value]="currentSorter" [selected]="currentSorter=='DATE'">
+    <option *ngFor="let currentSorter of SORT_LIST" [value]="currentSorter" [selected]="currentSorter=='DATE'" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       {{currentSorter}}
     </option>
   </select>
