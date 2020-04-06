@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Question} from '../../../models/question.model';
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-question',
@@ -16,9 +18,12 @@ export class QuestionComponent implements OnInit {
 
   @Output()
   questionToDeleted: EventEmitter<Question> = new EventEmitter<Question>();
+  
+  public setting: Setting;
 
   constructor() {
-  }
+    this.settingService.settings$.subscribe((setting) => this.setting = setting);
+   }
 
   ngOnInit() {
   }

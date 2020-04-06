@@ -3,6 +3,8 @@ import { QuizService } from '../../../services/quiz.service';
 import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {Answer, Question} from '../../../models/question.model';
 import {Quiz} from '../../../models/quiz.model';
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-question-form',
@@ -21,9 +23,9 @@ export class QuestionFormComponent implements OnChanges {
   modificationEnded: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private questionForm: FormGroup;
+  public setting: Setting;
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
-  }
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {}
 
   ngOnInit() {
     this.initFormBuilder();
