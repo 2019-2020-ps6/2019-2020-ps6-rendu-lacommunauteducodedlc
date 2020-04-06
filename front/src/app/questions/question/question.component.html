@@ -1,7 +1,7 @@
 <div class="card">
   <h2>
     <i *ngIf="question.iconClass" class={{quiz.iconClass}}></i><i *ngIf="!question.iconClass" class="fab fa-leanpub"></i>
-    <span class="question-label">{{question.label}}</span><br>
+    <span class="question-label {{setting.fontSizeText}} {{setting.fontStyle}}">{{question.label}}</span><br>
   </h2>
   <ol>
     <li *ngFor="let answer of question.answers">
