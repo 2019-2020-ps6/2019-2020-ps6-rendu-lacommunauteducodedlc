@@ -25,7 +25,7 @@ export class QuestionFormComponent implements OnChanges {
   private questionForm: FormGroup;
   public setting: Setting;
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService, private settingService: SettingService) {
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService, public settingService: SettingService) {
     this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
 
