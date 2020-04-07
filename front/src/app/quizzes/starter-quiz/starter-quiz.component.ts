@@ -26,7 +26,7 @@ export class StarterComponent implements OnInit {
         private route: ActivatedRoute
     ) {
       this.index = 0;
-      this.started = false;
+      this.started = true;
       this.finished = false;
       this.score = 0;
       this.questionAnswered = false;

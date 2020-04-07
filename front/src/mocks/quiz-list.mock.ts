@@ -35,18 +35,4 @@ export const QUESTION_SPORT: Question = {
   id: 14
 };
 
-export const QUIZ_LIST: Quiz[] = [
-    {
-        name: 'Les Acteurs', // What's happening if I change this value..?
-        theme: QuizTheme.Actor,
-        questions: [QUESTION_ACTOR],
-      id: 1,
-    },
-    {
-        name: 'Les Sports',
-        theme: QuizTheme.Sport,
-        questions: [QUESTION_SPORT],
-        iconClass: 'fas fa-basketball-ball',
-        id: 2,
-    }
-];
+export const QUIZ_LIST: Quiz[] = [];
