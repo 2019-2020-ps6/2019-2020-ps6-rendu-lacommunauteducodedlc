@@ -37,6 +37,7 @@ export class SettingService {
     this.setting = {fontSizeText : "font-size-basic-text",
                     fontSizeSubtitle : "font-size-basic-subtitle",
                     fontSizeTitle : "font-size-basic-title",
+                    fontSizeSubtext: "font-size-basic-subtext",
                     fontSizeButton : "font-size-basic-button",
                     fontStyle : "font-style-basic",
                     colorBackground : "color-basic-background",
@@ -60,12 +61,14 @@ export class SettingService {
     let fontText:String = fontSize+"-text";
     let fontSubtitle:String = fontSize+"-subtitle";
     let fontTitle:String = fontSize+"-title";
+    let fontSubtext:String = fontSize+"-subtext";
     let fontButton:String = fontSize+"-button";
     let fontSelector:String = fontSize+"-selector";
     
     this.setting.fontSizeText = fontText;
     this.setting.fontSizeSubtitle = fontSubtitle;
     this.setting.fontSizeTitle = fontTitle;
+    this.setting.fontSizeSubtext = fontSubtext;
     this.setting.fontSizeButton = fontButton;
 
     this.setting.selectorSize = fontSelector;
@@ -110,6 +113,10 @@ export class SettingService {
 
   public getFontSizeTitle() {
     return this.setting.fontSizeTitle;
+  }
+
+  public getFontSizeSubtext() {
+    return this.setting.fontSizeSubtext;
   }
 
   public getFontSizeButton() {

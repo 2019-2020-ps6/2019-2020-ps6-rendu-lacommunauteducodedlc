@@ -5,6 +5,7 @@ export interface Setting {
     fontSizeText: String;
     fontSizeSubtitle: String;
     fontSizeTitle: String;
+    fontSizeSubtext: String;
     fontSizeButton: String;
     selectorSize: String;
 

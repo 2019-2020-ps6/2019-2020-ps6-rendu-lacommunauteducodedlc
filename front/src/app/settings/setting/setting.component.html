@@ -34,7 +34,7 @@
 <div class ="daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}">
   <br>
 <label>Choisissez un type de Daltonisme : </label>
-<select class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}}" id="values" (change)="setColors($event.target.value)">
+<select class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" id="values" (change)="setColors($event.target.value)">
   <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="basic" [selected]="compareSickness('basic')">Pas de troubles</option>
   <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="tritanomal" [selected]="compareSickness('tritanomal')">Tritanomal</option>
   <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="deuteranomal" [selected]="compareSickness('deuteranomal')">Deutéranomal</option>
