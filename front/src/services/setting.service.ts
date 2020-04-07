@@ -37,6 +37,7 @@ export class SettingService {
     this.setting = {fontSizeText : "font-size-basic-text",
                     fontSizeSubtitle : "font-size-basic-subtitle",
                     fontSizeTitle : "font-size-basic-title",
+                    fontSizeSubtext: "font-size-basic-subtext",
                     fontSizeButton : "font-size-basic-button",
                     fontStyle : "font-style-basic",
                     colorBackground : "color-basic-background",
@@ -44,6 +45,7 @@ export class SettingService {
                     colorYes : "color-basic-yes",
                     colorNo : "color-basic-no",
                     colorButton : "color-basic-button",
+                    colorCard : "color-basic-card",
                     selectorSize : "font-size-basic-selector"
                   };
     this.updateSettings(this.setting);
@@ -59,12 +61,14 @@ export class SettingService {
     let fontText:String = fontSize+"-text";
     let fontSubtitle:String = fontSize+"-subtitle";
     let fontTitle:String = fontSize+"-title";
+    let fontSubtext:String = fontSize+"-subtext";
     let fontButton:String = fontSize+"-button";
     let fontSelector:String = fontSize+"-selector";
     
     this.setting.fontSizeText = fontText;
     this.setting.fontSizeSubtitle = fontSubtitle;
     this.setting.fontSizeTitle = fontTitle;
+    this.setting.fontSizeSubtext = fontSubtext;
     this.setting.fontSizeButton = fontButton;
 
     this.setting.selectorSize = fontSelector;
@@ -85,12 +89,14 @@ export class SettingService {
     let colorYes:String = color+"-yes";
     let colorNo:String = color+"-no";
     let colorButton:String = color+"-button";
+    let colorCard:String = color+"-card";
     
     this.setting.colorBackground = colorBackground;
     this.setting.colorHeader = colorHeader;
     this.setting.colorYes = colorYes;
     this.setting.colorNo = colorNo;
     this.setting.colorButton = colorButton;
+    this.setting.colorCard = colorCard;
 
     this.updateSettings(this.setting);
   }
@@ -109,8 +115,16 @@ export class SettingService {
     return this.setting.fontSizeTitle;
   }
 
+  public getFontSizeSubtext() {
+    return this.setting.fontSizeSubtext;
+  }
+
   public getFontSizeButton() {
     return this.setting.fontSizeButton;
+  }
+
+  public getSelectorSize() {
+    return this.setting.selectorSize;
   }
 
   //Getter pour la font style
@@ -139,7 +153,8 @@ export class SettingService {
     return this.setting.colorButton;
   }
 
-  public getSelectorSize() {
-    return this.setting.selectorSize;
+  public getColorCard(){
+    return this.setting.colorCard;
   }
+ 
 }

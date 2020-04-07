@@ -64,15 +64,12 @@
 }
 
 .anwser-correct, .anwser-correct:hover {
-    background-color: lightgreen;
 }
 
 .anwser-incorrect:hover {
-    background-color: $white;
 }
 
 .selected-anwser-incorrect, .selected-anwser-incorrect:hover {
-    background-color: lightcoral;
 }
 
 .progress {
