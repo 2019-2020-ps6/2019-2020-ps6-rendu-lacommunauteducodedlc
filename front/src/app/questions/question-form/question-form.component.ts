@@ -13,6 +13,9 @@ import { SettingService } from '../../../services/setting.service';
 })
 export class QuestionFormComponent implements OnChanges {
 
+  public minAns: number = 0;
+  public nbAns: number = 3;
+
   @Input()
   quiz: Quiz;
 
@@ -56,10 +59,12 @@ export class QuestionFormComponent implements OnChanges {
 
   addAnswer() {
     this.answers.push(this.createAnswer());
+    if (this.answers.length>this.nbAns) this.minAns=this.answers.length-this.nbAns;
   }
 
   delAnswer(ansIndex: number) {
     this.answers.removeAt(ansIndex);
+    if (ansIndex>=this.answers.length-this.nbAns) this.minAns--;
   }
 
   private createAnswer() {
@@ -126,4 +131,7 @@ export class QuestionFormComponent implements OnChanges {
   //
   //   this.initFormBuilder();
   // }
+  moveMinAns(number: number) {
+    if (this.minAns+number>=0 && this.minAns+number<=this.answers.length-this.nbAns) this.minAns+=number;
+  }
 }

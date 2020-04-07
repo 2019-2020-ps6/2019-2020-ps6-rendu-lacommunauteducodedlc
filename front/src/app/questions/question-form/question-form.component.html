@@ -7,19 +7,29 @@
     </label>
     <br>
     <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="addAnswer()">AJOUTER UNE RÉPONSE</button>
-    <div class="answer" formArrayName="answers">
-      <div *ngFor="let address of answers.controls; let i=index">
-        <div class="answer-form" [formGroupName]="i">
-          <label class="{{setting.fontSizeText}} {{setting.fontStyle}}">
-            Réponse
-            <input type="text" [formControlName]="'value'"> <i class="fas fa-trash-alt" (click)="delAnswer(i)"></i>
-            <br>
-            Bonne réponse ?
-            <input type="checkbox" [formControlName]="'isCorrect'">
-          </label>
+
+    <div id="answers-field" class="answers" formArrayName="answers">
+
+      <div *ngIf="answers.length>nbAns" id="up-down-ans-buttons">
+        <i class="fas fa-arrow-circle-up" (click)="moveMinAns(-1)"></i>
+        <i class="fas fa-arrow-circle-down" (click)="moveMinAns(1)"></i>
+      </div>
+      <div id="answers-list">
+        <div *ngFor="let address of answers.controls; let i=index">
+          <div *ngIf="i>=minAns && i<minAns+nbAns" class="answer-form" [formGroupName]="i">
+            <label class="{{setting.fontSizeText}} {{setting.fontStyle}}">
+              Réponse
+              <input type="text" [formControlName]="'value'"> <i class="fas fa-trash-alt" (click)="delAnswer(i)"></i>
+              <br>
+              Bonne réponse ?
+              <input type="checkbox" [formControlName]="'isCorrect'">
+            </label>
+          </div>
         </div>
       </div>
+
     </div>
+
     <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="upQuestion()">CONFIRMER</button>
     <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="deleteQuestion()">SUPPRIMER</button>
   </form>

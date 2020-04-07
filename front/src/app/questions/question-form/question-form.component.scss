@@ -7,3 +7,22 @@ h1 {
 input {
   margin-right: 10px;
 }
+
+#answers-field{
+  display: flex;
+}
+
+#up-down-ans-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 1em;
+}
+
+#answers-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.answer-form{
+}
