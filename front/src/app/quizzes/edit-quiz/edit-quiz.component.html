@@ -21,7 +21,7 @@
           <h3 class="{{setting.fontSizeText}} {{setting.fontStyle}}">Difficulté :</h3>
         <br>
         <div id = "stars" *ngFor="let i of [1,2,3,4,5]">
-          <img *ngIf="i>=diffSave" (click)="this.diffSave=i;log(this.diffSave)" src="https://img.icons8.com/material-sharp/24/000000/star.png" />
+          <img *ngIf="i<=diffSave" (click)="this.diffSave=i;log(this.diffSave)" src="https://img.icons8.com/material-sharp/24/000000/star.png" />
           <img *ngIf="i>diffSave" (click)="this.diffSave=i" src="https://img.icons8.com/android/24/000000/star.png" />
         </div>
         <br>
