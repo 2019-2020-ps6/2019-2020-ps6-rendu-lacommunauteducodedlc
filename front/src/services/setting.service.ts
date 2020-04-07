@@ -46,7 +46,8 @@ export class SettingService {
                     colorNo : "color-basic-no",
                     colorButton : "color-basic-button",
                     colorCard : "color-basic-card",
-                    selectorSize : "font-size-basic-selector"
+                    selectorSize : "font-size-basic-selector",
+                    radioRadius: "font-size-basic-radio"
                   };
     this.updateSettings(this.setting);
   }
@@ -64,13 +65,15 @@ export class SettingService {
     let fontSubtext:String = fontSize+"-subtext";
     let fontButton:String = fontSize+"-button";
     let fontSelector:String = fontSize+"-selector";
+    let fontRadio:String = fontSize+"-radio";
     
     this.setting.fontSizeText = fontText;
     this.setting.fontSizeSubtitle = fontSubtitle;
     this.setting.fontSizeTitle = fontTitle;
     this.setting.fontSizeSubtext = fontSubtext;
-    this.setting.fontSizeButton = fontButton;
 
+    this.setting.fontSizeButton = fontButton;
+    this.setting.radioRadius = fontRadio;
     this.setting.selectorSize = fontSelector;
 
     this.updateSettings(this.setting);
@@ -125,6 +128,10 @@ export class SettingService {
 
   public getSelectorSize() {
     return this.setting.selectorSize;
+  }
+
+  public getRadioRadius() {
+    return this.setting.radioRadius;
   }
 
   //Getter pour la font style

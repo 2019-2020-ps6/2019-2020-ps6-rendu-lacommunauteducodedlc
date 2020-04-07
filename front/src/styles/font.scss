@@ -21,6 +21,10 @@
     height: 27px;
     width: 180px;
 }
+.font-size-basic-radio {
+    height: 25px;
+    width: 25px;
+}
 
 //FONT SIZE PRESBYOPIA
 .font-size-presbyopia-text{
@@ -44,6 +48,10 @@
 .font-size-presbyopia-selector {
     height: 32px;
     width: 215px;
+}
+.font-size-presbyopia-radio {
+    height: 30px;
+    width: 30px;
 }
 
 //FONT SIZE MYOPIA
@@ -69,6 +77,10 @@
     height: 37px;
     width: 250px;
 }
+.font-size-myopia-radio {
+    height: 35px;
+    width: 35px;
+}
 
 //FONT SIZE ASTIGMATISM
 .font-size-astigmatism-text{
@@ -93,10 +105,14 @@
     height: 42px;
     width: 285px;
 }
+.font-size-astigmatism-radio {
+    height: 40px;
+    width: 40px;
+}
 
 //FONT SIZE HYPERYOPIA
 .font-size-hyperopia-text{
-    font-size: 42px
+    font-size: 42px;    
 }
 .font-size-hyperopia-subtitle {
     font-size: 50px;
@@ -116,5 +132,9 @@
 .font-size-hyperopia-selector {
     height: 47px;
     width: 320px;
+}
+.font-size-hyperopia-radio {
+    height: 45px;
+    width: 45px;
 }
 

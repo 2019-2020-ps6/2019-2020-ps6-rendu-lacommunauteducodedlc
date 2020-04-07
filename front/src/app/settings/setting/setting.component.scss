@@ -4,11 +4,9 @@
 
   /* Customize the label (the container) */
 .container {
-  display: block;
+  display: flex;
   position: relative;
-  padding-left: 35px;
-  margin-left: 25px;
-  margin-bottom: 12px;
+  margin-bottom: 1%;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -18,22 +16,22 @@
   
   /* Hide the browser's default container */
   .container input {
-    position: absolute;
+    //position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
+    margin-left: 25px;
   }
   
 
  /* Create a custom radio button */
 .checkmark {
-  position: absolute;
+  //position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
   border-radius: 50%;
+  margin-right: 1em;
 }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -50,11 +48,12 @@
   
   /* Style the checkmark/indicator */
   .container .checkmark:after {
-    left: 9px;
-    top: 9px;
-    width: 8px;
-    height: 8px;
+    top : 15%;
+    left: 15%;
+    position:relative;
     border-radius:50%;
+    height: 70%;
+    width: 70%;
     background: black;
   }
 
@@ -73,4 +72,9 @@
   .daltonisme {
     margin-left: 25px;
   }
-  
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
