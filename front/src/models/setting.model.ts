@@ -8,6 +8,11 @@ export interface Setting {
     fontSizeButton: String;
     selectorSize: String;
 
+//taille de bouton
+//couleur des cartes
+//input size
+//couleur des selector / saisie de texte
+
     fontStyle: String;
 
     colorBackground: String;
@@ -15,6 +20,7 @@ export interface Setting {
     colorYes: String;
     colorNo: String;
     colorButton: String;
+    colorCard: String;
 }
 
 export enum SettingType {

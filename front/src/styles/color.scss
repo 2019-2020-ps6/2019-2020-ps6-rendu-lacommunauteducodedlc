@@ -14,13 +14,16 @@
 .color-basic-button{
     background-color: #3862b6;
 }
+.color-basic-card {
+    background-color: #c1d9f8;
+}
 
 //COLORS TRITANOMAL (faible sur bleu)
 .color-tritanomal-background {
-    background-color: rgb(248, 212, 159);
+    background-color: #f8d49f;
 }
 .color-tritanomal-header {
-    background-color: rgb(246, 180, 0);
+    background-color: #f6b400;
 }
 .color-tritanomal-yes {
     background-color: #2023ee;
@@ -30,6 +33,9 @@
 }
 .color-tritanomal-button{
     background-color: #b69f38;
+}
+.color-tritanomal-card {
+    background-color: #f3dab4;
 }
 
 //COLORS PROTANOMAL (faible sur rouge)
@@ -48,6 +54,9 @@
 .color-protanomal-button{
     background-color: #b63838;
 }
+.color-protanomal-card {
+    background-color: #fac2c2;
+}
 
 //COLORS DEUTERANOMAL (faible sur vert)
 .color-deuteranomal-background {
@@ -64,4 +73,7 @@
 }
 .color-deuteranomal-button{
     background-color: #b63838;
+}
+.color-deuteranomal-card {
+    background-color: #fac2c2;
 }

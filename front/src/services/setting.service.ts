@@ -44,6 +44,7 @@ export class SettingService {
                     colorYes : "color-basic-yes",
                     colorNo : "color-basic-no",
                     colorButton : "color-basic-button",
+                    colorCard : "color-basic-card",
                     selectorSize : "font-size-basic-selector"
                   };
     this.updateSettings(this.setting);
@@ -85,12 +86,14 @@ export class SettingService {
     let colorYes:String = color+"-yes";
     let colorNo:String = color+"-no";
     let colorButton:String = color+"-button";
+    let colorCard:String = color+"-card";
     
     this.setting.colorBackground = colorBackground;
     this.setting.colorHeader = colorHeader;
     this.setting.colorYes = colorYes;
     this.setting.colorNo = colorNo;
     this.setting.colorButton = colorButton;
+    this.setting.colorCard = colorCard;
 
     this.updateSettings(this.setting);
   }
@@ -111,6 +114,10 @@ export class SettingService {
 
   public getFontSizeButton() {
     return this.setting.fontSizeButton;
+  }
+
+  public getSelectorSize() {
+    return this.setting.selectorSize;
   }
 
   //Getter pour la font style
@@ -139,7 +146,8 @@ export class SettingService {
     return this.setting.colorButton;
   }
 
-  public getSelectorSize() {
-    return this.setting.selectorSize;
+  public getColorCard(){
+    return this.setting.colorCard;
   }
+ 
 }
