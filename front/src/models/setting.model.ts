@@ -8,6 +8,7 @@ export interface Setting {
     fontSizeSubtext: String;
     fontSizeButton: String;
     selectorSize: String;
+    radioRadius: String;
 
 //taille de bouton
 //couleur des cartes

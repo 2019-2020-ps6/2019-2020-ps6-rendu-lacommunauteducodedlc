@@ -4,39 +4,35 @@
   <br><br>
 <div class = "subtitle {{setting.fontSizeSubtitle}} {{setting.fontStyle}}">Troubles Visuels</div>
 <br>
-<div>
+
+<div class = "buttons">
+
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Pas de trouble
-      <input type="radio" checked = "checked" name = "radio" (change)="setFont('basic',$event.target.checked)">
-      <span class="checkmark {{setting.colorButton}}"></span>
-    </label>
-  </div>
+    <input type="radio" checked = "checked" name = "radio" (change)="setFont('basic',$event.target.checked)">
+    <span class="checkmark {{setting.radioRadius}} {{setting.colorButton}}"></span>
+  </label>
 
-<div>
-<label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Presbytie
+  <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Presbytie
     <input type="radio" name = "radio" (change)="setFont('presbyopia',$event.target.checked)">
-    <span class="checkmark {{setting.colorButton}}"></span>
+    <span class="checkmark {{setting.radioRadius}} {{setting.colorButton}}"></span>
   </label>
-</div>
 
-<div>
-  <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Myopie
+  <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">
     <input type="radio" name = "radio" (change)="setFont('myopia',$event.target.checked)">
-    <span class="checkmark {{setting.colorButton}}"></span>
+    <span class="checkmark {{setting.radioRadius}} {{setting.colorButton}}"></span>
+    <div class="{{setting.fontSizeText}} {{setting.fontStyle}}">Myopie</div>
   </label>
-</div>
 
-  <div>
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Astigmatie
     <input type="radio" name = "radio" (change)="setFont('astigmatism',$event.target.checked)">
-    <span class="checkmark {{setting.colorButton}}"></span>
+    <span class="checkmark {{setting.radioRadius}} {{setting.colorButton}}"></span>
   </label>
-</div>
 
-  <div>
   <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">Hypermétropie
     <input type="radio" name = "radio" (change)="setFont('hyperopia',$event.target.checked)">
-    <span class="checkmark {{setting.colorButton}}"></span>
+    <span class="checkmark {{setting.radioRadius}} {{setting.colorButton}}"></span>
   </label>
+
 </div>
 
 <div class ="daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}">

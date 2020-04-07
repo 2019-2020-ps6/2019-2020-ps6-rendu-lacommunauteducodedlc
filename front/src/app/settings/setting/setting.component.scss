@@ -8,7 +8,8 @@
   position: relative;
   padding-left: 35px;
   margin-left: 25px;
-  margin-bottom: 12px;
+  margin-bottom: 3%;
+  margin-top: 3%;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -31,9 +32,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
   border-radius: 50%;
+  z-index: 12;
 }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -50,12 +50,14 @@
   
   /* Style the checkmark/indicator */
   .container .checkmark:after {
-    left: 9px;
-    top: 9px;
-    width: 8px;
-    height: 8px;
+    top : 15%;
+    left: 15%;
+    position:relative;
     border-radius:50%;
+    height: 70%;
+    width: 70%;
     background: black;
+    z-index: 25;
   }
 
   .title {
@@ -72,5 +74,11 @@
 
   .daltonisme {
     margin-left: 25px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
