@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Quiz } from '../../../models/quiz.model';
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-quiz',
@@ -17,7 +19,10 @@ export class QuizComponent implements OnInit {
   @Output()
   quizToDeleted: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
-  constructor() {
+  public setting: Setting;
+
+  constructor(private settingService: SettingService) {
+    this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
 
   ngOnInit() {

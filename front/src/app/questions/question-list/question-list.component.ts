@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { QuizService } from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {Question} from '../../../models/question.model';
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-question-list',
@@ -16,8 +18,11 @@ export class QuestionListComponent implements OnInit {
   @Output()
   questionSelected: EventEmitter<Question> = new EventEmitter<Question>();
 
-  constructor(public quizService: QuizService) {
+  public setting: Setting;
+
+  constructor(public quizService: QuizService, private settingService: SettingService) {
     // this.quizService.quizzes$.subscribe((quizzes) => this.quiz = quizzes.find(quiz => quiz.id === this.quiz.id));
+    this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
 
   ngOnInit() {

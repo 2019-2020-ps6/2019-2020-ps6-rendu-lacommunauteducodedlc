@@ -6,6 +6,8 @@ import {Observable} from 'rxjs';
 import {Quiz, QuizTheme} from '../../../models/quiz.model';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Question} from "../../../models/question.model";
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-edit-quiz',
@@ -18,13 +20,16 @@ export class EditQuizComponent implements OnInit {
   public THEME_LIST = Object.keys(QuizTheme).filter(k => typeof QuizTheme[k as any] === 'number');
   public quizForm: FormGroup;
   public diffSave: number;
+  public setting: Setting;
 
   constructor(
     public formBuilder: FormBuilder,
     private quizService: QuizService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private settingService: SettingService
   ) {
+    this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
 
   ngOnInit() {

@@ -3,6 +3,8 @@ import { Quiz } from '../../../models/quiz.model';
 import { ActivatedRoute } from '@angular/router';
 import { QuizService } from 'src/services/quiz.service';
 import { Answer } from 'src/models/question.model';
+import {Setting} from '../../../models/setting.model';
+import { SettingService } from '../../../services/setting.service';
 
 @Component({
   selector: 'app-starter-quiz',
@@ -20,10 +22,12 @@ export class StarterComponent implements OnInit {
     public questionAnswered: boolean;
     public answer: Answer;
     public police: string;
+    public setting: Setting;
 
     constructor(
         private quizService: QuizService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private settingService: SettingService
     ) {
       this.index = 0;
       this.started = true;
@@ -31,6 +35,7 @@ export class StarterComponent implements OnInit {
       this.score = 0;
       this.questionAnswered = false;
       this.answer = null;
+      this.settingService.settings$.subscribe((setting) => this.setting = setting);
     }
 
     ngOnInit() {

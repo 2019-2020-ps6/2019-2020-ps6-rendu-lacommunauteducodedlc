@@ -4,9 +4,9 @@
   <!--<span class="attrib-title">Nom: </span>-->
   <!--span *ngIf="quiz.date" id="date">Créé le: {{quiz.date | date:'d/MM/yy, H:mm'}}</!--span>-->
 
-  <h2><div class="attrib-title">{{quiz.name}}<br></div></h2>
+  <h2><div class="attrib-title {{setting.fontSizeText}} {{setting.fontStyle}}">{{quiz.name}}<br></div></h2>
 
-  <div class="attrib-value">{{quiz.questions.length}} questions<br></div>
+  <div class="attrib-value {{setting.fontSizeText}} {{setting.fontStyle}}">{{quiz.questions.length}} questions<br></div>
   <div id = "stars" *ngFor="let i of [1,2,3,4,5]">
     <img *ngIf="i<=quiz.difficulty" src="https://img.icons8.com/material-sharp/24/000000/star.png" />
     <img *ngIf="i>quiz.difficulty" src="https://img.icons8.com/android/24/000000/star.png" />
@@ -15,8 +15,8 @@
   <!--<span class="attrib-title"> Thème: </span> <span class="attrib-value">{{quiz.theme}} </span><br>-->
 
   <div id="buttons">
-    <button id="edit-button" class="button-card"><a routerLink="/edit-quiz/{{quiz.id}}">MODIFIER</a></button>
-    <button id="select-button" class="button-card"><a routerLink="/start-quiz/{{quiz.id}}">COMMENCER</a></button>
+    <button id="edit-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}"><a routerLink="/edit-quiz/{{quiz.id}}">MODIFIER</a></button>
+    <button id="select-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}"><a routerLink="/start-quiz/{{quiz.id}}">COMMENCER</a></button>
     <!--<button id="delete-button" class="button-card" (click)="rmQuiz()">SUPPRIMER</button>-->
   </div>
 

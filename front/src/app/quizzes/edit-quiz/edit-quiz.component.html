@@ -1,24 +1,24 @@
 <div class="edit-quiz">
   <div id="edit-bar">
-    <a routerLink="/quiz-list"><button class="button-card" id="button-return">Retour</button></a>
+    <a routerLink="/quiz-list"><button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" id="button-return">Retour</button></a>
     <div id="edit-quiz-form">
       <form class="quiz-form" *ngIf="quizForm" [formGroup]="quizForm">
-        <label for="title">
+        <label for="title" class="title {{setting.fontSizeText}} {{setting.fontStyle}}">
           Titre&nbsp;&nbsp;&nbsp;&nbsp;
           <input class="input-custom" type="text" id="title" [formControlName]="'name'" value="{{this.quiz.name}}">
         </label>
         <br>
-        <label for="theme">
+        <label for="theme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
           Thème
           <select name="theme-field" id="theme" [formControlName]="'theme'">
-            <option value="{{this.quiz.theme}}" [selected]="true">{{this.quiz.theme}}</option>
+            <option value="{{this.quiz.theme}}" [selected]="true" class="{{setting.fontSizeText}} {{setting.fontStyle}}">{{this.quiz.theme}}</option>
             <ng-container *ngFor="let currentTheme of THEME_LIST">
-              <option *ngIf="currentTheme.toString()!=this.quiz.theme.toString()"  [value]="currentTheme" >{{currentTheme}}</option>
+              <option *ngIf="currentTheme.toString()!=this.quiz.theme.toString()"  [value]="currentTheme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">{{currentTheme}}</option>
             </ng-container>
           </select>
         </label>
         <br>
-          Difficulté :
+          <h3 class="{{setting.fontSizeText}} {{setting.fontStyle}}">Difficulté :</h3>
         <br>
         <div id = "stars" *ngFor="let i of [1,2,3,4,5]">
           <img *ngIf="i>=diffSave" (click)="this.diffSave=i;log(this.diffSave)" src="https://img.icons8.com/material-sharp/24/000000/star.png" />
@@ -26,14 +26,14 @@
         </div>
         <br>
         <p id="msg"></p>
-        <a routerLink="/quiz-list"><button type="submit" class="button-card" (click)="upQuiz()">ENREGISTRER</button></a>
-        <a routerLink="/quiz-list"><button type="submit" class="button-card" (click)="deleteQuiz()">SUPPRIMER</button></a>
+        <a routerLink="/quiz-list"><button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="upQuiz()">ENREGISTRER</button></a>
+        <a routerLink="/quiz-list"><button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="deleteQuiz()">SUPPRIMER</button></a>
       </form>
     </div>
   </div>
   <div *ngIf="this.quiz != null" id="edit-body">
     <app-question-form *ngIf="this.question != null" [quiz]="quiz" [question]="question" (modificationEnded)="resetQuestion($event)"></app-question-form>
     <app-question-list [quiz]="quiz" (questionSelected)="selectQuestion($event)"></app-question-list>
-    <button type="submit" class="button-card" (click)="newQuestion()">Nouvelle question</button>
+    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="newQuestion()">Nouvelle question</button>
   </div>
 </div>
