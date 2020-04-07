@@ -29,7 +29,7 @@ export class QuizSortComponent implements OnInit {
     switch (this.SORT_LIST.indexOf(value)) {
       case QuizSort.NAME : this.quizList.sort((a,b)=> a.name.localeCompare(b.name)); break;
       case QuizSort.DATE : this.quizList.sort((a,b)=> (a.date < b.date) ? -1 : 1); break;
-      case QuizSort.THEME : this.quizList.sort((a,b)=> a.theme.localeCompare(b.theme)); break;
+      case QuizSort.THEME : this.quizList.sort((a,b)=> a.theme.toString().localeCompare(b.theme.toString())); break;
       case QuizSort.DIFFICULTY : this.quizList.sort((a,b)=> a.difficulty-b.difficulty); break;
       default : this.quizList.sort((a,b)=> a.name.localeCompare(b.name)); break;
     }

@@ -2,7 +2,7 @@ import { Question } from './question.model';
 
 export interface Quiz {
     name: string;
-    theme: string;
+    theme: QuizTheme;
     questions: Question[];
     iconClass?: string;
     date?: Date;
