@@ -12,6 +12,7 @@ import { SettingService } from '../../../services/setting.service';
   styleUrls: ['./question-form.component.scss']
 })
 export class QuestionFormComponent implements OnChanges {
+  private MAX_ANS = 6;
 
   public minAns: number = 0;
   public nbAns: number = 3;
@@ -58,8 +59,13 @@ export class QuestionFormComponent implements OnChanges {
   }
 
   addAnswer() {
+    if (this.answers.length>=this.MAX_ANS) {
+      this.printMessage("Nombre max de réponse atteint");
+      return;
+    }
     this.answers.push(this.createAnswer());
     if (this.answers.length>this.nbAns) this.minAns=this.answers.length-this.nbAns;
+    this.printMessage("");
   }
 
   delAnswer(ansIndex: number) {
@@ -133,5 +139,9 @@ export class QuestionFormComponent implements OnChanges {
   // }
   moveMinAns(number: number) {
     if (this.minAns+number>=0 && this.minAns+number<=this.answers.length-this.nbAns) this.minAns+=number;
+  }
+
+  private printMessage(msg: string) {
+    document.getElementById("msg-question-form").innerHTML = msg;
   }
 }
