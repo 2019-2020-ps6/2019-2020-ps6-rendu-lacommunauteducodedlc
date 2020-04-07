@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of, throwError} from 'rxjs';
 import { Quiz } from '../models/quiz.model';
 import {Answer, Question} from "../models/question.model";
-import { QUIZ_LIST } from '../mocks/quiz-list.mock';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, map} from 'rxjs/operators';
 import {subscribeToIterable} from 'rxjs/internal-compatibility';
