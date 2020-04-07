@@ -1,6 +1,6 @@
 <div class="starter-quiz">
     <div *ngIf="!started" >
-        <button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}"><a routerLink="/"> Retour </a></button>
+        <button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a routerLink="/"> Retour </a></button>
         <div class="center">
             <div class="grid">
                 <span class="space {{setting.fontSizeTitle}} {{setting.fontStyle}}"> {{ quiz.name }} </span>
@@ -15,25 +15,25 @@
                     <img src="https://img.icons8.com/android/24/000000/star.png" />
                 </div>
             </div>
-            <button id="button-start" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="startQuiz()">Commencer</button>
+            <button id="button-start" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="startQuiz()">Commencer</button>
         </div>
     </div>
     <div *ngIf="started">
         <div *ngIf="!finished && !questionAnswered" class="grid center">
             <span class="space">{{quiz.questions[index].label}}</span>
             <div *ngFor="let answer of quiz.questions[index].answers" class="element">
-                <button class="button-card space answer" (click)="questionAnswer(answer.id)"> {{ answer.value }} </button>
+                <button class="button-card space answer {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="questionAnswer(answer.id)"> {{ answer.value }} </button>
             </div>
         </div>
         <div *ngIf="!finished && questionAnswered" class="grid center">
             <span class="space">{{quiz.questions[index - 1].label}}</span>
             <div *ngFor="let answer of quiz.questions[index - 1].answers">
-                <button *ngIf="answer.isCorrect" class="button-card space anwser-correct answer"> <i class="fas fa-check"></i> {{ answer.value }} </button>
-                <button *ngIf="!answer.isCorrect && checkAnswer(answer.id)" class="button-card space anwser-incorrect answer"> <i class="fas fa-times"></i> {{ answer.value }} </button>
-                <button *ngIf="!answer.isCorrect && !checkAnswer(answer.id)" class="button-card space selected-anwser-incorrect answer"> <i class="fas fa-times"></i> {{ answer.value }} </button>
+                <button *ngIf="answer.isCorrect" class="button-card space anwser-correct answer {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorYes}}"> <i class="fas fa-check"></i> {{ answer.value }} </button>
+                <button *ngIf="!answer.isCorrect && checkAnswer(answer.id)" class="button-card space anwser-incorrect answer {{setting.fontSizeButton}} {{setting.fontStyle}}"> <i class="fas fa-times "></i> {{ answer.value }} </button>
+                <button *ngIf="!answer.isCorrect && !checkAnswer(answer.id)" class="button-card space selected-anwser-incorrect answer {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorNo}}"> <i class="fas fa-times"></i> {{ answer.value }} </button>
             </div>
             <div class="right">
-                <button id="button-next" class="button-card space" (click)="getNext()"> Suivant <i class="fas fa-arrow-right next"></i></button>
+                <button id="button-next" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="getNext()"> Suivant <i class="fas fa-arrow-right next"></i></button>
             </div>
         </div>
         <div *ngIf="!finished" class="grid center margin-top">
@@ -54,8 +54,8 @@
                 <span class="space {{setting.fontSizeSubtitle}} {{setting.fontStyle}}">Votre score : {{ score }}/{{ quiz.questions.length }}</span>
             </div>
             <div class="center">
-                <button id="button-restart" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="restart()">Recommencer</button>
-                <button id="button-new-quiz" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}}"><a routerLink="/">Nouveau Quiz</a></button>
+                <button id="button-restart" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="restart()">Recommencer</button>
+                <button id="button-new-quiz" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a routerLink="/">Nouveau Quiz</a></button>
             </div>
         </div>
     </div>

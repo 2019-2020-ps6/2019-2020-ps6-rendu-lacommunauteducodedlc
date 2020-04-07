@@ -1,18 +1,18 @@
-<div class="card">
+<div class="card {{setting.colorCard}}">
   <h1 class="title {{setting.fontSizeTitle}} {{setting.fontStyle}}">Modification de la question</h1>
   <form class="question-form" [formGroup]="questionForm">
     <label for="question-title" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       La question est :
-      <input class="input-custom" type="text" id="question-title" [formControlName]="'label'">
+      <input class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" type="text" id="question-title" [formControlName]="'label'">
     </label>
     <br>
-    <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="addAnswer()">AJOUTER UNE RÉPONSE</button>
+    <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="addAnswer()">AJOUTER UNE RÉPONSE</button>
     <div class="answer" formArrayName="answers">
       <div *ngFor="let address of answers.controls; let i=index">
         <div class="answer-form" [formGroupName]="i">
           <label class="{{setting.fontSizeText}} {{setting.fontStyle}}">
             Réponse
-            <input type="text" [formControlName]="'value'"> <i class="fas fa-trash-alt" (click)="delAnswer(i)"></i>
+            <input type="text" [formControlName]="'value'" class="{{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}"> <i class="fas fa-trash-alt" (click)="delAnswer(i)"></i>
             <br>
             Bonne réponse ?
             <input type="checkbox" [formControlName]="'isCorrect'">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="upQuestion()">CONFIRMER</button>
-    <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}}" (click)="deleteQuestion()">SUPPRIMER</button>
+    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="upQuestion()">CONFIRMER</button>
+    <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="deleteQuestion()">SUPPRIMER</button>
   </form>
 </div>

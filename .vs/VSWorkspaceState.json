@@ -4,13 +4,13 @@
     "\\front",
     "\\front\\src",
     "\\front\\src\\app",
-    "\\front\\src\\app\\header",
     "\\front\\src\\app\\questions",
+    "\\front\\src\\app\\questions\\question-form",
     "\\front\\src\\app\\questions\\question-list",
-    "\\front\\src\\app\\quizzes",
-    "\\front\\src\\app\\quizzes\\quiz",
-    "\\front\\src\\styles"
+    "\\front\\src\\app\\quizzes\\quiz-sort",
+    "\\front\\src\\app\\settings",
+    "\\front\\src\\app\\settings\\setting"
   ],
-  "SelectedNode": "\\front\\src\\styles\\card.scss",
+  "SelectedNode": "\\front\\src\\app\\questions\\question-form\\question-form.component.ts",
   "PreviewInSolutionExplorer": false
 }
