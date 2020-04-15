@@ -47,8 +47,19 @@ export class SettingComponent implements OnInit {
     this.settingService.changeColors("color-"+sickness);
   }
 
-  compareSickness(sickness : String): boolean {
+  compareSicknessColor(sickness : String): boolean {
     return this.setting.colorBackground.toString()==="color-"+sickness+"-background";
+  }
+
+  compareSicknessFont(sickness : String): String {
+    console.log("avant if");
+    if (this.setting.fontSizeText.toString()==="font-size-"+sickness+"-text"){
+      console.log(sickness);
+      return "checked";
+    }
+    else {
+      return "";
+    }
   }
 
 }
