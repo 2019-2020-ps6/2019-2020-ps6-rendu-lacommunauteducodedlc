@@ -2,13 +2,34 @@
 
 .quiz-list {
   display: flex;
+  justify-content: space-between;
 }
 
-.container {
+.container-quiz {
   display: flex;
   flex-flow: wrap row;
+  justify-content: space-around;
 }
 
-.block {
-  width: auto;
+.creation-and-filter {
+  width: fit-content;
+}
+
+.creation-and-filter div.card {
+  margin-left: 0;
+}
+
+#up-down-ans-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#up-down-ans-buttons i{
+  font-size: 4em;
+}
+
+.container-display{
+  display: flex;
+  justify-content: space-between;
 }
