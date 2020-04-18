@@ -22,6 +22,14 @@ export class SettingComponent implements OnInit {
   public setting: Setting;
 
 
+  //TODO !!!!!!!
+  BasicQuestionNumber: Number = 8;
+  presbyopiaQuestionNumber: Number = 6;
+  myopiaQuestionNumber: Number = 5;
+  astigmatismQuestionNumber: Number = 4;
+  hyperopiaQuestionNumber: Number = 3;
+
+
   constructor(
     private settingService: SettingService,
     private route: ActivatedRoute,
@@ -43,6 +51,20 @@ export class SettingComponent implements OnInit {
     }
   }
 
+  adaptQustionNumber(sickness: String) {
+    switch (sickness) {
+      case "presbyopia": this.setQuestionNumber(this.presbyopiaQuestionNumber);
+      case "myopia": this.setQuestionNumber(this.myopiaQuestionNumber);
+      case "astigmatism": this.setQuestionNumber(this.astigmatismQuestionNumber);
+      case "hyperopia": this.setQuestionNumber(this.hyperopiaQuestionNumber);
+      default: this.setQuestionNumber(this.BasicQuestionNumber);
+    }
+  }
+
+  setQuestionNumber(number: Number) {
+    this.settingService.setQuestionNumber(number);
+  }
+
   public setColors(sickness : String) {
     this.settingService.changeColors("color-"+sickness);
   }
@@ -52,14 +74,17 @@ export class SettingComponent implements OnInit {
   }
 
   compareSicknessFont(sickness : String): String {
-    console.log("avant if");
     if (this.setting.fontSizeText.toString()==="font-size-"+sickness+"-text"){
-      console.log(sickness);
       return "checked";
     }
     else {
       return "";
     }
   }
-
+  setMonochromate(sickness: String, checked: boolean) {
+    if(checked){
+      this.setColors(sickness);
+    }
+    else this.setColors("basic");
+  }
 }

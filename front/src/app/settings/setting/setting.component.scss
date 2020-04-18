@@ -101,9 +101,6 @@
 
   .subtitle {
     font-weight: bolder;
-  }
-
-  .daltonismeButtons {
     text-align: center;
   }
 
@@ -119,12 +116,20 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 10;
-    text-align: center;
+  //  text-align: center;
+  }
+
+  .buttonTroubles {
+    margin-left: 35%;
   }
 
   .daltonisme {
     position: relative;
     z-index: 1;
     margin-left: 50%;
+    text-align: center;
+  }
+
+  .daltonismeButtons {
     text-align: center;
   }

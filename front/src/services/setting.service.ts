@@ -25,6 +25,7 @@ export class SettingService {
    */
 
   private setting : Setting;
+
  // private url = 'http://localhost:9428/api';
 
   /**
@@ -47,7 +48,8 @@ export class SettingService {
                     colorButton : "color-basic-button",
                     colorCard : "color-basic-card",
                     selectorSize : "font-size-basic-selector",
-                    radioRadius: "font-size-basic-radio"
+                    radioRadius: "font-size-basic-radio",
+                    questionNumber: 8,
                   };
     this.updateSettings(this.setting);
   }
@@ -76,6 +78,8 @@ export class SettingService {
     this.setting.radioRadius = fontRadio;
     this.setting.selectorSize = fontSelector;
 
+
+
     this.updateSettings(this.setting);
   }
 
@@ -102,6 +106,14 @@ export class SettingService {
     this.setting.colorCard = colorCard;
 
     this.updateSettings(this.setting);
+  }
+
+  setQuestionNumber(number: Number) {
+    this.setting.questionNumber = number;
+  }
+
+  public getQuestionNumber() {
+    return this.setting.questionNumber;
   }
 
 

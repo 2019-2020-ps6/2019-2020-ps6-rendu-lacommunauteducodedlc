@@ -11,7 +11,6 @@ export interface Setting {
     radioRadius: String;
 
 //taille de bouton
-//couleur des cartes
 //input size
 //couleur des selector / saisie de texte
 
@@ -23,6 +22,8 @@ export interface Setting {
     colorNo: String;
     colorButton: String;
     colorCard: String;
+
+    questionNumber: Number;
 }
 
 export enum SettingType {
