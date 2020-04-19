@@ -14,16 +14,16 @@ enum checkbox {
 }
 
 @Component({
-  selector: 'app-setting',
-  templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.scss']
+  selector: 'app-specialSettings',
+  templateUrl: './specialSettings.component.html',
+  styleUrls: ['./specialSettings.component.scss']
 })
-export class SettingComponent implements OnInit {
+export class SpecialSettingsComponent implements OnInit {
   public setting: Setting;
 
 
   //TODO !!!!!!!
-  BasicQuestionNumber: Number = 8;
+  basicQuestionNumber: Number = 8;
   presbyopiaQuestionNumber: Number = 6;
   myopiaQuestionNumber: Number = 5;
   astigmatismQuestionNumber: Number = 4;
@@ -45,19 +45,21 @@ export class SettingComponent implements OnInit {
     if(checked){
       this.settingService.changeFontSize("font-size-"+sickness);
       this.settingService.changeFontStyle("font-style-"+sickness);
+      this.adaptQuestionNumber(sickness);
     }
     else {
       this.setFont("basic",true);
+      this.adaptQuestionNumber("basic");
     }
   }
 
-  adaptQustionNumber(sickness: String) {
+  adaptQuestionNumber(sickness: String) {
     switch (sickness) {
       case "presbyopia": this.setQuestionNumber(this.presbyopiaQuestionNumber);
       case "myopia": this.setQuestionNumber(this.myopiaQuestionNumber);
       case "astigmatism": this.setQuestionNumber(this.astigmatismQuestionNumber);
       case "hyperopia": this.setQuestionNumber(this.hyperopiaQuestionNumber);
-      default: this.setQuestionNumber(this.BasicQuestionNumber);
+      default: this.setQuestionNumber(this.basicQuestionNumber);
     }
   }
 

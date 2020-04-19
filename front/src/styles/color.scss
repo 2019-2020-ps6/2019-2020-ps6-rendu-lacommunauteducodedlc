@@ -38,62 +38,128 @@
     background-color: #cccccc;
 }
 
-//COLORS TRITANOMAL (faible sur bleu)
-.color-tritanomal-background {
+
+// COULEURS DICHROMATES
+
+// COULEURS TRITANOPE
+.color-tritanope-background {
     background-color: #f8d49f;
 }
-.color-tritanomal-header {
+.color-tritanope-header {
     background-color: #f6b400;
 }
-.color-tritanomal-yes {
+.color-tritanope-yes {
     background-color: #2023ee;
 }
-.color-tritanomal-no {
+.color-tritanope-no {
     background-color: #ee2020;
 }
-.color-tritanomal-button{
+.color-tritanope-button{
     background-color: #b69f38;
 }
-.color-tritanomal-card {
+.color-tritanope-card {
     background-color: #fab854;
+}
+
+// COULEURS PROTANOPE
+.color-protanope-background {
+    background-color: #f89f9f;
+}
+.color-protanope-header {
+    background-color: #f60000;
+}
+.color-protanope-yes {
+    background-color: #ad20ee;
+}
+.color-protanope-no {
+    background-color: #20ee2a;
+}
+.color-protanope-button{
+    background-color: #b63838;
+}
+.color-protanope-card {
+    background-color: #f35252;
+}
+
+// COULEURS DEUTERANOPE
+.color-deuteranope-background {
+    background-color: #f89f9f;
+}
+.color-deuteranope-header {
+    background-color: #f60000;
+}
+.color-deuteranope-yes {
+    background-color: #be20ee;
+}
+.color-deuteranope-no {
+    background-color: #eea620;
+}
+.color-deuteranope-button{
+    background-color: #b63838;
+}
+.color-deuteranope-card {
+    background-color: #f35252;
+}
+
+
+//COULEURS TRICHROMATES
+
+//COLORS TRITANOMAL (faible sur bleu)
+.color-tritanomal-background {
+    background-color: #00ff00;
+}
+.color-tritanomal-header {
+    background-color: #2948f8;
+}
+.color-tritanomal-yes {
+    background-color: #ff1ce1;
+}
+.color-tritanomal-no {
+    background-color: #ff0000;
+}
+.color-tritanomal-button{
+    background-color: #5e76fa;
+}
+.color-tritanomal-card {
+    background-color: #37fd89;
 }
 
 //COLORS PROTANOMAL (faible sur rouge)
 .color-protanomal-background {
-    background-color: #f89f9f;
+    background-color: #8cc2ff;
 }
 .color-protanomal-header {
-    background-color: #f60000;
+    background-color: #3a47f7;
 }
 .color-protanomal-yes {
-    background-color: #ad20ee;
+    background-color: #00ff00;
 }
 .color-protanomal-no {
-    background-color: #20ee2a;
+    background-color: #ff0080;
 }
 .color-protanomal-button{
-    background-color: #b63838;
+    background-color: #4450fa;
 }
 .color-protanomal-card {
-    background-color: #f35252;
+    background-color: #5762fa;
 }
 
 //COLORS DEUTERANOMAL (faible sur vert)
 .color-deuteranomal-background {
-    background-color: #f89f9f;
+    background-color: #52c5fa;
 }
 .color-deuteranomal-header {
-    background-color: #f60000;
+    background-color: #1900f6;
 }
 .color-deuteranomal-yes {
-    background-color: #be20ee;
+    background-color: #2bff00;
 }
 .color-deuteranomal-no {
-    background-color: #eea620;
+    background-color: #ee2020;
 }
 .color-deuteranomal-button{
-    background-color: #b63838;
+    background-color: #5f4ef7;
 }
 .color-deuteranomal-card {
-    background-color: #f35252;
+    background-color: #2da8e0;
 }

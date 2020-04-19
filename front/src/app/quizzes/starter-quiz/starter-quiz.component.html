@@ -1,6 +1,6 @@
 <div class="starter-quiz">
     <div *ngIf="!started" >
-        <button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a routerLink="/"> Retour </a></button>
+        <a routerLink="/"><button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"> Retour </button></a>
         <div class="center">
             <div class="grid">
                 <span class="space {{setting.fontSizeTitle}} {{setting.fontStyle}}"> {{ quiz.name }} </span>

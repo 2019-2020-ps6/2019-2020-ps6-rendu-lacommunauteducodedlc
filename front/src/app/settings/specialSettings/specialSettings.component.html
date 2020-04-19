@@ -1,6 +1,13 @@
-<h1 class = "title {{setting.fontSizeTitle}} {{setting.fontStyle}}">Réglages Particuliers</h1>
-
 <div class="page">
+
+  <h1 class = "title {{setting.fontSizeTitle}} {{setting.fontStyle}}">Réglages Particuliers</h1>
+
+  <div class = "button">
+    <a routerLink="/settings">
+      <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">Retour</button>
+    </a>
+  </div>
+
   <br class = "container {{setting.fontSizeText}}"><br>
 
   <div class = "troubles">
@@ -67,9 +74,9 @@
       <div class="chromate">Dichromate</div>
       <select class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" id="values" (change)="setColors($event.target.value)">
         <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="basic" [selected]="compareSicknessColor('basic')">Pas de troubles</option>
-        <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="tritanomal" [selected]="compareSicknessColor('tritanomal')">Tritanomal</option>
-        <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="deuteranomal" [selected]="compareSicknessColor('deuteranomal')">Deutéranomal</option>
-        <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value ="protanomal" [selected]="compareSicknessColor('protanomal')">Protanomal</option>
+        <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="tritanope" [selected]="compareSicknessColor('tritanope')">Tritanope</option>
+        <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="deuteranope" [selected]="compareSicknessColor('deuteranope')">Deutéranope</option>
+        <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value ="protanope" [selected]="compareSicknessColor('protanope')">Protanope</option>
       </select>
 
       <br><br>

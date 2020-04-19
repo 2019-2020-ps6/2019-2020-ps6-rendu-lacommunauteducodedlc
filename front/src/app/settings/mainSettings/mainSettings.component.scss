@@ -1,0 +1,18 @@
+@import "../../../styles/central.style.scss";
+
+.page {
+  top: 10px;
+  position: relative;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  margin: 10px;
+}
+
+.button-card {
+  position: absolute;
+  right: 5%;
+  top: 0px;
+}

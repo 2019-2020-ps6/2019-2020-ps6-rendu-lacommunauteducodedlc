@@ -4,7 +4,6 @@ import { Setting } from '../models/setting.model';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, map} from 'rxjs/operators';
 import {subscribeToIterable} from 'rxjs/internal-compatibility';
-import { SettingComponent } from 'src/app/settings/setting/setting.component';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -77,8 +76,6 @@ export class SettingService {
     this.setting.fontSizeButton = fontButton;
     this.setting.radioRadius = fontRadio;
     this.setting.selectorSize = fontSelector;
-
-
 
     this.updateSettings(this.setting);
   }

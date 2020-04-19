@@ -13,7 +13,8 @@ import {AppRoutingModule} from './routing.module';
 import {QuestionComponent} from './questions/question/question.component';
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {QuestionListComponent} from './questions/question-list/question-list.component';
-import {SettingComponent} from './settings/setting/setting.component';
+import {SpecialSettingsComponent} from './settings/specialSettings/specialSettings.component';
+import {MainSettingsComponent} from './settings/mainSettings/mainSettings.component';
 import {StarterComponent} from './quizzes/starter-quiz/starter-quiz.component';
 import {QuizSortComponent} from "./quizzes/quiz-sort/quiz-sort.component";
 
@@ -28,7 +29,8 @@ import {QuizSortComponent} from "./quizzes/quiz-sort/quiz-sort.component";
     QuestionComponent,
     QuestionFormComponent,
     QuestionListComponent,
-    SettingComponent,
+    SpecialSettingsComponent,
+    MainSettingsComponent,
     StarterComponent,
     QuizSortComponent
   ],
