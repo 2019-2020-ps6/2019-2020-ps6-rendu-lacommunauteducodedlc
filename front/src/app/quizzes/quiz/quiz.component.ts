@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Quiz } from '../../../models/quiz.model';
 import {Setting} from '../../../models/setting.model';
 import { SettingService } from '../../../services/setting.service';
+import { QuizGameService } from 'src/services/quiz-game.service';
 
 @Component({
   selector: 'app-quiz',
@@ -21,7 +22,7 @@ export class QuizComponent implements OnInit {
 
   public setting: Setting;
 
-  constructor(private settingService: SettingService) {
+  constructor(private settingService: SettingService, private quizGameService: QuizGameService) {
     this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
 

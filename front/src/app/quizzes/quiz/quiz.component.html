@@ -16,8 +16,8 @@
   <!--<span class="attrib-title"> Thème: </span> <span class="attrib-value">{{quiz.theme}} </span><br>-->
 
   <div id="buttons">
-    <button id="edit-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a routerLink="/edit-quiz/{{quiz.id}}">MODIFIER</a></button>
-    <button id="select-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a routerLink="/start-quiz/{{quiz.id}}">COMMENCER</a></button>
+    <a routerLink="/edit-quiz/{{quiz.id}}"><button id="edit-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">MODIFIER</button></a>
+    <a routerLink="/start-quiz/{{quiz.id}}"><button id="select-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">COMMENCER</button></a>
     <!--<button id="delete-button" class="button-card" (click)="rmQuiz()">SUPPRIMER</button>-->
   </div>
 
