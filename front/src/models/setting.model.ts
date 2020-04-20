@@ -23,7 +23,7 @@ export interface Setting {
     colorButton: String;
     colorCard: String;
 
-    questionNumber: Number;
+    questionNumber: number;
 }
 
 export enum SettingType {

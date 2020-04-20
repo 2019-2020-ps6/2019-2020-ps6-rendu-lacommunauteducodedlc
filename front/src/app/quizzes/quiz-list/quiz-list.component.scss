@@ -5,10 +5,14 @@
   justify-content: space-between;
 }
 
+.quiz{
+  min-width: 0;
+}
+
 .container-quiz {
   display: flex;
   flex-flow: wrap row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .creation-and-filter {
@@ -23,6 +27,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-right: 1em;
+  align-items: center;
 }
 
 #up-down-ans-buttons i{

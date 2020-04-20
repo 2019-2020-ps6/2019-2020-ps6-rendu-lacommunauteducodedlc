@@ -33,7 +33,7 @@ export class SettingService {
    */
   public settings$: BehaviorSubject<Setting> = new BehaviorSubject(this.setting);
 
-  constructor(private httpClient: HttpClient) { 
+  constructor(private httpClient: HttpClient) {
     this.setting = {fontSizeText : "font-size-basic-text",
                     fontSizeSubtitle : "font-size-basic-subtitle",
                     fontSizeTitle : "font-size-basic-title",
@@ -48,7 +48,7 @@ export class SettingService {
                     colorCard : "color-basic-card",
                     selectorSize : "font-size-basic-selector",
                     radioRadius: "font-size-basic-radio",
-                    questionNumber: 8,
+                    questionNumber: 6,
                   };
     this.updateSettings(this.setting);
   }
@@ -67,7 +67,7 @@ export class SettingService {
     let fontButton:String = fontSize+"-button";
     let fontSelector:String = fontSize+"-selector";
     let fontRadio:String = fontSize+"-radio";
-    
+
     this.setting.fontSizeText = fontText;
     this.setting.fontSizeSubtitle = fontSubtitle;
     this.setting.fontSizeTitle = fontTitle;
@@ -94,7 +94,7 @@ export class SettingService {
     let colorNo:String = color+"-no";
     let colorButton:String = color+"-button";
     let colorCard:String = color+"-card";
-    
+
     this.setting.colorBackground = colorBackground;
     this.setting.colorHeader = colorHeader;
     this.setting.colorYes = colorYes;
@@ -105,7 +105,7 @@ export class SettingService {
     this.updateSettings(this.setting);
   }
 
-  setQuestionNumber(number: Number) {
+  setQuestionNumber(number: number) {
     this.setting.questionNumber = number;
   }
 
@@ -172,5 +172,5 @@ export class SettingService {
   public getColorCard(){
     return this.setting.colorCard;
   }
- 
+
 }

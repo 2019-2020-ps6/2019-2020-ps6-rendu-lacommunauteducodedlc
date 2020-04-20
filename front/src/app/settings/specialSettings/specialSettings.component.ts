@@ -23,11 +23,11 @@ export class SpecialSettingsComponent implements OnInit {
 
 
   //TODO !!!!!!!
-  basicQuestionNumber: Number = 8;
-  presbyopiaQuestionNumber: Number = 6;
-  myopiaQuestionNumber: Number = 5;
-  astigmatismQuestionNumber: Number = 4;
-  hyperopiaQuestionNumber: Number = 3;
+  basicQuestionNumber: number = 6;
+  presbyopiaQuestionNumber: number = 4;
+  myopiaQuestionNumber: number = 2;
+  astigmatismQuestionNumber: number = 2;
+  hyperopiaQuestionNumber: number = 2;
 
 
   constructor(
@@ -55,15 +55,15 @@ export class SpecialSettingsComponent implements OnInit {
 
   adaptQuestionNumber(sickness: String) {
     switch (sickness) {
-      case "presbyopia": this.setQuestionNumber(this.presbyopiaQuestionNumber);
-      case "myopia": this.setQuestionNumber(this.myopiaQuestionNumber);
-      case "astigmatism": this.setQuestionNumber(this.astigmatismQuestionNumber);
-      case "hyperopia": this.setQuestionNumber(this.hyperopiaQuestionNumber);
+      case "presbyopia": this.setQuestionNumber(this.presbyopiaQuestionNumber); break;
+      case "myopia": this.setQuestionNumber(this.myopiaQuestionNumber); break;
+      case "astigmatism": this.setQuestionNumber(this.astigmatismQuestionNumber); break;
+      case "hyperopia": this.setQuestionNumber(this.hyperopiaQuestionNumber); break;
       default: this.setQuestionNumber(this.basicQuestionNumber);
     }
   }
 
-  setQuestionNumber(number: Number) {
+  setQuestionNumber(number: number) {
     this.settingService.setQuestionNumber(number);
   }
 

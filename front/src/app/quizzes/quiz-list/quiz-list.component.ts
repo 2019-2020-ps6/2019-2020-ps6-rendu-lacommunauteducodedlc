@@ -19,7 +19,11 @@ export class QuizListComponent implements OnInit {
 
   constructor(public quizService: QuizService, private settingService: SettingService) {
     this.quizService.quizzes$.subscribe((quiz) => this.quizList = quiz);
-    this.settingService.settings$.subscribe((setting) => this.setting = setting);
+    this.settingService.settings$.subscribe((setting) => {
+      this.setting = setting;
+    });
+    this.nbMaxQuizDisp = this.settingService.getQuestionNumber();
+    console.log("construct")
   }
 
   ngOnInit() {
@@ -36,6 +40,18 @@ export class QuizListComponent implements OnInit {
   }
 
   moveMinDisp(number: number) {
-    if (this.currentFirstQuizDisp+number>=0 && this.currentFirstQuizDisp+number<=this.quizList.length) this.currentFirstQuizDisp+=number;
+    if (this.currentFirstQuizDisp+number>=0 && this.currentFirstQuizDisp+number<this.quizList.length) this.currentFirstQuizDisp+=number;
+  }
+
+  getCurrentPage() {
+    let val =  this.currentFirstQuizDisp/this.nbMaxQuizDisp+1;
+    console.log("current : "+val);
+    return val;
+  }
+
+  getTotalPage() {
+    let val = (this.quizList.length-1)/this.nbMaxQuizDisp +1;
+    console.log("total : "+val);
+    return Math.floor(val);
   }
 }

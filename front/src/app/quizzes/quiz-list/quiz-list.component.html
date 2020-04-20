@@ -5,7 +5,7 @@
     </div>
     <div class="container-display">
       <div class="container-quiz">
-          <div class="quiz" *ngFor="let quiz of quizList; let i=index">
+          <div class="quiz" *ngFor="let quiz of quizList; let i=index" >
               <!--Inputs & Output allow communication between parent & child components.-->
               <!--More information: https://angular.io/guide/component-interaction-->
               <app-quiz *ngIf="i>=currentFirstQuizDisp && i<currentFirstQuizDisp+nbMaxQuizDisp" [quiz]="quiz" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
@@ -13,7 +13,8 @@
       </div>
     </div>
     <div *ngIf="quizList.length>nbMaxQuizDisp" id="up-down-ans-buttons">
-      <i class="fas fa-arrow-circle-up" (click)="moveMinDisp(-nbMaxQuizDisp/2)"></i>
-      <i class="fas fa-arrow-circle-down" (click)="moveMinDisp(nbMaxQuizDisp/2)"></i>
+      <i class="fas fa-arrow-circle-up" (click)="moveMinDisp(-nbMaxQuizDisp)"></i>
+      <p class="{{ this.setting.fontSizeText }} {{ this.setting.fontStyle }} ">{{ this.getCurrentPage() }}/{{ this.getTotalPage() }}</p>
+      <i class="fas fa-arrow-circle-down" (click)="moveMinDisp(nbMaxQuizDisp)"></i>
     </div>
 </div>
