@@ -1,4 +1,4 @@
 <div class="user {{ setting.fontStyle }} {{ setting.fontSizeText }}">
-  <i class="fas fa-user-circle" (click)="this.selectUser()"></i>
+  <a routerLink="/user/{{ this.user.id }}"><i class="fas fa-user-circle" (click)="this.selectUser()"></i></a>
   {{ user.userName }}
 </div>
