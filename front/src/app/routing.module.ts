@@ -8,15 +8,19 @@ import { StarterComponent } from './quizzes/starter-quiz/starter-quiz.component'
 import { Quiz } from '../models/quiz.model';
 import {UserListComponent} from "./profils/users/user-list/user-list.component";
 
-const routes: Routes = [
-  {path: 'user-list', component: UserListComponent},
-  {path: ':userId/blabla', redirectTo: "/blabla"},
+const subRoutes: Routes = [
   {path: 'quiz-list', component: QuizListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
-  {path: '', redirectTo: '/quiz-list', pathMatch: 'full' },
+  {path: '', redirectTo: 'quiz-list', pathMatch: 'full' },
   {path: 'settings', component: MainSettingsComponent},
   {path: 'specialSettings', component: SpecialSettingsComponent},
   {path: 'start-quiz/:id', component: StarterComponent}
+];
+
+const routes: Routes = [
+  {path: 'user/:userId', children: subRoutes},
+  {path: '', children: subRoutes},
+  {path: 'user-list', component: UserListComponent}
 ];
 
 @NgModule({
