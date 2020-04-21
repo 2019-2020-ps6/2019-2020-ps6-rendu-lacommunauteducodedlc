@@ -6,8 +6,11 @@ import { SpecialSettingsComponent } from './settings/specialSettings/specialSett
 import { MainSettingsComponent } from './settings/mainSettings/mainSettings.component';
 import { StarterComponent } from './quizzes/starter-quiz/starter-quiz.component';
 import { Quiz } from '../models/quiz.model';
+import {UserListComponent} from "./profils/users/user-list/user-list.component";
 
 const routes: Routes = [
+  {path: 'user-list', component: UserListComponent},
+  {path: ':userId/blabla', redirectTo: "/blabla"},
   {path: 'quiz-list', component: QuizListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
   {path: '', redirectTo: '/quiz-list', pathMatch: 'full' },

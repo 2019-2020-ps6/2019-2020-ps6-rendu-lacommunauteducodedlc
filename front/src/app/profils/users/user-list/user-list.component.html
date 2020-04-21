@@ -1,0 +1,5 @@
+<div class="user-list">
+  <div *ngFor="let user of userList">
+    <app-user [user]="user" (userSelected)="userSelected($event)"></app-user>
+  </div>
+</div>
