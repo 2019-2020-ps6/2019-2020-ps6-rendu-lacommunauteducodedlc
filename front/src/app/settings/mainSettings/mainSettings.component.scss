@@ -19,7 +19,7 @@
 
 .scrollSize {
   position: relative;
-  margin: 5%;
+  margin: 1%;
   text-align: center;
 }
 
@@ -36,4 +36,8 @@
   cursor: pointer;
   border:0 solid transparent;
   border-radius:1.5rem;
+}
+
+.enonce {
+  margin: 2%;
 }
