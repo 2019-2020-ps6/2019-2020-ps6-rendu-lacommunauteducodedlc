@@ -3,18 +3,18 @@ const BaseModel = require('../utils/base-model.js')
 
 module.exports = new BaseModel('Settings', {
 
-  userId: Joi.number().required(),
+  userId: Joi.number(),
   name: Joi.string(),
 
   fontSizeText: Joi.string().required(),
-  fontSizeSubtitle:Joi.string().required(),
+  fontSizeSubtitle: Joi.string().required(),
   fontSizeTitle: Joi.string().required(),
   fontSizeSubtext: Joi.string().required(),
   fontSizeButton: Joi.string().required(),
   selectorSize: Joi.string().required(),
   radioRadius: Joi.string().required(),
 
-  fontStyle:Joi.string().required(),
+  fontStyle: Joi.string().required(),
 
   colorBackground: Joi.string().required(),
   colorHeader: Joi.string().required(),

@@ -1,7 +1,6 @@
 const { Router } = require('express')
 
 const { Settings } = require('../../models')
-const SettingsRouter = require('./settings')
 
 const router = new Router()
 
@@ -49,8 +48,5 @@ router.put('/:settingsId', (req, res) => {
     res.status(500).json(err)
   }
 })
-
-
-router.use('/:settingsId', SettingsRouter)
 
 module.exports = router

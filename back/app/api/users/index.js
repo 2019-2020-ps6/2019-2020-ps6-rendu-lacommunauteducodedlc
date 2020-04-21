@@ -1,6 +1,6 @@
 const { Router } = require('express')
 
-const { User } = require('../../models')
+const { User, Settings } = require('../../models')
 
 const router = new Router()
 
@@ -22,6 +22,8 @@ router.get('/:userId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
+    const settings = Settings.create({...Settings.getById("1"), id: Date.now()})
+    req.body.settingsId = settings.id;
     const user = User.create({ ...req.body })
     res.status(201).json(user)
   } catch (err) {

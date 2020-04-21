@@ -7,7 +7,7 @@ const UserRouter = require('./users')
 
 const router = new Router()
 router.get('/status', (req, res) => res.status(200).json('ok'))
-router.user('/settings', SettingsRouter)
+router.use('/settings', SettingsRouter)
 router.use('/quizzes', QuizzesRouter)
 router.use('/questions', QuestionRouter)
 router.use('/answers', AnswerRouter)

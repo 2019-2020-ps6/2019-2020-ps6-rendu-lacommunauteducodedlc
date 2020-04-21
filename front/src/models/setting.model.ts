@@ -1,5 +1,5 @@
 export interface Setting {
-    type?: string;
+    id?: number;
     name?: string;
 
     fontSizeText: String;
@@ -9,10 +9,6 @@ export interface Setting {
     fontSizeButton: String;
     selectorSize: String;
     radioRadius: String;
-
-//taille de bouton
-//input size
-//couleur des selector / saisie de texte
 
     fontStyle: String;
 
