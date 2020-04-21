@@ -25,5 +25,8 @@ export class MainSettingsComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  changeSize(value: string) {
+    if (value==="0") this.settingService.changeFontSize("font-size-basic");
+    else this.settingService.changeFontSize("font-size-"+value);
+  }
 }

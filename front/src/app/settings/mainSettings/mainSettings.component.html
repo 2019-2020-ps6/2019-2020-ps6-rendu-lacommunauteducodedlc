@@ -12,7 +12,7 @@
 
     <br>
     <div class="scrollSize {{setting.fontSizeText}}" >
-        <input class="scroll {{setting.colorCard}} {{setting.colorScroll}} {{setting.scrollSize}}" type="range" value="0" max="4" min="0" step="1">
+        <input class="scroll {{setting.colorCard}} {{setting.colorScroll}} {{setting.scrollSize}}" type="range" value="0" max="4" min="0" step="1" (change)="changeSize($event.target.value)">
     </div>
 
 </div>
