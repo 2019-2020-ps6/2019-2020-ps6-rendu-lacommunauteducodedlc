@@ -17,6 +17,9 @@
 .color-basic-card {
     background-color: #5c9ff7;
 }
+.color-basic-scroll::-moz-range-thumb {
+    background: #3862b6;
+}
 
 //COLORS MONOCHROMATE
 .color-monochromate-background {
@@ -36,6 +39,9 @@
 }
 .color-monochromate-card {
     background-color: #cccccc;
+}
+.color-monochromate-scroll::-moz-range-thumb {
+    background: #747474;
 }
 
 
@@ -60,6 +66,9 @@
 .color-tritanope-card {
     background-color: #fab854;
 }
+.color-tritanope-scroll::-moz-range-thumb {
+    background: #b69f38;
+}
 
 // COULEURS PROTANOPE
 .color-protanope-background {
@@ -80,6 +89,9 @@
 .color-protanope-card {
     background-color: #f35252;
 }
+.color-protanope-scroll::-moz-range-thumb {
+    background: #b63838;
+}
 
 // COULEURS DEUTERANOPE
 .color-deuteranope-background {
@@ -99,6 +111,9 @@
 }
 .color-deuteranope-card {
     background-color: #f35252;
+}
+.color-deuteranope-scroll::-moz-range-thumb {
+    background: #b63838;
 }
 
 
@@ -123,6 +138,9 @@
 .color-tritanomal-card {
     background-color: #37fd89;
 }
+.color-tritanomal-scroll::-moz-range-thumb {
+    background: #5e76fa;
+}
 
 //COLORS PROTANOMAL (faible sur rouge)
 .color-protanomal-background {
@@ -143,6 +161,9 @@
 .color-protanomal-card {
     background-color: #5762fa;
 }
+.color-protanomal-scroll::-moz-range-thumb {
+    background: #4450fa;
+}
 
 //COLORS DEUTERANOMAL (faible sur vert)
 .color-deuteranomal-background {
@@ -162,4 +183,7 @@
 }
 .color-deuteranomal-card {
     background-color: #2da8e0;
+}
+.color-deuteranomal-scroll::-moz-range-thumb {
+    background: #5f4ef7;
 }
