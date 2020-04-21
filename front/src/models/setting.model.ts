@@ -9,6 +9,7 @@ export interface Setting {
     fontSizeButton: String;
     selectorSize: String;
     radioRadius: String;
+    scrollSize: String;
 
 //taille de bouton
 //input size
@@ -22,6 +23,7 @@ export interface Setting {
     colorNo: String;
     colorButton: String;
     colorCard: String;
+    colorScroll: String;
 
     questionNumber: number;
 }
