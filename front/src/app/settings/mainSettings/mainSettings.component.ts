@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {Observable} from 'rxjs';
 import {Setting} from '../../../models/setting.model';
+import {NavigationService} from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-mainSettings',
@@ -17,12 +18,14 @@ export class MainSettingsComponent implements OnInit {
   constructor(
     private settingService: SettingService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private navigation: NavigationService
   ) {
     this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
 
   ngOnInit() {
+    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
   }
 
   changeSize(value: string) {

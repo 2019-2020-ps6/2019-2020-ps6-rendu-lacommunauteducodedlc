@@ -3,6 +3,8 @@ import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 import {Setting} from '../../../models/setting.model';
 import { SettingService } from '../../../services/setting.service';
+import {ActivatedRoute} from "@angular/router";
+import {NavigationService} from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-quiz-list',
@@ -17,7 +19,10 @@ export class QuizListComponent implements OnInit {
   public nbMaxQuizDisp = 6;
   public currentFirstQuizDisp = 0;
 
-  constructor(public quizService: QuizService, private settingService: SettingService) {
+  constructor(public quizService: QuizService,
+              private settingService: SettingService,
+              public route : ActivatedRoute,
+              public navigation: NavigationService) {
     this.quizService.quizzes$.subscribe((quiz) => this.quizList = quiz);
     this.settingService.settings$.subscribe((setting) => {
       this.setting = setting;
@@ -27,6 +32,7 @@ export class QuizListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
   }
 
   quizSelected(selected: boolean) {

@@ -1,6 +1,6 @@
 <div class="edit-quiz">
   <div id="edit-bar">
-    <a routerLink="/quiz-list"><button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" id="button-return">Retour</button></a>
+    <a (click)="this.navigation.navigate('/quiz-list')"><button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" id="button-return">Retour</button></a>
     <div id="edit-quiz-form">
       <form class="quiz-form" *ngIf="quizForm" [formGroup]="quizForm">
         <label for="title" class="title {{setting.fontSizeText}} {{setting.fontStyle}}">
@@ -26,8 +26,8 @@
         </div>
         <br>
         <p id="msg"></p>
-        <a routerLink="/quiz-list"><button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="upQuiz()">ENREGISTRER</button></a>
-        <a routerLink="/quiz-list"><button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="deleteQuiz()">SUPPRIMER</button></a>
+        <a (click)="this.navigation.navigate('/quiz-list')"><button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="upQuiz()">ENREGISTRER</button></a>
+        <a (click)="this.navigation.navigate('/quiz-list')"><button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="deleteQuiz()">SUPPRIMER</button></a>
       </form>
     </div>
   </div>

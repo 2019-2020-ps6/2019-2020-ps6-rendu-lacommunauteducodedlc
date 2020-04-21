@@ -1,6 +1,6 @@
 <div class="starter-quiz">
     <div *ngIf="!started" >
-        <a routerLink="/"><button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"> Retour </button></a>
+        <a (click)="this.navigation.navigate('/')"><button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"> Retour </button></a>
         <div class="center">
             <div class="grid">
                 <span class="space {{setting.fontSizeTitle}} {{setting.fontStyle}}"> {{ quiz.name }} </span>
@@ -55,7 +55,7 @@
             </div>
             <div class="center">
                 <button id="button-restart" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="restart()">Recommencer</button>
-                <button id="button-new-quiz" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a routerLink="/">Nouveau Quiz</a></button>
+                <button id="button-new-quiz" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a (click)="this.navigation.navigate('/')">Nouveau Quiz</a></button>
             </div>
         </div>
     </div>

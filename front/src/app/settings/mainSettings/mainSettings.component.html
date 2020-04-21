@@ -1,10 +1,10 @@
 <div class = "page">
-    
+
     <div>
         <h1 class = "title {{setting.fontSizeTitle}} {{setting.fontStyle}}">Réglages</h1>
 
         <div class = "button">
-            <a routerLink="/specialSettings">
+            <a (click)="this.navigation.navigate('/specialSettings')">
                 <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">Réglages Particuliers</button>
             </a>
         </div>
