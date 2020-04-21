@@ -55,16 +55,12 @@ export class SpecialSettingsComponent implements OnInit {
 
   adaptQuestionNumber(sickness: String) {
     switch (sickness) {
-      case "presbyopia": this.setQuestionNumber(this.presbyopiaQuestionNumber); break;
-      case "myopia": this.setQuestionNumber(this.myopiaQuestionNumber); break;
-      case "astigmatism": this.setQuestionNumber(this.astigmatismQuestionNumber); break;
-      case "hyperopia": this.setQuestionNumber(this.hyperopiaQuestionNumber); break;
-      default: this.setQuestionNumber(this.basicQuestionNumber);
+      case "presbyopia": this.settingService.setQuestionNumber(this.presbyopiaQuestionNumber); break;
+      case "myopia": this.settingService.setQuestionNumber(this.myopiaQuestionNumber); break;
+      case "astigmatism": this.settingService.setQuestionNumber(this.astigmatismQuestionNumber); break;
+      case "hyperopia": this.settingService.setQuestionNumber(this.hyperopiaQuestionNumber); break;
+      default: this.settingService.setQuestionNumber(this.basicQuestionNumber);
     }
-  }
-
-  setQuestionNumber(number: number) {
-    this.settingService.setQuestionNumber(number);
   }
 
   public setColors(sickness : String) {
@@ -76,13 +72,14 @@ export class SpecialSettingsComponent implements OnInit {
   }
 
   compareSicknessFont(sickness : String): String {
-    if (this.setting.fontSizeText.toString()==="font-size-"+sickness+"-text"){
+    if (this.setting.fontSizeText.toString()==="font-size-"+sickness+"-text" || sickness==="basic"){
       return "checked";
     }
     else {
       return "";
     }
   }
+
   setMonochromate(sickness: String, checked: boolean) {
     if(checked){
       this.setColors(sickness);

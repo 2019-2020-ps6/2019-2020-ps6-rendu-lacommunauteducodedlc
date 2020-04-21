@@ -11,8 +11,22 @@
     </div>
 
     <br>
+    <div class="enonce {{setting.fontSizeText}} {{setting.fontStyle}}">Police d'écriture :</div>
     <div class="scrollSize {{setting.fontSizeText}}" >
-        <input class="scroll {{setting.colorCard}} {{setting.colorScroll}} {{setting.scrollSize}}" type="range" value="0" max="4" min="0" step="1" (change)="changeSize($event.target.value)">
+        <select class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" id="values" (change)="setFont($event.target.value)">
+            <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="arial" [selected]="compareFont('arial')">Arial</option>
+            <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="fantasy" [selected]="compareFont('fantasy')">Fantasy</option>
+            <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value="lucida" [selected]="compareFont('lucida')">Lucida Grande</option>
+            <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value ="times" [selected]="compareFont('times')">Times</option>
+            <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value ="monospace" [selected]="compareFont('monospace')">Monospace</option>
+            <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value ="franklin" [selected]="compareFont('franklin')">Franklin</option>
+            <option class = "daltonisme {{setting.fontSizeText}} {{setting.fontStyle}}" value ="segoe" [selected]="compareFont('segoe')">Segoe</option>
+          </select>
+    </div>
+    <div class="enonce {{setting.fontSizeText}} {{setting.fontStyle}}">Taille de la police :</div>
+    <div class="scrollSize {{setting.fontSizeText}}" >
+        <input class="scroll {{setting.colorCard}} {{setting.colorScroll}} {{setting.scrollSize}}" type="range" [value]="setScrollValue()" max="4" min="0" step="1" (change)="changeSize($event.target.value)">
+        <div class="{{setting.fontSizeSubtext}} {{setting.fontStyle}}">Réglez la taille de la police selon votre convenance</div>
     </div>
 
 </div>
