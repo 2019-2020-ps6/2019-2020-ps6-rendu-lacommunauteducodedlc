@@ -39,6 +39,8 @@ router.post('/', (req, res) => {
 
 router.delete('/:userId', (req, res) => {
   try {
+    let user = User.getById(req.params.userId);
+    Settings.delete(user.settingsId);
     res.status(200).json(User.delete(req.params.userId))
   } catch (err) {
     res.status(500).json(err)
