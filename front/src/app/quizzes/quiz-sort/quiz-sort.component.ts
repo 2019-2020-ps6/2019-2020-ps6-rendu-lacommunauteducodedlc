@@ -25,7 +25,7 @@ export class QuizSortComponent implements OnInit {
 
   sortBy(value: any) {
     console.log(this.SORT_LIST.indexOf(value));
-    console.log(QuizSort.DATE === this.SORT_LIST.indexOf(value));
+    console.log(QuizSort.Date =this.SORT_LIST.indexOf(value));
     switch (this.SORT_LIST.indexOf(value)) {
       case QuizSort.Nom : this.quizList.sort((a,b)=> a.name.localeCompare(b.name)); break;
       case QuizSort.Date : this.quizList.sort((a,b)=> (a.date < b.date) ? -1 : 1); break;
