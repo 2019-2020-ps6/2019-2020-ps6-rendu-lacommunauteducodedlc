@@ -35,7 +35,12 @@
 .scroll::-moz-range-thumb {
   cursor: pointer;
   border:0 solid transparent;
-  border-radius:1.5rem;
+  border-radius: 1.5rem;
+}
+.scroll::-webkit-slider-thumb {
+  cursor: pointer;
+  border:0 solid transparent;
+  border-radius: 1.5rem;
 }
 
 .enonce {
