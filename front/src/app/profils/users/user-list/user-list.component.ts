@@ -15,6 +15,7 @@ export class UserListComponent implements OnInit {
 
   public userList: User[] = [];
   public setting: Setting;
+  public formDisplay: boolean;
 
   constructor(public userService: UserService,
               private settingService: SettingService,
@@ -37,7 +38,10 @@ export class UserListComponent implements OnInit {
   deleteUser(user: User) {
     this.userList.slice(this.userList.indexOf(user), 1);
     console.log('Was deleted : ', user);
-    //TODO
-    // this.userService.deleteUser(user);
+    this.userService.deleteUser(user);
+  }
+
+  setFormDisplay(b: boolean) {
+    this.formDisplay = b;
   }
 }

@@ -19,6 +19,7 @@ import {StarterComponent} from './quizzes/starter-quiz/starter-quiz.component';
 import {QuizSortComponent} from "./quizzes/quiz-sort/quiz-sort.component";
 import {UserComponent} from "./profils/users/user/user.component";
 import {UserListComponent} from "./profils/users/user-list/user-list.component";
+import {UserFormComponent} from "./profils/users/user-form/user-form.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {UserListComponent} from "./profils/users/user-list/user-list.component";
     StarterComponent,
     QuizSortComponent,
     UserComponent,
-    UserListComponent
+    UserListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

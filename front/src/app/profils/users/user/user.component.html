@@ -1,4 +1,7 @@
-<div class="user {{ setting.fontStyle }} {{ setting.fontSizeText }}">
+<div class="user flex-column {{ setting.fontStyle }} {{ setting.fontSizeText }}">
   <a routerLink="/user/{{ this.user.id }}"><i class="fas fa-user-circle" (click)="this.selectUser()"></i></a>
-  {{ user.userName }}
+  <div class="flex-line foot">
+    <i class="bin-button ghost fas fa-trash-alt"></i>
+    <div id="name-div">{{ user.userName}}</div>
+    <i class="bin-button button fas fa-trash-alt" (click)="this.deleteUser()"></i></div>
 </div>

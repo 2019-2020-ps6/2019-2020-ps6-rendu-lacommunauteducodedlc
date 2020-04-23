@@ -16,6 +16,9 @@ export class UserComponent implements OnInit {
   @Output()
   userSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Output()
+  userDeleted: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   public setting: Setting;
 
   constructor(private settingService: SettingService) {
@@ -27,5 +30,9 @@ export class UserComponent implements OnInit {
 
   selectUser() {
     this.userSelected.emit(true);
+  }
+
+  deleteUser() {
+    this.userDeleted.emit(true);
   }
 }

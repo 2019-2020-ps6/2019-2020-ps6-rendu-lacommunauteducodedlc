@@ -22,11 +22,13 @@ router.get('/:userId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const settings = Settings.create({...Settings.getById("1"), id: Date.now()})
+    let setId = (req.body.settingsId) ? req.body.settingsId : Date.now();
+    const settings = Settings.create({...Settings.getById("1"), id: setId})
     req.body.settingsId = settings.id;
     const user = User.create({ ...req.body })
     res.status(201).json(user)
   } catch (err) {
+    console.log(err)
     if (err.name === 'ValidationError') {
       res.status(400).json(err.extra)
     } else {

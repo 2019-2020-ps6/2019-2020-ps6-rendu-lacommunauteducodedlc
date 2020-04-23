@@ -40,28 +40,27 @@ export class UserService {
     this.getUsers();
   }
 
-  // addQuiz(user: User) {
-  //   // You need here to update the list of user and then update our observable (Subject) with the new list
-  //   // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
-  //   const copy = JSON.parse(JSON.stringify(user));
-  //   delete copy.questions;
-  //   console.log(user);
-  //   this.httpClient.post<User>(this.url + '/users', copy, httpOptions)
-  //     .pipe(
-  //       catchError(this.handleError)
-  //     ).subscribe((quiz1) => this.users.push(user));
-  // }
+  addUser(user: User) {
+    // You need here to update the list of user and then update our observable (Subject) with the new list
+    // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
+    const copy = JSON.parse(JSON.stringify(user));
+    console.log(user);
+    this.httpClient.post<User>(this.url + '/users', copy, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe((quiz1) => this.users.push(user));
+  }
 
-  // deleteQuiz(quiz: User) {
-  //   this.users.splice(this.users.indexOf(quiz), 1);
-  //   this.users$.next(this.users);
-  //   this.httpClient.delete<User>(this.url + '/users/'+quiz.id, httpOptions)
-  //     .pipe(
-  //       catchError(this.handleError)
-  //     ).subscribe((question) => {
-  //
-  //   });
-  // }
+  deleteUser(user: User) {
+    this.users.splice(this.users.indexOf(user), 1);
+    this.users$.next(this.users);
+    this.httpClient.delete<User>(this.url + '/users/'+user.id, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).subscribe((question) => {
+
+    });
+  }
 
   getUsers() {
     this.httpClient.get<User[]>(this.url + '/users').subscribe((quizzes) => {

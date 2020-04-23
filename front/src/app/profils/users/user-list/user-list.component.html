@@ -1,5 +1,7 @@
 <div class="user-list">
   <div *ngFor="let user of userList">
-    <app-user [user]="user" (userSelected)="userSelected($event)"></app-user>
+    <app-user [user]="user" (userSelected)="userSelected($event)" (userDeleted)="deleteUser(user)"></app-user>
   </div>
+  <app-user-form *ngIf="this.formDisplay" (formDone)="setFormDisplay(!$event)"></app-user-form>
+  <i class="add-use-button fas fa-plus-circle" *ngIf="!this.formDisplay" (click)="setFormDisplay(true)"></i>
 </div>
