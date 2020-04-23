@@ -11,15 +11,16 @@ import {UserListComponent} from "./profils/users/user-list/user-list.component";
 const subRoutes: Routes = [
   {path: 'quiz-list', component: QuizListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
-  {path: '', redirectTo: 'quiz-list', pathMatch: 'full' },
   {path: 'settings', component: MainSettingsComponent},
   {path: 'specialSettings', component: SpecialSettingsComponent},
   {path: 'start-quiz/:id', component: StarterComponent}
 ];
 
 const routes: Routes = [
-  {path: 'user/:userId', children: subRoutes},
-  {path: '', children: subRoutes},
+  {path: 'user/:userId', children: subRoutes.concat(
+      {path: '', redirectTo: 'quiz-list', pathMatch: 'full' })},
+  {path: '', children: subRoutes.concat(
+      {path: '', redirectTo: '/user-list', pathMatch: 'full' })},
   {path: 'user-list', component: UserListComponent}
 ];
 

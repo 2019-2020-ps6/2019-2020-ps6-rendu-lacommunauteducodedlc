@@ -17,6 +17,9 @@ export class UserListComponent implements OnInit {
   public setting: Setting;
   public formDisplay: boolean;
 
+  public currentFirst =0;
+  public nbMaxDisplay = 8;
+
   constructor(public userService: UserService,
               private settingService: SettingService,
               private route: ActivatedRoute,
@@ -36,6 +39,7 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(user: User) {
+    if (!((this.userList.indexOf(user)+1)%this.nbMaxDisplay)) this.changeCurrentFirst(-this.nbMaxDisplay+1);
     this.userList.slice(this.userList.indexOf(user), 1);
     console.log('Was deleted : ', user);
     this.userService.deleteUser(user);
@@ -43,5 +47,10 @@ export class UserListComponent implements OnInit {
 
   setFormDisplay(b: boolean) {
     this.formDisplay = b;
+  }
+
+  changeCurrentFirst(i : number){
+    if (this.currentFirst+i<0) return;
+    this.currentFirst+=i;
   }
 }

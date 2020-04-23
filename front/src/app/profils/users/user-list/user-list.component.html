@@ -1,9 +1,23 @@
-<div class="user-list">
-  <div class="block-items" *ngFor="let user of userList">
-    <app-user [user]="user" (userSelected)="userSelected($event)" (userDeleted)="deleteUser(user)"></app-user>
+<div id="user-list-container">
+  <div class="left-right-list-button left-list-button">
+    <i *ngIf="this.currentFirst && this.userList.length>=nbMaxDisplay" class="fas fa-chevron-left button" (click)="changeCurrentFirst(-this.nbMaxDisplay+1)"></i>
+    <i *ngIf="!this.currentFirst && this.userList.length>=nbMaxDisplay" class="fas fa-chevron-left disabled"></i>
   </div>
-  <app-user-form class="block-items" *ngIf="this.formDisplay" (formDone)="setFormDisplay(!$event)"></app-user-form>
-  <div class="block-items" *ngIf="!this.formDisplay" >
-    <i class="add-use-button fas fa-plus-circle" (click)="setFormDisplay(true)"></i>
+  <div class="user-list">
+
+    <div class="block-items user" *ngFor="let user of userList; let i = index">
+      <app-user *ngIf="i>=currentFirst && i<currentFirst+nbMaxDisplay-1" [user]="user" (userSelected)="userSelected($event)" (userDeleted)="deleteUser(user)"></app-user>
+    </div>
+
+    <app-user-form class="block-items" *ngIf="this.formDisplay" (formDone)="setFormDisplay(!$event);userAdded()"></app-user-form>
+
+    <div class="block-items" *ngIf="!this.formDisplay" >
+      <div class="block-items {{ setting.fontSizeText}} {{ setting.fontStyle }}"><i class="add-use-button fas fa-plus-circle" (click)="setFormDisplay(true)"></i></div>
+    </div>
+
+  </div>
+  <div class="left-right-list-button right-list-button">
+    <i *ngIf="(this.currentFirst+nbMaxDisplay <= this.userList.length) && this.userList.length>=nbMaxDisplay" class="fas fa-chevron-right button" (click)="changeCurrentFirst(+this.nbMaxDisplay-1)"></i>
+    <i *ngIf="!(this.currentFirst+nbMaxDisplay <= this.userList.length) && this.userList.length>=nbMaxDisplay" class="fas fa-chevron-right disabled"></i>
   </div>
 </div>

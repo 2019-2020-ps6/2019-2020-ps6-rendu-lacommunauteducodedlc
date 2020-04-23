@@ -5,8 +5,16 @@ i {
 }
 
 .bin-button{
-  font-size: large;
+  font-size: 0.9em;
   margin: 1em;
+}
+
+.bin-button.button {
+  margin-right: 0;
+}
+
+.bin-button.ghost {
+  margin-left: 0;
 }
 
 .ghost{
