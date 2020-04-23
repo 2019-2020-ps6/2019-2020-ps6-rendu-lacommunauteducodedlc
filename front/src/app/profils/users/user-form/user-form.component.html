@@ -1,6 +1,10 @@
 <div class="{{ setting.fontStyle }} {{ setting.fontSizeText }}">
   <form class="user-form flex-column" [formGroup]="userForm">
-    <i class="fas fa-user-circle"></i>
+    <div class="flex-line {{setting.fontSizeText}} {{setting.fontStyle}}">
+      <i class="fas fa-chevron-left button" (click)="changeIcon(+1)"></i>
+      <i class="fas {{ this.ICON_LIST[this.currentIcon] }}"></i>
+      <i class="fas fa-chevron-right button" (click)="changeIcon(-1)"></i>
+    </div>
     <label for="userName" class="flex-line {{setting.fontSizeText}} {{setting.fontStyle}}">
       <input type="text" id="userName" [formControlName]="'userName'" class="{{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" placeholder="Your name..">
       <i class="button-valid-user fas fa-plus-circle" (click)="addUser()"></i>

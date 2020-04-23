@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 import {Setting} from '../../../../models/setting.model';
-import { SettingService } from '../../../../services/setting.service';
-import {User} from "../../../../models/user.model";
+import {SettingService} from '../../../../services/setting.service';
+import {IconUser, User} from "../../../../models/user.model";
 import {UserService} from "../../../../services/user.service";
 
 @Component({
@@ -24,8 +24,10 @@ export class UserFormComponent implements OnInit {
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance
    */
   public userForm: FormGroup;
-  // public ICON_LIST = Object.keys(IconList).filter(k => typeof QuizTheme[k as any] === 'number');
+  public ICON_LIST = Object.keys(IconUser).filter(k => typeof IconUser[k as any] === 'number');
   public setting: Setting;
+
+  private currentIcon = 0;
 
   constructor(public formBuilder: FormBuilder, public userService: UserService, private settingService: SettingService) {
     // Form creation
@@ -44,6 +46,7 @@ export class UserFormComponent implements OnInit {
     const userToCreate: User = this.userForm.getRawValue() as User;
 
     userToCreate.id = Date.now();
+    userToCreate.icon = this.ICON_LIST[this.currentIcon];
 
     // Do you need to log your object here in your class? Uncomment the code below
     // and open your console in your browser by pressing F12 and choose the tab "Console".
@@ -60,5 +63,11 @@ export class UserFormComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       userName: ['']
     });
+  }
+
+  changeIcon(i : number){
+    this.currentIcon=this.currentIcon+i;
+    while(this.currentIcon<0) this.currentIcon+= this.ICON_LIST.length;
+    this.currentIcon%=this.ICON_LIST.length;
   }
 }
