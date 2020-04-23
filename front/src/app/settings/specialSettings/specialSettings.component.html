@@ -3,7 +3,7 @@
   <h1 class = "title {{setting.fontSizeTitle}} {{setting.fontStyle}}">Réglages Particuliers</h1>
 
   <div class = "button">
-    <a routerLink="/settings">
+    <a (click)="this.navigation.navigate('/settings')">
       <button class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">Retour</button>
     </a>
   </div>
@@ -11,10 +11,10 @@
   <br class = "container {{setting.fontSizeText}}"><br>
 
   <div class = "troubles">
-    
+
     <div class = "subtitle {{setting.fontSizeSubtitle}} {{setting.fontStyle}}">Troubles Visuels</div>
     <br>
-    
+
     <div class = "buttonTroubles">
       <div>
         <label class="container {{setting.fontSizeText}} {{setting.fontStyle}}">

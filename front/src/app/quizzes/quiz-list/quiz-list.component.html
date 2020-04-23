@@ -12,9 +12,10 @@
           </div>
       </div>
     </div>
+    <div *ngIf="quizList.length<=nbMaxQuizDisp"></div>
     <div *ngIf="quizList.length>nbMaxQuizDisp" id="up-down-ans-buttons">
-      <i class="fas fa-arrow-circle-up" (click)="moveMinDisp(-nbMaxQuizDisp)"></i>
+      <i class="fas fa-arrow-circle-up button" (click)="moveMinDisp(-nbMaxQuizDisp)"></i>
       <p class="{{ this.setting.fontSizeText }} {{ this.setting.fontStyle }} ">{{ this.getCurrentPage() }}/{{ this.getTotalPage() }}</p>
-      <i class="fas fa-arrow-circle-down" (click)="moveMinDisp(nbMaxQuizDisp)"></i>
+      <i class="fas fa-arrow-circle-down button" (click)="moveMinDisp(nbMaxQuizDisp)"></i>
     </div>
 </div>

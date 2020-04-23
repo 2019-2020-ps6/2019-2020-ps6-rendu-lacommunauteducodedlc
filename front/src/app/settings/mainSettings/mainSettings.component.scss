@@ -1,7 +1,6 @@
 @import "../../../styles/central.style.scss";
 
 .page {
-  top: 10px;
   position: relative;
 }
 
@@ -13,6 +12,38 @@
 
 .button-card {
   position: absolute;
-  right: 5%;
-  top: 0px;
+  max-width: 35%;
+  right: 2%;
+  top: 0%;
+}
+
+.scrollSize {
+  position: relative;
+  margin: 1%;
+  text-align: center;
+}
+
+.scroll {
+  position: relative;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border:0 solid transparent;
+  border-radius:1.5rem;
+  margin: 1%;
+}
+
+.scroll::-moz-range-thumb {
+  cursor: pointer;
+  border:0 solid transparent;
+  border-radius: 1.5rem;
+}
+.scroll::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  border:0 solid transparent;
+  border-radius: 1.5rem;
+}
+
+.enonce {
+  margin: 2%;
 }

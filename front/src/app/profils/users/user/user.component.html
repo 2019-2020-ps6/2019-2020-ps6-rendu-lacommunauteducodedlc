@@ -1,0 +1,10 @@
+<div class="user flex-column {{ setting.fontStyle }} {{ setting.fontSizeText }}">
+  <a routerLink="/user/{{ this.user.id }}">
+    <i *ngIf="!this.user.icon" class="fas fa-user-circle" (click)="this.selectUser()"></i>
+    <i *ngIf="this.user.icon" class="fas {{ this.user.icon }}" (click)="this.selectUser()"></i>
+  </a>
+  <div class="flex-line foot">
+    <i class="bin-button ghost fas fa-trash-alt"></i>
+    <div id="name-div">{{ user.userName}}</div>
+    <i class="bin-button button fas fa-trash-alt" (click)="this.deleteUser()"></i></div>
+</div>

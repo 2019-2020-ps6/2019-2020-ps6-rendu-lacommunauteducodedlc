@@ -1,0 +1,41 @@
+@import '../../../../styles/central.style.scss';
+
+i {
+  font-size: 4.5em;
+}
+
+.bin-button{
+  font-size: 0.9em;
+  margin: 1em;
+}
+
+.bin-button.button {
+  margin-right: 0;
+}
+
+.bin-button.ghost {
+  margin-left: 0;
+}
+
+.ghost{
+  color: transparent;
+}
+
+.foot{
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.flex-line{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}

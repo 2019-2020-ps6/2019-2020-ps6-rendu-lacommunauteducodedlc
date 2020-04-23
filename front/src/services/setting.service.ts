@@ -46,7 +46,9 @@ export class SettingService {
                     colorNo : "color-basic-no",
                     colorButton : "color-basic-button",
                     colorCard : "color-basic-card",
+                    colorScroll : "color-basic-scroll",
                     selectorSize : "font-size-basic-selector",
+                    scrollSize : "font-size-basic-scroll",
                     radioRadius: "font-size-basic-radio",
                     questionNumber: 6,
                   };
@@ -67,6 +69,7 @@ export class SettingService {
     let fontButton:String = fontSize+"-button";
     let fontSelector:String = fontSize+"-selector";
     let fontRadio:String = fontSize+"-radio";
+    let fontScroll:String = fontSize+"-scroll";
 
     this.setting.fontSizeText = fontText;
     this.setting.fontSizeSubtitle = fontSubtitle;
@@ -76,6 +79,7 @@ export class SettingService {
     this.setting.fontSizeButton = fontButton;
     this.setting.radioRadius = fontRadio;
     this.setting.selectorSize = fontSelector;
+    this.setting.scrollSize = fontScroll;
 
     this.updateSettings(this.setting);
   }
@@ -94,6 +98,7 @@ export class SettingService {
     let colorNo:String = color+"-no";
     let colorButton:String = color+"-button";
     let colorCard:String = color+"-card";
+    let colorScroll:String = color+"-scroll";
 
     this.setting.colorBackground = colorBackground;
     this.setting.colorHeader = colorHeader;
@@ -101,6 +106,7 @@ export class SettingService {
     this.setting.colorNo = colorNo;
     this.setting.colorButton = colorButton;
     this.setting.colorCard = colorCard;
+    this.setting.colorScroll = colorScroll;
 
     this.updateSettings(this.setting);
   }

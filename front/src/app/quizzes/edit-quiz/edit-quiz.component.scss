@@ -2,6 +2,7 @@
 
 .edit-quiz{
   display: flex;
+  height: 100%;
 }
 
 #edit-bar form {
@@ -10,14 +11,26 @@
 
 #edit-bar {
   position: fixed;
-  height: 100%;
-  width: 20%;
   padding-top: 1em;
   padding-left: 1em;
 }
 
+.edit-bar-shape {
+  height: 100%;
+  min-width: 25%;
+  width: 25%;
+}
+
+#edit-bar-design {
+  border-right: 1px;
+}
+
 #edit-body {
-  margin-left: 24%;/* Same as the width of the sidenav */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #edit-quiz-form{
@@ -25,7 +38,7 @@
 }
 
 #button-return{
-  margin-bottom: 3em;
+  margin-bottom: 10px;
 }
 
 #stars{

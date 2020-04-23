@@ -1,0 +1,59 @@
+@import '../../../../styles/central.style.scss';
+
+#user-list-container{
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.left-right-list-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.left-right-list-button i{
+  font-size: 5em;
+  transform: scaleY(2.5);
+  margin: 10px;
+}
+
+.user-list {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.add-use-button {
+  font-size: 4.5em;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.add-use-button:hover{
+  cursor: pointer;
+}
+
+.block-items{
+  flex-basis: 16em;
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disabled {
+  color: ThreeDDarkShadow;
+}
+
+.user:empty{
+  display: none;
+}

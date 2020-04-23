@@ -5,6 +5,7 @@ import { QuizService } from 'src/services/quiz.service';
 import { Answer } from 'src/models/question.model';
 import {Setting} from '../../../models/setting.model';
 import { SettingService } from '../../../services/setting.service';
+import {NavigationService} from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-starter-quiz',
@@ -27,7 +28,8 @@ export class StarterComponent implements OnInit {
     constructor(
         private quizService: QuizService,
         private route: ActivatedRoute,
-        private settingService: SettingService
+        private settingService: SettingService,
+        private navigation: NavigationService
     ) {
       this.index = 0;
       this.started = true;
@@ -41,8 +43,9 @@ export class StarterComponent implements OnInit {
     ngOnInit() {
         this.getQuiz();
         console.log(this.quiz);
+        this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"));
     }
-  
+
     getQuiz(): void {
       const id = +this.route.snapshot.paramMap.get('id');
       this.quizService.getQuiz(id).subscribe(quiz => this.quiz = quiz);

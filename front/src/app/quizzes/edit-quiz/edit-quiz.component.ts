@@ -8,6 +8,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {Question} from "../../../models/question.model";
 import {Setting} from '../../../models/setting.model';
 import { SettingService } from '../../../services/setting.service';
+import {NavigationService} from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-edit-quiz',
@@ -27,7 +28,8 @@ export class EditQuizComponent implements OnInit {
     private quizService: QuizService,
     private route: ActivatedRoute,
     private location: Location,
-    private settingService: SettingService
+    private settingService: SettingService,
+    private navigation: NavigationService
   ) {
     this.settingService.settings$.subscribe((setting) => this.setting = setting);
   }
@@ -39,6 +41,7 @@ export class EditQuizComponent implements OnInit {
       this.quiz = quiz;
       this.initForm();
     });
+    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
   }
 
   initForm(): void {

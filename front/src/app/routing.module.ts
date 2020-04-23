@@ -6,14 +6,22 @@ import { SpecialSettingsComponent } from './settings/specialSettings/specialSett
 import { MainSettingsComponent } from './settings/mainSettings/mainSettings.component';
 import { StarterComponent } from './quizzes/starter-quiz/starter-quiz.component';
 import { Quiz } from '../models/quiz.model';
+import {UserListComponent} from "./profils/users/user-list/user-list.component";
 
-const routes: Routes = [
+const subRoutes: Routes = [
   {path: 'quiz-list', component: QuizListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
-  {path: '', redirectTo: '/quiz-list', pathMatch: 'full' },
   {path: 'settings', component: MainSettingsComponent},
   {path: 'specialSettings', component: SpecialSettingsComponent},
   {path: 'start-quiz/:id', component: StarterComponent}
+];
+
+const routes: Routes = [
+  {path: 'user/:userId', children: subRoutes.concat(
+      {path: '', redirectTo: 'quiz-list', pathMatch: 'full' })},
+  {path: '', children: subRoutes.concat(
+      {path: '', redirectTo: '/user-list', pathMatch: 'full' })},
+  {path: 'user-list', component: UserListComponent}
 ];
 
 @NgModule({

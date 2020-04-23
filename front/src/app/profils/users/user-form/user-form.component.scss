@@ -1,0 +1,30 @@
+@import '../../../../styles/central.style.scss';
+
+i {
+  font-size: 4.5em;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-line{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button-valid-user{
+  font-size: large;
+}
+
+input[type="text"]{
+  border: none;
+  border-bottom: 2px solid black;
+  background: none;
+}

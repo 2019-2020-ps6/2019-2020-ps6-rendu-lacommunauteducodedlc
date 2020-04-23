@@ -9,7 +9,9 @@ input {
 }
 
 #answers-field{
+  margin-top: 10px;
   display: flex;
+  justify-content: flex-end;
 }
 
 #up-down-ans-buttons{
@@ -25,5 +27,16 @@ input {
 }
 
 #msg-question-form{
-  color: red;
+  color: black;
+  margin: 0;
+}
+
+.question-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#add-asw{
+  margin-top: 10px;
+  align-self: flex-end;
 }

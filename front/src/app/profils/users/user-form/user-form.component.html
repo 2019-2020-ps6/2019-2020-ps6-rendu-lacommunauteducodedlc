@@ -1,0 +1,38 @@
+<div class="{{ setting.fontStyle }} {{ setting.fontSizeText }}">
+  <form class="user-form flex-column" [formGroup]="userForm">
+    <div class="flex-line {{setting.fontSizeText}} {{setting.fontStyle}}">
+      <i class="fas fa-chevron-left button" (click)="changeIcon(+1)"></i>
+      <i class="fas {{ this.ICON_LIST[this.currentIcon] }}"></i>
+      <i class="fas fa-chevron-right button" (click)="changeIcon(-1)"></i>
+    </div>
+    <label for="userName" class="flex-line {{setting.fontSizeText}} {{setting.fontStyle}}">
+      <input type="text" id="userName" [formControlName]="'userName'" class="{{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" placeholder="Your name..">
+      <i class="button-valid-user fas fa-plus-circle" (click)="addUser()"></i>
+    </label>
+  </form>
+</div>
+
+<!--<div class="card {{setting.colorCard}}">-->
+<!--  <h2 class="{{setting.fontSizeTitle}} {{setting.fontStyle}}">Créer un nouveau quiz</h2>-->
+<!--  <form class="quiz-form" [formGroup]="quizForm">-->
+<!--    <label for="title" class="{{setting.fontSizeText}} {{setting.fontStyle}}">-->
+<!--      Titre-->
+<!--      <br>-->
+<!--      <input class="input-custom" type="text" id="title" [formControlName]="'name'" class="{{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}">-->
+<!--    </label>-->
+<!--    <br>-->
+<!--    <label for="theme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">-->
+<!--      Thème-->
+<!--      <br>-->
+<!--      <select name="theme-field" id="theme" [formControlName]="'theme'" class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}">-->
+<!--        <option *ngFor="let currentTheme of THEME_LIST" [value]="currentTheme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">-->
+<!--          {{currentTheme}}-->
+<!--        </option>-->
+<!--      </select>-->
+<!--    </label>-->
+<!--    <br>-->
+<!--    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="addQuiz()">CRÉER</button>-->
+<!--  </form>-->
+<!--</div>-->
+<!-- Uncomment below to see your form structure and how it changes-->
+<!--<br><br>{{quizForm.getRawValue() | json}}-->

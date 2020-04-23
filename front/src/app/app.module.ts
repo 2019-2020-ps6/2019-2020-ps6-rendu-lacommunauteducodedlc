@@ -17,6 +17,9 @@ import {SpecialSettingsComponent} from './settings/specialSettings/specialSettin
 import {MainSettingsComponent} from './settings/mainSettings/mainSettings.component';
 import {StarterComponent} from './quizzes/starter-quiz/starter-quiz.component';
 import {QuizSortComponent} from "./quizzes/quiz-sort/quiz-sort.component";
+import {UserComponent} from "./profils/users/user/user.component";
+import {UserListComponent} from "./profils/users/user-list/user-list.component";
+import {UserFormComponent} from "./profils/users/user-form/user-form.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {QuizSortComponent} from "./quizzes/quiz-sort/quiz-sort.component";
     SpecialSettingsComponent,
     MainSettingsComponent,
     StarterComponent,
-    QuizSortComponent
+    QuizSortComponent,
+    UserComponent,
+    UserListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
