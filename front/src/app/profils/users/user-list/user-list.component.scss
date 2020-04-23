@@ -3,8 +3,10 @@
 .user-list {
   display: flex;
   justify-content: space-around;
-  height: 60%;
-  align-items: center;
+  min-height: 72%;
+  align-items: flex-start;
+  align-content: space-around;
+  flex-wrap: wrap;
 }
 
 .add-use-button {
@@ -16,4 +18,12 @@
 
 .add-use-button:hover{
   cursor: pointer;
+}
+
+.block-items{
+  flex-basis: 18em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

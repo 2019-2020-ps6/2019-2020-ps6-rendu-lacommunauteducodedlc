@@ -23,9 +23,9 @@ router.get('/:userId', (req, res) => {
 router.post('/', (req, res) => {
   try {
     let setId = (req.body.settingsId) ? req.body.settingsId : Date.now();
-    const settings = Settings.create({...Settings.getById("1"), id: setId})
-    req.body.settingsId = settings.id;
+    req.body.settingsId = setId;
     const user = User.create({ ...req.body })
+    const settings = Settings.create({id: setId})
     res.status(201).json(user)
   } catch (err) {
     console.log(err)

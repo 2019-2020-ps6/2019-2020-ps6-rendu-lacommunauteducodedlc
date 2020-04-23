@@ -6,22 +6,22 @@ module.exports = new BaseModel('Settings', {
   userId: Joi.number(),
   name: Joi.string(),
 
-  fontSizeText: Joi.string().required(),
-  fontSizeSubtitle: Joi.string().required(),
-  fontSizeTitle: Joi.string().required(),
-  fontSizeSubtext: Joi.string().required(),
-  fontSizeButton: Joi.string().required(),
-  selectorSize: Joi.string().required(),
-  radioRadius: Joi.string().required(),
+  fontSizeText: Joi.string().default('font-size-basic-text'),
+  fontSizeSubtitle: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-subtitle'),
+  fontSizeTitle: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-title'),
+  fontSizeSubtext: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-subtext'),
+  fontSizeButton: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-button'),
+  selectorSize: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-selector'),
+  radioRadius: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-radio'),
 
-  fontStyle: Joi.string().required(),
+  fontStyle: Joi.string().allow('', null).empty(['', null]).default('font-style-basic'),
 
-  colorBackground: Joi.string().required(),
-  colorHeader: Joi.string().required(),
-  colorYes: Joi.string().required(),
-  colorNo: Joi.string().required(),
-  colorButton: Joi.string().required(),
-  colorCard: Joi.string().required(),
+  colorBackground: Joi.string().allow('', null).empty(['', null]).default('color-basic-background'),
+  colorHeader: Joi.string().allow('', null).empty(['', null]).default('color-basic-header'),
+  colorYes: Joi.string().allow('', null).empty(['', null]).default('color-basic-yes'),
+  colorNo: Joi.string().allow('', null).empty(['', null]).default('color-basic-no'),
+  colorButton: Joi.string().allow('', null).empty(['', null]).default('color-basic-button'),
+  colorCard: Joi.string().allow('', null).empty(['', null]).default('color-basic-card'),
 
-  questionNumber: Joi.number().required()
-})
+  questionNumber: Joi.number().allow(0, null).empty([0, null]).default(6)
+});
