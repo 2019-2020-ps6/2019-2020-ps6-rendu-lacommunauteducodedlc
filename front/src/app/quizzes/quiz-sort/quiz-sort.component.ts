@@ -27,18 +27,18 @@ export class QuizSortComponent implements OnInit {
     console.log(this.SORT_LIST.indexOf(value));
     console.log(QuizSort.DATE === this.SORT_LIST.indexOf(value));
     switch (this.SORT_LIST.indexOf(value)) {
-      case QuizSort.NAME : this.quizList.sort((a,b)=> a.name.localeCompare(b.name)); break;
-      case QuizSort.DATE : this.quizList.sort((a,b)=> (a.date < b.date) ? -1 : 1); break;
-      case QuizSort.THEME : this.quizList.sort((a,b)=> a.theme.toString().localeCompare(b.theme.toString())); break;
-      case QuizSort.DIFFICULTY : this.quizList.sort((a,b)=> a.difficulty-b.difficulty); break;
+      case QuizSort.Nom : this.quizList.sort((a,b)=> a.name.localeCompare(b.name)); break;
+      case QuizSort.Date : this.quizList.sort((a,b)=> (a.date < b.date) ? -1 : 1); break;
+      case QuizSort.Thème : this.quizList.sort((a,b)=> a.theme.toString().localeCompare(b.theme.toString())); break;
+      case QuizSort.Difficulté : this.quizList.sort((a,b)=> a.difficulty-b.difficulty); break;
       default : this.quizList.sort((a,b)=> a.name.localeCompare(b.name)); break;
     }
   }
 }
 
 enum QuizSort {
-  THEME,
-  NAME,
-  DATE,
-  DIFFICULTY
+  Thème,
+  Nom,
+  Date,
+  Difficulté
 }

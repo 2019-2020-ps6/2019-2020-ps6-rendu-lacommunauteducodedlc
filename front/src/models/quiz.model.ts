@@ -12,9 +12,9 @@ export interface Quiz {
 
 export enum QuizTheme {
   Sport,
-  Actor,
-  Movie,
+  Acteurs,
+  Films,
   Art,
-  Literature,
-  Music
+  Littérature,
+  Musique
 }
