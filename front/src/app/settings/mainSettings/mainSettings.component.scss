@@ -38,6 +38,7 @@
   border-radius: 1.5rem;
 }
 .scroll::-webkit-slider-thumb {
+  -webkit-appearance: none;
   cursor: pointer;
   border:0 solid transparent;
   border-radius: 1.5rem;
