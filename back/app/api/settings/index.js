@@ -12,10 +12,21 @@ router.get('/', (req, res) => {
   }
 })
 
+router.get('/default', (req, res) => {
+  try {
+    let set = Settings.create({id: 1})
+    res.status(200).json(set)
+    Settings.delete(set.id);
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 router.get('/:settingsId', (req, res) => {
   try {
     res.status(200).json(Settings.getById(req.params.settingsId))
   } catch (err) {
+    console.log(err)
     res.status(500).json(err)
   }
 })
@@ -45,6 +56,7 @@ router.put('/:settingsId', (req, res) => {
   try {
     res.status(200).json(Settings.update(req.params.settingsId, { ...req.body }))
   } catch (err) {
+    console.log(err)
     res.status(500).json(err)
   }
 })

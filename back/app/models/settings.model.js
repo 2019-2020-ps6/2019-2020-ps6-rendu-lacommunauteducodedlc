@@ -13,6 +13,7 @@ module.exports = new BaseModel('Settings', {
   fontSizeButton: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-button'),
   selectorSize: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-selector'),
   radioRadius: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-radio'),
+  scrollSize: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-scroll'),
 
   fontStyle: Joi.string().allow('', null).empty(['', null]).default('font-style-basic'),
 
@@ -22,6 +23,7 @@ module.exports = new BaseModel('Settings', {
   colorNo: Joi.string().allow('', null).empty(['', null]).default('color-basic-no'),
   colorButton: Joi.string().allow('', null).empty(['', null]).default('color-basic-button'),
   colorCard: Joi.string().allow('', null).empty(['', null]).default('color-basic-card'),
+  colorScroll: Joi.string().allow('', null).empty(['', null]).default('color-basic-scroll'),
 
   questionNumber: Joi.number().allow(0, null).empty([0, null]).default(6)
 });

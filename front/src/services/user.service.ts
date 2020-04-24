@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable, of, throwError} from 'rxjs';
+import {BehaviorSubject, Observable, of, Subscription, throwError} from 'rxjs';
 import { User } from '../models/user.model';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, map} from 'rxjs/operators';
@@ -28,12 +28,15 @@ export class UserService {
    */
   private users: User[] = [];
   private url = 'http://localhost:9428/api';
+  private currentUser: User = null;
+  private prevUserSub: Subscription;
 
   /**
    * Observable which contains the list of the quiz.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public users$: BehaviorSubject<User[]> = new BehaviorSubject(this.users);
+  public currentUser$: BehaviorSubject<User> = new BehaviorSubject<User>(this.currentUser)
 
   constructor(private httpClient: HttpClient) {
 
@@ -108,4 +111,16 @@ export class UserService {
   //       catchError(this.handleError)
   //     ).subscribe();
   // }
+  setCurrentUser(userId: string) {
+    if (this.prevUserSub) this.prevUserSub.unsubscribe();
+    if (!userId) {
+      this.prevUserSub = null;
+      this.currentUser$.next(null);
+      return
+    }
+    this.prevUserSub = (!userId) ? null : this.getUser(Number(userId)).subscribe((user) => {
+      this.currentUser = user;
+      this.currentUser$.next(user);
+    });
+  }
 }

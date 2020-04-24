@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable, of, throwError} from 'rxjs';
+import {BehaviorSubject, Observable, of, Subscription, throwError} from 'rxjs';
 import { Setting } from '../models/setting.model';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, map} from 'rxjs/operators';
 import {subscribeToIterable} from 'rxjs/internal-compatibility';
+import {UserService} from "./user.service";
+import {User} from "../models/user.model";
+import {Quiz} from "../models/quiz.model";
+import {handleError, QuizService} from "./quiz.service";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -33,7 +37,7 @@ export class SettingService {
    */
   public settings$: BehaviorSubject<Setting> = new BehaviorSubject(this.setting);
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private userService: UserService) {
     this.setting = {fontSizeText : "font-size-basic-text",
                     fontSizeSubtitle : "font-size-basic-subtitle",
                     fontSizeTitle : "font-size-basic-title",
@@ -53,10 +57,18 @@ export class SettingService {
                     questionNumber: 6,
                   };
     this.updateSettings(this.setting);
+    this.getUserSetting();
   }
 
   updateSettings(setting: Setting) {
     this.settings$.next(this.setting);
+
+    if (!this.userSetting) return;
+    const copy = JSON.parse(JSON.stringify(setting));
+    this.httpClient.put<Quiz>(this.url + '/settings/'+setting.id, copy, httpOptions)
+      .pipe(
+        catchError(handleError)
+      ).subscribe();
   }
 
   //argument : font-size-laMaladie
@@ -179,4 +191,44 @@ export class SettingService {
     return this.setting.colorCard;
   }
 
+
+
+  /////////   user setting sub  ////////
+
+  private preSubSetting: Subscription;
+  private userSetting: boolean;
+  private url = 'http://localhost:9428/api';
+
+  private defaultSub: Subscription;
+
+  private getUserSetting() {
+    this.userService.currentUser$.subscribe((user)=>{
+      if(!user) this.setDefaultSettings();
+      else this.getSettings(user.settingsId);
+    })
+  }
+
+  private setDefaultSettings() {
+    this.userSetting = false;
+    if(this.preSubSetting) this.preSubSetting.unsubscribe();
+    this.defaultSub = this.httpClient.get<Setting>(this.url + '/settings/default').subscribe((settings) => {
+      if(!settings) return;
+      if(this.defaultSub) {
+        this.defaultSub.unsubscribe();
+      }
+      if(this.userSetting) return;
+      this.setting = settings;
+      this.settings$.next(this.setting);
+    });
+  }
+
+  private getSettings(settingsId: number) {
+
+    this.userSetting = true;
+    this.httpClient.get<Setting>(this.url + '/settings/'+settingsId).subscribe((settings) => {
+      if(!settings) return;
+      this.setting = settings;
+      this.settings$.next(this.setting);
+    });
+  }
 }

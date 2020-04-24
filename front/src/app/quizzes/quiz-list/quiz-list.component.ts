@@ -51,13 +51,11 @@ export class QuizListComponent implements OnInit {
 
   getCurrentPage() {
     let val =  this.currentFirstQuizDisp/this.nbMaxQuizDisp+1;
-    console.log("current : "+val);
     return val;
   }
 
   getTotalPage() {
     let val = (this.quizList.length-1)/this.nbMaxQuizDisp +1;
-    console.log("total : "+val);
     return Math.floor(val);
   }
 }

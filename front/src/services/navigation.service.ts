@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "./user.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavigationService {
   public userId: string = null;
+  public userId$
 
   constructor(private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private userService: UserService) {
   }
 
   async navigate(link: string){
@@ -24,5 +27,6 @@ export class NavigationService {
 
   setUserId(userId: string) {
     this.userId = userId
+    this.userService.setCurrentUser(userId);
   }
 }
