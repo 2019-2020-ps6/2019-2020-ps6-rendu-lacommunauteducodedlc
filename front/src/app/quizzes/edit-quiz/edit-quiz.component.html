@@ -10,6 +10,7 @@
         <br>
         <label for="theme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
           Thème
+          <br>
           <select name="theme-field" id="theme" [formControlName]="'theme'" class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorCard}}">
             <option value="{{this.quiz.theme}}" [selected]="true" class="{{setting.fontSizeText}} {{setting.fontStyle}}">{{this.quiz.theme}}</option>
             <ng-container *ngFor="let currentTheme of THEME_LIST">
