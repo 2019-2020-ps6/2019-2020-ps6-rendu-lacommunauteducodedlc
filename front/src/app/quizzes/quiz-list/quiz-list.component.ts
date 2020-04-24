@@ -26,8 +26,8 @@ export class QuizListComponent implements OnInit {
     this.quizService.quizzes$.subscribe((quiz) => this.quizList = quiz);
     this.settingService.settings$.subscribe((setting) => {
       this.setting = setting;
+      if (setting)  this.nbMaxQuizDisp = setting.questionNumber;
     });
-    this.nbMaxQuizDisp = this.settingService.getQuestionNumber();
     console.log("construct")
   }
 

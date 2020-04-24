@@ -209,6 +209,7 @@ export class SettingService {
   }
 
   private setDefaultSettings() {
+    if(!this.userSetting) return;
     this.userSetting = false;
     if(this.preSubSetting) this.preSubSetting.unsubscribe();
     this.defaultSub = this.httpClient.get<Setting>(this.url + '/settings/default').subscribe((settings) => {
@@ -217,7 +218,7 @@ export class SettingService {
         this.defaultSub.unsubscribe();
       }
       if(this.userSetting) return;
-      this.setting = settings;
+      this.setting =  {...this.setting, ...settings};
       this.settings$.next(this.setting);
     });
   }
@@ -227,7 +228,7 @@ export class SettingService {
     this.userSetting = true;
     this.httpClient.get<Setting>(this.url + '/settings/'+settingsId).subscribe((settings) => {
       if(!settings) return;
-      this.setting = settings;
+      this.setting = {...this.setting, ...settings};
       this.settings$.next(this.setting);
     });
   }
