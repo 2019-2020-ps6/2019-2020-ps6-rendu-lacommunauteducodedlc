@@ -30,7 +30,8 @@ a{
 }
 
 #stars{
-  display: inline;
+  display: flex;
+  padding: 0.1em;
 }
 
 #theme-field{

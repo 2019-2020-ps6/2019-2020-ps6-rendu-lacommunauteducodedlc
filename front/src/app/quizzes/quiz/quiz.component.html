@@ -8,11 +8,12 @@
   <div id="theme-field" class="attrib-value {{setting.fontSizeSubtext}} {{setting.fontStyle}}">{{quiz.theme}}</div>
 
   <div class="attrib-value {{setting.fontSizeSubtext}} {{setting.fontStyle}}">{{quiz.questions.length}} questions<br></div>
-  <div id = "stars" *ngFor="let i of [1,2,3,4,5]">
-    <img *ngIf="i<=quiz.difficulty" src="https://img.icons8.com/material-sharp/24/000000/star.png" />
-    <img *ngIf="i>quiz.difficulty" src="https://img.icons8.com/android/24/000000/star.png" />
+  <div  id = "stars">
+    <div class="{{setting.fontSizeText}} {{setting.fontStyle}}" *ngFor="let i of [1,2,3,4,5]">
+      <i *ngIf="i<=quiz.difficulty" class="fas fa-star"></i>
+      <i *ngIf="i>quiz.difficulty" class="far fa-star"></i>
+    </div>
   </div>
-
   <!--<span class="attrib-title"> Thème: </span> <span class="attrib-value">{{quiz.theme}} </span><br>-->
 
   <div id="buttons">

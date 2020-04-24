@@ -42,12 +42,16 @@
   margin-bottom: 10px;
 }
 
-#stars{
-  display: inline;
+.stars-container{
+  display: flex;
 }
 
-#stars img:hover{
+.stars i:hover{
   cursor: pointer;
+}
+
+.stars i{
+  font-size: 1.4em;
 }
 
 .input-custom {
