@@ -1,6 +1,6 @@
 <div class="quiz-list">
     <div class="creation-and-filter">
-        <app-quiz-form></app-quiz-form>
+        <app-quiz-form *ngIf="!navigation.userId"></app-quiz-form>
         <app-quiz-sort [quizList]="quizList"></app-quiz-sort>
     </div>
     <div class="container-display">
@@ -8,7 +8,7 @@
           <div class="quiz" *ngFor="let quiz of quizList; let i=index" >
               <!--Inputs & Output allow communication between parent & child components.-->
               <!--More information: https://angular.io/guide/component-interaction-->
-              <app-quiz *ngIf="i>=currentFirstQuizDisp && i<currentFirstQuizDisp+nbMaxQuizDisp" [quiz]="quiz" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
+              <app-quiz *ngIf="i>=currentFirstQuizDisp && i<currentFirstQuizDisp+nbMaxQuizDisp" [quiz]="quiz" [modifAvailable]="!navigation.userId" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
           </div>
       </div>
     </div>

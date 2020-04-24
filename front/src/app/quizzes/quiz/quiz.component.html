@@ -1,4 +1,4 @@
-<div class="card {{setting.colorCard}}">
+<div id="container-quiz" class="card {{setting.colorCard}}">
 
   <!--<i *ngIf="quiz.iconClass" class={{quiz.iconClass}}></i><i *ngIf="!quiz.iconClass" class="fab fa-leanpub"></i><br>-->
   <!--<span class="attrib-title">Nom: </span>-->
@@ -16,7 +16,7 @@
   <!--<span class="attrib-title"> Thème: </span> <span class="attrib-value">{{quiz.theme}} </span><br>-->
 
   <div id="buttons">
-    <a (click)="this.navigation.navigate('/edit-quiz/'+quiz.id)"><button id="edit-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">MODIFIER</button></a>
+    <a *ngIf="modifAvailable" (click)="this.navigation.navigate('/edit-quiz/'+quiz.id)"><button id="edit-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">MODIFIER</button></a>
     <a (click)="this.navigation.navigate('/start-quiz/'+quiz.id)"><button id="select-button" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">COMMENCER</button></a>
     <!--<button id="delete-button" class="button-card" (click)="rmQuiz()">SUPPRIMER</button>-->
   </div>
