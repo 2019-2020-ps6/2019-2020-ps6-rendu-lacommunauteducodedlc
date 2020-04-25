@@ -46,6 +46,7 @@ export class UserService {
   addUser(user: User) {
     // You need here to update the list of user and then update our observable (Subject) with the new list
     // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
+    if(!user.settingsId) user.settingsId = Date.now();
     const copy = JSON.parse(JSON.stringify(user));
     console.log(user);
     this.httpClient.post<User>(this.url + '/users', copy, httpOptions)
