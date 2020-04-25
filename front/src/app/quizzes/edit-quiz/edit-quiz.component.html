@@ -5,13 +5,13 @@
       <form class="quiz-form" *ngIf="quizForm" [formGroup]="quizForm">
         <label for="title" class="title {{setting.fontSizeText}} {{setting.fontStyle}}">
           Titre&nbsp;&nbsp;&nbsp;&nbsp;
-          <input class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorCard}}" type="text" id="title" [formControlName]="'name'" value="{{this.quiz.name}}">
+          <input class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" type="text" id="title" [formControlName]="'name'" value="{{this.quiz.name}}">
         </label>
         <br>
         <label for="theme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
           Thème
           <br>
-          <select name="theme-field" id="theme" [formControlName]="'theme'" class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorCard}}">
+          <select name="theme-field" id="theme" [formControlName]="'theme'" class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}">
             <option value="{{this.quiz.theme}}" [selected]="true" class="{{setting.fontSizeText}} {{setting.fontStyle}}">{{this.quiz.theme}}</option>
             <ng-container *ngFor="let currentTheme of THEME_LIST">
               <option *ngIf="currentTheme.toString()!=this.quiz.theme.toString()"  [value]="currentTheme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">{{currentTheme}}</option>

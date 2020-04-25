@@ -20,6 +20,8 @@
 }
 
 .creation-and-filter {
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: fit-content;
   border-right: solid black 0.5px;
 
@@ -28,9 +30,15 @@
   box-shadow: 0px 0px 21px 5px rgba(0,0,0,0.19);
 }
 
-.creation-and-filter div.card {
+.creation-and-filter ::ng-deep.card {
   margin-left: 0;
   margin-right: 0;
+  border-right: initial;
+  border-left: initial;
+  border-top: initial;
+  padding-bottom: 1rem;
+  border-radius: 0;
+  box-shadow: 0 0 0 0;
 }
 
 #up-down-ans-buttons{
