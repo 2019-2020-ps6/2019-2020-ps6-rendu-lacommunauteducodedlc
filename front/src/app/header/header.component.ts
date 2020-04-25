@@ -11,6 +11,8 @@ import {NavigationService} from "../../services/navigation.service";
 })
 export class HeaderComponent implements OnInit {
 
+  public isConnected: boolean;
+
   public setting: Setting;
   public preRouterLink:  string;
 
