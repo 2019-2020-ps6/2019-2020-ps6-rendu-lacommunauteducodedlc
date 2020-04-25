@@ -39,13 +39,22 @@
 .buttons {
   display: flex;
   position: absolute;
-  right: 30px;
-  top: 0;
   height: 100%;
   align-items: center;
 }
 
+.buttons_right {
+  right: 30px;
+  top: 0;
+}
+
+.buttons_left {
+  left: 30px;
+  top: 0;
+}
+
 .buttons i {
   font-size: 1.3em;
+  margin-left: 5px;
 }
 
