@@ -5,7 +5,7 @@
             <p class="bold {{ setting.fontSizeSubtitle }}"> {{ quiz.name }} </p>
             <p *ngIf="quiz.questions.length == 1" class="{{ setting.fontSizeText }}">{{ quiz.questions.length }} Question</p>
             <p *ngIf="quiz.questions.length > 1" class="{{ setting.fontSizeText }}">{{ quiz.questions.length }} Questions</p>
-            <p class="{{ setting.fontSizeText }}"> Difficulté: </p>
+            <p class="{{ setting.fontSizeText }}">Difficulté</p>
             <div class="stars {{ setting.fontSizeText }}">
                 <div *ngFor="let i of [1,2,3,4,5]">
                     <i *ngIf="i<=quiz.difficulty" class="fas fa-star"></i>
@@ -16,20 +16,20 @@
         </div>
     </div>
     <div *ngIf="started && !finished" class="play-game">
-        <div class="{{setting.fontSizeSubtitle}}">{{question.label}}</div>
-        <div *ngIf="!answered()" class="container-answer">
+        <div class="question {{setting.fontSizeSubtitle}}">{{question.label}}</div>
+        <div *ngIf="!answered()" class="answer">
             <div *ngFor="let answer of question.answers; let i = index">
                 <button *ngIf="i >= currentFirstAnswerDisp && i < currentFirstAnswerDisp + nbMaxAnswerDisp" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="setAnswer(answer)"> {{ answer.value }} </button>
             </div>
         </div>
-        <div class="navigation" *ngIf="!answered() && question.answers.length > nbMaxAnswerDisp">
-            <i class="fas fa-arrow-circle-left button" (click)="moveMinDisp(-nbMaxAnswerDisp)"></i>
-            <p class="{{ setting.fontSizeText }} {{ setting.fontStyle }} ">{{ getCurrentAnswer() }}/{{ getTotalAnswer() }}</p>
-            <i class="fas fa-arrow-circle-right button" (click)="moveMinDisp(nbMaxAnswerDisp)"></i>
+        <div class="navigation {{ setting.fontSizeText }}" *ngIf="!answered() && question.answers.length > nbMaxAnswerDisp">
+            <i class="fas fa-arrow-circle-left" (click)="moveMinDisp(-nbMaxAnswerDisp)"></i>
+            <p class="page">{{ getCurrentAnswer() }}/{{ getTotalAnswer() }}</p>
+            <i class="fas fa-arrow-circle-right" (click)="moveMinDisp(nbMaxAnswerDisp)"></i>
         </div>
-        <div *ngIf="answered()" class="container-answer">
-            <button class="button-card-answser answer {{setting.fontSizeButton}} {{setting.colorYes}}" DISABLED> <i class="fas fa-check"></i> {{ correctAnswer.value }} </button>
-            <button *ngIf="!answerSelected.isCorrect" class="button-card-answser {{setting.fontSizeButton}} {{setting.colorNo}} " DISABLED> <i class="fas fa-times"></i> {{ answerSelected.value }} </button>
+        <div *ngIf="answered()" class="answer">
+            <button class="button-card-answser {{setting.fontSizeButton}} {{setting.colorYes}} element" DISABLED> <i class="fas fa-check"></i> {{ correctAnswer.value }} </button>
+            <button *ngIf="!answerSelected.isCorrect" class="button-card-answser {{setting.fontSizeButton}} {{setting.colorNo}} element" DISABLED> <i class="fas fa-times"></i> {{ answerSelected.value }} </button>
         </div>
         <div *ngIf="answered() && !inProgress" class="next">
             <button id="button-next" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="next()">Suivant<i class="fas fa-arrow-right"></i></button>

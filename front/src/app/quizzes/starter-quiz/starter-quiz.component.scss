@@ -1,23 +1,5 @@
 @import '../../../styles/central.style.scss';
 
-p{
-    display: block;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding: 0.2em;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-#button-return {
-    margin-left: 1em;
-    margin-top: 1em;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -31,25 +13,11 @@ p{
     display: flex;
 }
 
-.space {
-    position: relative;
-}
-
 .play-game {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 2%;
-}
-
-.container-answer {
-    display: flex;
-    justify-content: center;
-    width: 70%;
-    padding-top: 1%;
-    padding-right: 1%;
-    padding-left: 1%;
-    padding-bottom: 0%;
 }
 
 .end-container {
@@ -60,64 +28,19 @@ p{
     padding-left: 1%;
 }
 
-.left, .right {
+.answer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-}
-
-.element {
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-.answer-button {
-    width: -webkit-fill-available;
-}
-
-.uneven {
-    display: flex;
+    flex-direction: row;
     justify-content: center;
-    width: 50%;
+    margin-top: 2%;
+    width: 100%;
 }
 
 .next {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-}
-
-#button-next {
-    margin-right: 10%;
-    width: max-content;
-}
-
-.fas {
-    margin-left: 0.5em;
-}
-
-.progress {
-    width: 100%;
-}
-
-progress {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 70%;
-    height: 10px;
-}
-
-progress::-webkit-progress-bar {
-    background-color: #eee;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-    border-radius: 15px;
-}
-
-progress::-webkit-progress-value {
-      border-radius: 15px;
-      background-color: $blue;
+    margin-top: 2%;
 }
 
 .navigation {
@@ -125,4 +48,50 @@ progress::-webkit-progress-value {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-top: 2%;
+}
+
+#button-return {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+#button-next {
+    margin-right: 10%;
+    width: max-content;
+}
+
+#button-start {
+    margin-top: 1%;
+    width: max-content;
+}
+
+p{
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0.2em;
+    line-height: 100%;
+    text-align: center;
+}
+
+.question {
+    line-height: 100%;
+    text-align: center;
+}
+
+.page {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.element {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.bold {
+    font-weight: bold;
 }
