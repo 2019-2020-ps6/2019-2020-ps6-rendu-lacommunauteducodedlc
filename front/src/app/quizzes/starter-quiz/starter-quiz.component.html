@@ -1,62 +1,52 @@
-<div class="starter-quiz">
+<div class="starter-quiz  {{setting.fontStyle}}">
     <div *ngIf="!started" >
-        <a (click)="this.navigation.navigate('/')"><button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"> Retour </button></a>
-        <div class="center">
-            <div class="grid">
-                <span class="space {{setting.fontSizeTitle}} {{setting.fontStyle}}"> {{ quiz.name }} </span>
-                <span *ngIf="quiz.questions.length == 1" class="space {{setting.fontSizeSubtitle}} {{setting.fontStyle}}"> {{ quiz.questions.length }} Question</span>
-                <span *ngIf="quiz.questions.length > 1" class="space {{setting.fontSizeSubtitle}} {{setting.fontStyle}}"> {{ quiz.questions.length }} Questions</span>
-                <span class="space {{setting.fontSizeText}} {{setting.fontStyle}}"> Difficulté : </span>
-                <div>
-                    <img src="https://img.icons8.com/material-sharp/24/000000/star.png" />
-                    <img src="https://img.icons8.com/android/24/000000/star.png" />
-                    <img src="https://img.icons8.com/android/24/000000/star.png" />
-                    <img src="https://img.icons8.com/android/24/000000/star.png" />
-                    <img src="https://img.icons8.com/android/24/000000/star.png" />
+        <a (click)="this.navigation.navigate('/')"><button id="button-return" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}"> Retour </button></a>
+        <div *ngIf="quiz" class="container">
+            <p class="bold {{ setting.fontSizeSubtitle }}"> {{ quiz.name }} </p>
+            <p *ngIf="quiz.questions.length == 1" class="{{ setting.fontSizeText }}">{{ quiz.questions.length }} Question</p>
+            <p *ngIf="quiz.questions.length > 1" class="{{ setting.fontSizeText }}">{{ quiz.questions.length }} Questions</p>
+            <p class="{{ setting.fontSizeText }}"> Difficulté: </p>
+            <div class="stars {{ setting.fontSizeText }}">
+                <div *ngFor="let i of [1,2,3,4,5]">
+                    <i *ngIf="i<=quiz.difficulty" class="fas fa-star"></i>
+                    <i *ngIf="i>quiz.difficulty" class="far fa-star"></i>
                 </div>
             </div>
-            <button id="button-start" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="startQuiz()">Commencer</button>
+            <button id="button-start" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="startQuiz()">Commencer</button>
         </div>
     </div>
-    <div *ngIf="started">
-        <div *ngIf="!finished && !questionAnswered" class="grid center">
-            <span class="space">{{quiz.questions[index].label}}</span>
-            <div *ngFor="let answer of quiz.questions[index].answers" class="element">
-                <button class="button-card space answer {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="questionAnswer(answer.id)"> {{ answer.value }} </button>
+    <div *ngIf="started && !finished" class="play-game">
+        <div class="{{setting.fontSizeSubtitle}}">{{question.label}}</div>
+        <div *ngIf="!answered()" class="container-answer">
+            <div *ngFor="let answer of question.answers; let i = index">
+                <button *ngIf="i >= currentFirstAnswerDisp && i < currentFirstAnswerDisp + nbMaxAnswerDisp" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="setAnswer(answer)"> {{ answer.value }} </button>
             </div>
         </div>
-        <div *ngIf="!finished && questionAnswered" class="grid center">
-            <span class="space">{{quiz.questions[index - 1].label}}</span>
-            <div *ngFor="let answer of quiz.questions[index - 1].answers">
-                <button *ngIf="answer.isCorrect" class="button-card space anwser-correct answer {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorYes}}"> <i class="fas fa-check"></i> {{ answer.value }} </button>
-                <button *ngIf="!answer.isCorrect && checkAnswer(answer.id)" class="button-card space anwser-incorrect answer {{setting.fontSizeButton}} {{setting.fontStyle}}"> <i class="fas fa-times "></i> {{ answer.value }} </button>
-                <button *ngIf="!answer.isCorrect && !checkAnswer(answer.id)" class="button-card space selected-anwser-incorrect answer {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorNo}}"> <i class="fas fa-times"></i> {{ answer.value }} </button>
-            </div>
-            <div class="right">
-                <button id="button-next" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="getNext()"> Suivant <i class="fas fa-arrow-right next"></i></button>
-            </div>
+        <div *ngIf="!answered() && question.answers.length > nbMaxAnswerDisp">
+            <i class="fas fa-arrow-circle-left button" (click)="moveMinDisp(-nbMaxAnswerDisp)"></i>
+            <p class="{{ setting.fontSizeText }} {{ setting.fontStyle }} ">{{ getCurrentAnswer() }}/{{ getTotalAnswer() }}</p>
+            <i class="fas fa-arrow-circle-right button" (click)="moveMinDisp(nbMaxAnswerDisp)"></i>
         </div>
-        <div *ngIf="!finished" class="grid center margin-top">
-            <div *ngIf="!questionAnswered">
-                <span class="{{setting.fontSizeText}} {{setting.fontStyle}}">Question : {{ index + 1 }}/{{ quiz.questions.length }}</span>
-            </div>
-            <div *ngIf="questionAnswered">
-                <span class="{{setting.fontSizeText}} {{setting.fontStyle}}">Question : {{ index }}/{{ quiz.questions.length }}</span>
-            </div>
-            <div class="progress">
-                <progress id="progress" value={{index}} min="0" max={{quiz.questions.length}}></progress>
-            </div>
+        <div *ngIf="answered()" class="container-answer">
+            <button class="button-card-answser answer {{setting.fontSizeButton}} {{setting.colorYes}}" DISABLED> <i class="fas fa-check"></i> {{ correctAnswer.value }} </button>
+            <button *ngIf="!answerSelected.isCorrect" class="button-card-answser {{setting.fontSizeButton}} {{setting.colorNo}} " DISABLED> <i class="fas fa-times"></i> {{ answerSelected.value }} </button>
         </div>
-        <div *ngIf="finished">
-            <div class="grid center">
-                <span class="space {{setting.fontSizeTitle}} {{setting.fontStyle}}">Bien joué !</span>
-                <span class="space {{setting.fontSizeSubtitle}} {{setting.fontStyle}}">Fin du quiz "{{quiz.name}}"</span>
-                <span class="space {{setting.fontSizeSubtitle}} {{setting.fontStyle}}">Votre score : {{ score }}/{{ quiz.questions.length }}</span>
-            </div>
-            <div class="center">
-                <button id="button-restart" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="restart()">Recommencer</button>
-                <button id="button-new-quiz" class="button-card space {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}"><a (click)="this.navigation.navigate('/')">Nouveau Quiz</a></button>
-            </div>
+        <div *ngIf="answered() && !inProgress" class="next">
+            <button id="button-next" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="next()">Suivant<i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div *ngIf="answered() && inProgress" class="next">
+            <button id="button-next" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="finish()">Terminer<i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+    <div *ngIf="finished">
+        <div class="container">
+            <p class="bold {{setting.fontSizeSubtitle}}">Bien joué !</p>
+            <p class="{{setting.fontSizeText}}">Fin du quiz "{{quiz.name}}"</p>
+            <p class="{{setting.fontSizeText}}">Votre score : {{ score }}/{{ quiz.questions.length }}</p>
+        </div>
+        <div class="end-container">
+            <button id="button-restart" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="restart()">Recommencer</button>
+            <a (click)="this.navigation.navigate('/')"><button id="button-new-quiz" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}">Nouveau Quiz</button></a>
         </div>
     </div>
 </div>

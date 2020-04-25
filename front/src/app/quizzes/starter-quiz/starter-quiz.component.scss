@@ -1,17 +1,16 @@
 @import '../../../styles/central.style.scss';
 
-.answer {
-    width: 20%;
-    position: relative;
+p{
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0.2em;
 }
 
-.next {
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-.fa-arrow-right {
-    size: 5px;
+.bold {
+    font-weight: bold;
 }
 
 #button-return {
@@ -19,57 +18,83 @@
     margin-top: 1em;
 }
 
-#button-start {
-    margin-bottom: 1em;
-    margin-top: 1em;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
-#button-restart {
-    margin-right: 0.5em;
-    width: 20%;
-}
-
-#button-new-quiz {
-    margin-left: 0.5em;
-    width: 20%;
-}
-
-#button-next {
-    width: 15%;
-}
-
-.starter-quiz {
-    margin-top: 5%;
-}
-
-.center {
-    text-align: center;
-}
-
-.grid {
-    display: grid;
+.stars {
+    display: flex;
 }
 
 .space {
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
+    position: relative;
 }
 
-.right {
-    text-align: right;
-}
-
-.margin-top {
+.play-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 2%;
 }
 
-.anwser-correct, .anwser-correct:hover {
+.container-answer {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-bottom: 0%;
 }
 
-.anwser-incorrect:hover {
+.end-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
 }
 
-.selected-anwser-incorrect, .selected-anwser-incorrect:hover {
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.element {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.answer-button {
+    width: -webkit-fill-available;
+}
+
+.uneven {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.next {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#button-next {
+    margin-right: 10%;
+    width: max-content;
+}
+
+.fas {
+    margin-left: 0.5em;
 }
 
 .progress {
@@ -93,16 +118,4 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
       border-radius: 15px;
       background-color: $blue;
-}
-
-.container-quiz {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 1em;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
