@@ -11,10 +11,19 @@ export interface Quiz {
 }
 
 export enum QuizTheme {
-  Sport,
-  Acteurs,
-  Films,
-  Art,
-  Littérature,
-  Musique
+  'Acteurs',
+  'Animaux',
+  'Art',
+  'Culture générale',
+  'Films',
+  'Histoire',
+  'Littérature',
+  'Musique',
+  'Nourriture',
+  'Sciences',
+  'Séries',
+  'Société',
+  'Sport',
+  'Technologie',
+  'Télévision',
 }

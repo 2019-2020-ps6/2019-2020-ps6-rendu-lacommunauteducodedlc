@@ -63,7 +63,7 @@ export class QuizFormComponent implements OnInit {
   initFormBuilder(){
     this.quizForm = this.formBuilder.group({
       name: ['Nouveau Quiz ?'],
-      theme: ['None']
+      theme: ['Aucun']
     });
   }
 }
