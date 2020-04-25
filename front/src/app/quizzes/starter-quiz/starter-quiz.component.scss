@@ -119,3 +119,10 @@ progress::-webkit-progress-value {
       border-radius: 15px;
       background-color: $blue;
 }
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

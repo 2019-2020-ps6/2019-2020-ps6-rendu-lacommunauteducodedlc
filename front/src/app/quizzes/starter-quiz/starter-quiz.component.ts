@@ -80,6 +80,9 @@ export class StarterComponent implements OnInit {
         this.index++
         this.answerSelected = answer;
         this.updateScore()
+        if (this.index == this.quiz.questions.length) {
+          this.inProgress = true
+        }
     }
 
     isSelectedAnswer(answer: Answer): boolean {
@@ -117,9 +120,6 @@ export class StarterComponent implements OnInit {
     }
 
     next() {
-      if (this.index == this.quiz.questions.length - 1 ) {
-          this.inProgress = true
-      }
       this.ngOnInit()
     }
 
