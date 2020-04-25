@@ -1,5 +1,5 @@
 <div class="quiz-list">
-    <div class="creation-and-filter">
+    <div class="creation-and-filter {{ setting.colorCard }}">
         <app-quiz-form *ngIf="!navigation.userId"></app-quiz-form>
         <app-quiz-sort [quizList]="quizList"></app-quiz-sort>
     </div>
