@@ -11,3 +11,14 @@
   flex-direction: column;
   height: 100%;
 }
+
+#abs-header {
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+}
+
+#flex-header ::ng-deep.header {
+  box-shadow: 0 0 0 0;
+}
