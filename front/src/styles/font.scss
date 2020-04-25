@@ -48,7 +48,7 @@ app-quiz.font-size-basic-text {
 
 //FONT SIZE PRESBYOPIA
 .font-size-presbyopia-text{
-    font-size: 27px;
+    font-size: 30px;
     color: #000000;
 }
 .font-size-presbyopia-subtitle {
@@ -65,11 +65,11 @@ app-quiz.font-size-basic-text {
     color: #000000;
 }
 .font-style-presbyopia{
-    font-family: fantasy;
+    font-family: 'Franklin', 'Arial Narrow', Arial, sans-serif;
 }
 .font-size-presbyopia-selector {
-    height: 32px;
-    width: 215px;
+    height: 35px;
+    width: 235px;
 }
 .font-size-presbyopia-scroll {
     height: 10px;
@@ -93,44 +93,44 @@ app-quiz.font-size-basic-text {
 
 //FONT SIZE MYOPIA
 .font-size-myopia-text{
-    font-size: 32px;
+    font-size: 22px;
     color: #000000;
 }
 .font-size-myopia-subtitle {
-    font-size: 40px;
+    font-size: 30px;
 }
 .font-size-myopia-title {
-    font-size: 50px;
+    font-size: 40px;
 }
 .font-size-myopia-subtext{
-    font-size: 22px
+    font-size: 12px
 }
 .font-size-myopia-button {
-    font-size: 26px;
+    font-size: 16px;
     color: #000000;
 }
 .font-style-myopia {
-    font-family: cursive;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .font-size-myopia-selector {
-    height: 37px;
-    width: 250px;
+    height: 35px;
+    width: 190px;
 }
 .font-size-myopia-scroll {
-    height: 15px;
-    width: 350px;
+    height: 5px;
+    width: 250px;
 }
 .font-size-myopia-scroll::-moz-range-thumb {
-    height: 32px;
-    width: 32px;
+    height: 22px;
+    width: 22px;
 }
 .font-size-myopia-scroll::-webkit-slider-thumb {
-    height: 32px;
-    width: 32px;
+    height: 22px;
+    width: 22px;
 }
 .font-size-myopia-radio {
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
 }
 
 
@@ -155,11 +155,11 @@ app-quiz.font-size-basic-text {
     color: #000000;
 }
 .font-style-astigmatism {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .font-size-astigmatism-selector {
-    height: 42px;
-    width: 285px;
+    height: 45px;
+    width: 310px;
 }
 .font-size-astigmatism-scroll {
     height: 20px;
@@ -200,11 +200,11 @@ app-quiz.font-size-basic-text {
     color: #000000;
 }
 .font-style-hyperopia {
-    font-family: monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .font-size-hyperopia-selector {
-    height: 47px;
-    width: 320px;
+    height: 60px;
+    width: 310px;
 }
 .font-size-hyperopia-scroll {
     height: 25px;
