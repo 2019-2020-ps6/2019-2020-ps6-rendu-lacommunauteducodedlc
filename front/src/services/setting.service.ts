@@ -125,6 +125,8 @@ export class SettingService {
 
   setQuestionNumber(number: number) {
     this.setting.questionNumber = number;
+
+    this.updateSettings(this.setting);
   }
 
   public getQuestionNumber() {
