@@ -19,7 +19,7 @@
         <div class="question {{setting.fontSizeSubtitle}}">{{question.label}}</div>
         <div *ngIf="!answered()" class="answer-container">
             <div class="answer" *ngFor="let answer of question.answers; let i = index">
-                <button *ngIf="i >= currentFirstAnswerDisp && i < currentFirstAnswerDisp + nbMaxAnswerDisp" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}}" (click)="setAnswer(answer)"> {{ answer.value }} </button>
+                <button *ngIf="i >= currentFirstAnswerDisp && i < currentFirstAnswerDisp + nbMaxAnswerDisp" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}} button-answer" (click)="setAnswer(answer)"> {{ answer.value }} </button>
             </div>
         </div>
         <div *ngIf="!answered() && question.answers.length <= nbMaxQuizDisp"></div>

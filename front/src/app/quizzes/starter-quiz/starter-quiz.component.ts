@@ -26,7 +26,7 @@ export class StarterComponent implements OnInit {
     private question: Question
     private answerSelected: Answer
     private correctAnswer: Answer
-    public nbMaxAnswerDisp = 4
+    public nbMaxAnswerDisp = 6
     public currentFirstAnswerDisp = 0
 
     constructor(
@@ -40,7 +40,10 @@ export class StarterComponent implements OnInit {
       this.inProgress = false
       this.finished = false
       this.score = 0
-      this.settingService.settings$.subscribe((setting) => this.setting = setting)
+      this.settingService.settings$.subscribe((setting) => {
+        this.setting = setting
+        if (setting)  this.nbMaxAnswerDisp = setting.answerNumber
+      })
     }
 
     ngOnInit() {
