@@ -28,11 +28,13 @@
             <p class="page">{{ getCurrentAnswer() }}/{{ getTotalAnswer() }}</p>
             <i class="fas fa-arrow-circle-right" (click)="moveMinDisp(nbMaxAnswerDisp)"></i>
         </div>
-        <div *ngIf="answered() && correctAnswer.length > 0" class="answer-container">
-            <button class="answer button-card-answser {{setting.fontSizeButton}} {{setting.colorYes}} element" DISABLED> <i class="fas fa-check"></i> {{ getValueCorrectAnswer() }}</button>
-            <button *ngIf="!answerSelected.isCorrect" class="answer button-card-answser {{setting.fontSizeButton}} {{setting.colorNo}} element" DISABLED> <i class="fas fa-times"></i> {{ answerSelected.value }} </button>
+        <div *ngIf="answered() && correctAnswer.length > 0" class="answer-container-2">
+            <div *ngFor="let answer of correctAnswer">
+                <button class="answer button-card-answser {{setting.fontSizeButton}} {{setting.colorYes}} element" DISABLED> <i class="fas fa-check"></i> {{ answer.value }}</button>
+            </div>
+            <div><button *ngIf="!answerSelected.isCorrect" class="answer button-card-answser {{setting.fontSizeButton}} {{setting.colorNo}} element" DISABLED> <i class="fas fa-times"></i> {{ answerSelected.value }} </button></div>
         </div>
-        <div *ngIf="answered() && correctAnswer.length == 0" class="answer-container">
+        <div *ngIf="answered() && correctAnswer.length == 0" class="answer-container-2">
             <p class="{{ setting.fontSizeText }}">Il n'y a pas de bonne réponse <i class="fas fa-smile-wink {{ setting.fontSizeText }}"></i></p>
         </div>
         <div *ngIf="answered() && !inProgress" class="next">
