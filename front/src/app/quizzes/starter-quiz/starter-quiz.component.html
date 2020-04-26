@@ -22,7 +22,7 @@
                 <button *ngIf="i >= currentFirstAnswerDisp && i < currentFirstAnswerDisp + nbMaxAnswerDisp" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}} button-answer" (click)="setAnswer(answer)"> {{ answer.value }} </button>
             </div>
         </div>
-        <div *ngIf="!answered() && question.answers.length <= nbMaxQuizDisp"></div>
+        <div *ngIf="!answered() && question.answers.length <= nbMaxAnswerDisp"></div>
         <div class="navigation {{ setting.fontSizeText }}" *ngIf="!answered() && question.answers.length > nbMaxAnswerDisp">
             <i class="fas fa-arrow-circle-left" (click)="moveMinDisp(-nbMaxAnswerDisp)"></i>
             <p class="page">{{ getCurrentAnswer() }}/{{ getTotalAnswer() }}</p>

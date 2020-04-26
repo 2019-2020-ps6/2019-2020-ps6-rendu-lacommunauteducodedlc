@@ -69,6 +69,9 @@
     justify-content: center;
     margin-top: 2%;
 }
+.navigation *{
+  font-size: 2em;
+}
 
 #button-return {
     margin-left: 1em;
@@ -121,9 +124,13 @@ p{
 
 .answer {
     max-width: 60em;
+    font-size: 2.2em;
 }
 
 .button-answer {
     margin-top: 0.3em;
     margin-bottom: 0.3em;
+}
+.answer:empty{
+  display: none;
 }
