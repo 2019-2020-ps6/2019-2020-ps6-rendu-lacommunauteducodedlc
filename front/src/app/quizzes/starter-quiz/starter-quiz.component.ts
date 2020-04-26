@@ -25,7 +25,7 @@ export class StarterComponent implements OnInit {
     private setting: Setting
     private question: Question
     private answerSelected: Answer
-    private correctAnswer: Answer
+    private correctAnswer: Answer[]
     public nbMaxAnswerDisp = 6
     public currentFirstAnswerDisp = 0
 
@@ -65,6 +65,7 @@ export class StarterComponent implements OnInit {
 
     initQuestion() {
       this.answerSelected = undefined
+      this.correctAnswer = []
       this.getCorrectAnswer()
     }
 
@@ -95,9 +96,22 @@ export class StarterComponent implements OnInit {
     getCorrectAnswer() {
       this.question.answers.forEach((answer) => {
         if (answer.isCorrect) {
-          this.correctAnswer = answer
+          this.correctAnswer.push(answer)
         }
       })
+    }
+
+    getValueCorrectAnswer(): string {
+      let correctAnswer: Answer
+      this.correctAnswer.forEach((answer) => {
+        if (answer == this.answerSelected) {
+          correctAnswer = answer
+        }
+      })
+      if (correctAnswer == undefined) {
+        correctAnswer = this.correctAnswer[0]
+      }
+      return correctAnswer.value
     }
 
     restart() {
@@ -127,7 +141,7 @@ export class StarterComponent implements OnInit {
     }
 
     updateScore() {
-      if (this.answerSelected.isCorrect) {
+      if (this.answerSelected.isCorrect || this.correctAnswer.length == 0) {
         this.score++
       }
     }
