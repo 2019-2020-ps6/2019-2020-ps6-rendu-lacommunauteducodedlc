@@ -25,5 +25,6 @@ module.exports = new BaseModel('Settings', {
   colorCard: Joi.string().allow('', null).empty(['', null]).default('color-basic-card'),
   colorScroll: Joi.string().allow('', null).empty(['', null]).default('color-basic-scroll'),
 
-  questionNumber: Joi.number().allow(0, null).empty([0, null]).default(6)
+  questionNumber: Joi.number().allow(0, null).empty([0, null]).default(6),
+  answerNumber: Joi.number().allow(0, null).empty([0, null]).default(6)
 });

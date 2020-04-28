@@ -23,6 +23,10 @@ questionNumber2: number = 2;
 questionNumber3: number = 2;
 questionNumber4: number = 2;
 
+answerNumber0: number = 6;
+answerNumber1: number = 3;
+answerNumber2: number = 1;
+
 
   constructor(
     private settingService: SettingService,
@@ -41,6 +45,7 @@ questionNumber4: number = 2;
     if (value==="0") this.settingService.changeFontSize("font-size-basic");
     else this.settingService.changeFontSize("font-size-"+value);
     this.adaptQuestionNumber(value);
+    this.adaptAnswerNumber(value);
   }
 
   setScrollValue(): number {
@@ -73,6 +78,15 @@ questionNumber4: number = 2;
       case "3": this.settingService.setQuestionNumber(this.questionNumber3); break;
       case "4": this.settingService.setQuestionNumber(this.questionNumber4); break;
       default: this.settingService.setQuestionNumber(this.questionNumber0);
+    }
+  }
+
+  adaptAnswerNumber(value: String) {
+    switch (value) {
+      case "2": 
+      case "3": this.settingService.setAnswerNumber(this.answerNumber1); break;
+      case "4": this.settingService.setAnswerNumber(this.answerNumber2); break;
+      default: this.settingService.setAnswerNumber(this.answerNumber0); 
     }
   }
 }

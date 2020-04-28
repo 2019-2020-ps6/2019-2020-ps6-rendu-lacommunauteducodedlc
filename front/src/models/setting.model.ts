@@ -22,6 +22,7 @@ export interface Setting {
     colorScroll: String;
 
     questionNumber: number;
+    answerNumber: number;
 }
 
 export enum SettingType {

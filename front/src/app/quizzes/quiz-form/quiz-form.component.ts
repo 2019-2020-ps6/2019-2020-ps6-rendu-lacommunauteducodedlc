@@ -20,6 +20,8 @@ export class QuizFormComponent implements OnInit {
    * QuizForm: Object which manages the form in our component.
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance
    */
+  public currentTextInput: string;
+
   public quizForm: FormGroup;
   public THEME_LIST = Object.keys(QuizTheme).filter(k => typeof QuizTheme[k as any] === 'number');
   public setting: Setting;
@@ -37,6 +39,7 @@ export class QuizFormComponent implements OnInit {
   }
 
   addQuiz() {
+    if(!this.currentTextInput) return;
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
     quizToCreate.questions = [];
@@ -62,8 +65,17 @@ export class QuizFormComponent implements OnInit {
 
   initFormBuilder(){
     this.quizForm = this.formBuilder.group({
-      name: ['Nouveau Quiz ?'],
+      name: [''],
       theme: ['Aucun']
     });
+  }
+
+  log($event: boolean) {
+    if ($event) console.log(true);
+    else console.log(false)
+  }
+
+  getButtonStyle(disabled: boolean){
+    return (disabled) ? 'disabled' : '';
   }
 }

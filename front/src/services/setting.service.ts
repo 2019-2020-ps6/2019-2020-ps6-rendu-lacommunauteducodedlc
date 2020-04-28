@@ -55,6 +55,7 @@ export class SettingService {
                     scrollSize : "font-size-basic-scroll",
                     radioRadius: "font-size-basic-radio",
                     questionNumber: 6,
+                    answerNumber: 6,
                   };
     this.updateSettings(this.setting);
     this.getUserSetting();
@@ -129,8 +130,18 @@ export class SettingService {
     this.updateSettings(this.setting);
   }
 
+  setAnswerNumber(number: number) {
+    this.setting.answerNumber = number;
+
+    this.updateSettings(this.setting);
+  }
+
   public getQuestionNumber() {
     return this.setting.questionNumber;
+  }
+
+  public getAnswerNumber() {
+    return this.setting.answerNumber;
   }
 
 

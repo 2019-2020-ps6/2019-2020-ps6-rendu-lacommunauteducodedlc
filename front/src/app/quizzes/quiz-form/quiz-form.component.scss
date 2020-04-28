@@ -7,3 +7,12 @@
 .input-custom {
   max-width: 8em ;
 }
+
+button.disabled {
+  background: ThreeDShadow;
+}
+
+button.disabled:hover {
+  cursor: initial;
+  background: ButtonShadow;
+}

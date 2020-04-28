@@ -30,6 +30,11 @@ export class SpecialSettingsComponent implements OnInit {
   astigmatismQuestionNumber: number = 2;
   hyperopiaQuestionNumber: number = 2;
 
+  basicAnswerNumber: number = 6;
+  presbyopiaAnswerNumber: number = 4;
+  myopiaAnswerNumber: number = 3;
+  astigmatismAnswerNumber: number = 2;
+  hyperopiaAnswerNumber: number = 1;
 
   constructor(
     private settingService: SettingService,
@@ -49,10 +54,12 @@ export class SpecialSettingsComponent implements OnInit {
       this.settingService.changeFontSize("font-size-"+sickness);
       this.settingService.changeFontStyle("font-style-"+sickness);
       this.adaptQuestionNumber(sickness);
+      this.adaptAnswerNumber(sickness);
     }
     else {
       this.setFont("basic",true);
       this.adaptQuestionNumber("basic");
+      this.adaptAnswerNumber("basic");
     }
   }
 
@@ -63,6 +70,16 @@ export class SpecialSettingsComponent implements OnInit {
       case "astigmatism": this.settingService.setQuestionNumber(this.astigmatismQuestionNumber); break;
       case "hyperopia": this.settingService.setQuestionNumber(this.hyperopiaQuestionNumber); break;
       default: this.settingService.setQuestionNumber(this.basicQuestionNumber);
+    }
+  }
+
+  adaptAnswerNumber(sickness: String) {
+    switch (sickness) {
+      case "presbyopia": this.settingService.setAnswerNumber(this.presbyopiaAnswerNumber); break;
+      case "myopia": this.settingService.setAnswerNumber(this.myopiaAnswerNumber); break;
+      case "astigmatism": this.settingService.setAnswerNumber(this.astigmatismAnswerNumber); break;
+      case "hyperopia": this.settingService.setAnswerNumber(this.hyperopiaAnswerNumber); break;
+      default: this.settingService.setAnswerNumber(this.basicAnswerNumber);
     }
   }
 

@@ -4,7 +4,7 @@
     <label for="title" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       Titre
       <br>
-      <input type="text" id="title" [formControlName]="'name'" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}">
+      <input type="text" id="title" [formControlName]="'name'" placeholder="Nom du quiz" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="this.currentTextInput=$event.toString(); log($event)">
     </label>
     <br>
     <label for="theme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
@@ -17,7 +17,7 @@
       </select>
     </label>
     <br>
-    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="addQuiz()">CRÉER</button>
+    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}} {{getButtonStyle(!this.currentTextInput)}}" (click)="addQuiz()">CRÉER</button>
   </form>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->
