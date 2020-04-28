@@ -7,7 +7,6 @@ import {UserService} from "./user.service";
 })
 export class NavigationService {
   public userId: string = null;
-  public userId$
 
   constructor(private route: ActivatedRoute,
               private router: Router,
