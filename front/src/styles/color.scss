@@ -1,6 +1,7 @@
 //COLORS BASIC
 .color-basic-background {
-    background-color: #9FC5F8;
+  background-color: #9FC5F8;
+  color: #000000;
 }
 .color-basic-header {
   background-color: #0052F6;
@@ -12,37 +13,19 @@
 .color-basic-no {
     background-color: #ee2020;
 }
-.color-basic-button{
-    background-color: #3862b6;
+.color-basic-button {
+  background-color: #3862b6;
+  color: #000000;
 }
 .color-basic-card {
   background-color: #5c9ff7;
+  color: #000000;
 }
 .color-basic-scroll::-moz-range-thumb {
     background: #3862b6;
 }
 .color-basic-scroll::-webkit-slider-thumb {
     background: #3862b6;
-}
-
-.color-basic-text {
-  color: #000000;
-}
-
-.color-basic-subtitle {
-  color: #000000;
-}
-
-.color-basic-title {
-  color: #000000;
-}
-
-.color-basic-subtext {
-  color: #000000;
-}
-
-.color-basic-button {
-  color: #000000;
 }
 
 //COLORS MONOCHROMATE
@@ -236,6 +219,7 @@
 //DARK MODE COLORS
 .color-dark-background {
   background-color: #073763;
+  color: #D4D4D4;
 }
 
 .color-dark-header {
@@ -253,10 +237,12 @@
 
 .color-dark-button {
   background-color: #455E92;
+  color: #D4D4D4;
 }
 
 .color-dark-card {
   background-color: #22427C;
+  color: #D4D4D4;
 }
 
 .color-dark-scroll::-moz-range-thumb {
@@ -265,24 +251,4 @@
 
 .color-dark-scroll::-webkit-slider-thumb {
   background: #42588C;
-}
-
-.color-dark-text {
-  color: #B9B9B9;
-}
-
-.color-dark-subtitle {
-  color: #B9B9B9;
-}
-
-.color-dark-title {
-  color: #B9B9B9;
-}
-
-.color-dark-subtext {
-  color: #B9B9B9;
-}
-
-.color-dark-button {
-  color: #D4D4D4;
 }

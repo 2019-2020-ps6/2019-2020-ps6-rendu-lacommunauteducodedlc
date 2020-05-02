@@ -20,7 +20,6 @@ export interface Setting {
     colorButton: String;
     colorCard: String;
     colorScroll: String;
-    colorText: String;
 
     questionNumber: number;
     answerNumber: number;

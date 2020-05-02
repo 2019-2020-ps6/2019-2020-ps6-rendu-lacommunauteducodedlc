@@ -51,7 +51,6 @@ export class SettingService {
                     colorButton : "color-basic-button",
                     colorCard : "color-basic-card",
                     colorScroll : "color-basic-scroll",
-                    colorText: "color-basic-text",
                     selectorSize : "font-size-basic-selector",
                     scrollSize : "font-size-basic-scroll",
                     radioRadius: "font-size-basic-radio",
@@ -113,7 +112,6 @@ export class SettingService {
     let colorButton:String = color+"-button";
     let colorCard:String = color+"-card";
     let colorScroll:String = color+"-scroll";
-    let colorText:String = color+"text";
 
     this.setting.colorBackground = colorBackground;
     this.setting.colorHeader = colorHeader;
@@ -122,7 +120,6 @@ export class SettingService {
     this.setting.colorButton = colorButton;
     this.setting.colorCard = colorCard;
     this.setting.colorScroll = colorScroll;
-    this.setting.colorText = colorText;
 
     this.updateSettings(this.setting);
   }
@@ -205,10 +202,6 @@ export class SettingService {
 
   public getColorCard(){
     return this.setting.colorCard;
-  }
-
-  public getColorText() {
-    return this.setting.colorText;
   }
 
 
