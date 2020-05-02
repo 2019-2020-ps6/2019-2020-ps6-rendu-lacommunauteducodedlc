@@ -89,4 +89,21 @@ answerNumber2: number = 1;
       default: this.settingService.setAnswerNumber(this.answerNumber0); 
     }
   }
+
+  public setColors(sickness : String) {
+     this.settingService.changeColors("color-"+sickness);
+  }
+
+  setDark(sickness: String, checked: boolean) {
+    if(checked){
+      this.setColors(sickness);
+    }
+    else {
+      this.setColors("basic");
+    }
+  }
+
+  compareSicknessColor(sickness : String): boolean {
+    return this.setting.colorBackground.toString()==="color-"+sickness+"-background";
+  }
 }

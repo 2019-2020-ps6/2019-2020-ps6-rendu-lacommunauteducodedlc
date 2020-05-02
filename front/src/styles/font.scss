@@ -1,226 +1,267 @@
 //FONT SIZE BASIC
 .font-size-basic-text {
-    font-size: 22px;
-    color: #000000;
+  font-size: 22px;
 }
+
 app-quiz.font-size-basic-text {
   max-width: 30%;
 }
+
 .font-size-basic-subtitle {
-    font-size: 30px;
+  font-size: 30px;
 }
+
 .font-size-basic-title {
-    font-size: 40px;
+  font-size: 40px;
 }
+
 .font-size-basic-subtext {
-    font-size: 12px;
+  font-size: 12px;
 }
+
 .font-size-basic-button {
-    font-size: 16px;
-    color: #000000;
+  font-size: 16px;
 }
-.font-style-basic{
-    font-family: Arial, Helvetica, sans-serif;
+
+.font-style-basic {
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 .font-size-basic-selector {
-    height: 27px;
-    width: 180px;
+  height: 27px;
+  width: 180px;
 }
+
 .font-size-basic-scroll {
-    height: 5px;
-    width: 250px;
+  height: 5px;
+  width: 250px;
 }
+
 .font-size-basic-scroll::-moz-range-thumb {
-    height: 22px;
-    width: 22px;
+  height: 22px;
+  width: 22px;
 }
+
 .font-size-basic-scroll::-webkit-slider-thumb {
-    height: 22px;
-    width: 22px;
+  height: 22px;
+  width: 22px;
 }
+
 .font-size-basic-radio {
-    height: 25px;
-    width: 25px;
+  height: 25px;
+  width: 25px;
 }
 
 
 
 
 //FONT SIZE PRESBYOPIA
-.font-size-presbyopia-text{
-    font-size: 30px;
-    color: #000000;
+.font-size-presbyopia-text {
+  font-size: 30px;
 }
+
 .font-size-presbyopia-subtitle {
-    font-size: 35px;
+  font-size: 35px;
 }
+
 .font-size-presbyopia-title {
-    font-size: 45px;
+  font-size: 45px;
 }
+
 .font-size-presbyopia-subtext {
-    font-size: 17px;
+  font-size: 17px;
 }
+
 .font-size-presbyopia-button {
-    font-size: 21px;
-    color: #000000;
+  font-size: 21px;
 }
-.font-style-presbyopia{
-    font-family: 'Franklin', 'Arial Narrow', Arial, sans-serif;
+
+.font-style-presbyopia {
+  font-family: 'Franklin', 'Arial Narrow', Arial, sans-serif;
 }
+
 .font-size-presbyopia-selector {
-    height: 35px;
-    width: 235px;
+  height: 35px;
+  width: 235px;
 }
+
 .font-size-presbyopia-scroll {
-    height: 10px;
-    width: 300px;
+  height: 10px;
+  width: 300px;
 }
+
 .font-size-presbyopia-scroll::-moz-range-thumb {
-    height: 27px;
-    width: 27px;
+  height: 27px;
+  width: 27px;
 }
+
 .font-size-presbyopia-scroll::-webkit-slider-thumb {
-    height: 27px;
-    width: 27px;
+  height: 27px;
+  width: 27px;
 }
+
 .font-size-presbyopia-radio {
-    height: 30px;
-    width: 30px;
+  height: 30px;
+  width: 30px;
 }
 
 
 
 
 //FONT SIZE MYOPIA
-.font-size-myopia-text{
-    font-size: 22px;
-    color: #000000;
+.font-size-myopia-text {
+  font-size: 22px;
 }
+
 .font-size-myopia-subtitle {
-    font-size: 30px;
+  font-size: 30px;
 }
+
 .font-size-myopia-title {
-    font-size: 40px;
+  font-size: 40px;
 }
-.font-size-myopia-subtext{
-    font-size: 12px
+
+.font-size-myopia-subtext {
+  font-size: 12px
 }
+
 .font-size-myopia-button {
-    font-size: 16px;
-    color: #000000;
+  font-size: 16px;
 }
+
 .font-style-myopia {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .font-size-myopia-selector {
-    height: 35px;
-    width: 190px;
+  height: 35px;
+  width: 190px;
 }
+
 .font-size-myopia-scroll {
-    height: 5px;
-    width: 250px;
+  height: 5px;
+  width: 250px;
 }
+
 .font-size-myopia-scroll::-moz-range-thumb {
-    height: 22px;
-    width: 22px;
+  height: 22px;
+  width: 22px;
 }
+
 .font-size-myopia-scroll::-webkit-slider-thumb {
-    height: 22px;
-    width: 22px;
+  height: 22px;
+  width: 22px;
 }
+
 .font-size-myopia-radio {
-    height: 25px;
-    width: 25px;
+  height: 25px;
+  width: 25px;
 }
 
 
 
 
 //FONT SIZE ASTIGMATISM
-.font-size-astigmatism-text{
-    font-size: 37px;
-    color: #000000;
+.font-size-astigmatism-text {
+  font-size: 37px;
 }
+
 .font-size-astigmatism-subtitle {
-    font-size: 45px;
+  font-size: 45px;
 }
+
 .font-size-astigmatism-title {
-    font-size: 55px;
+  font-size: 55px;
 }
-.font-size-astigmatism-subtext{
-    font-size: 27px
+
+.font-size-astigmatism-subtext {
+  font-size: 27px
 }
+
 .font-size-astigmatism-button {
-    font-size: 31px;
-    color: #000000;
+  font-size: 31px;
 }
+
 .font-style-astigmatism {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .font-size-astigmatism-selector {
-    height: 45px;
-    width: 310px;
+  height: 45px;
+  width: 310px;
 }
+
 .font-size-astigmatism-scroll {
-    height: 20px;
-    width: 400px;
+  height: 20px;
+  width: 400px;
 }
+
 .font-size-astigmatism-scroll::-moz-range-thumb {
-    height: 37px;
-    width: 37px;
+  height: 37px;
+  width: 37px;
 }
+
 .font-size-astigmatism-scroll::-webkit-slider-thumb {
-    height: 37px;
-    width: 37px;
+  height: 37px;
+  width: 37px;
 }
+
 .font-size-astigmatism-radio {
-    height: 40px;
-    width: 40px;
+  height: 40px;
+  width: 40px;
 }
 
 
 
 
 //FONT SIZE HYPERYOPIA
-.font-size-hyperopia-text{
-    font-size: 42px;
-    color: #000000;
+.font-size-hyperopia-text {
+  font-size: 42px;
 }
+
 .font-size-hyperopia-subtitle {
-    font-size: 50px;
+  font-size: 50px;
 }
+
 .font-size-hyperopia-title {
-    font-size: 60px;
+  font-size: 60px;
 }
-.font-size-hyperopia-subtext{
-    font-size: 32px
+
+.font-size-hyperopia-subtext {
+  font-size: 32px
 }
+
 .font-size-hyperopia-button {
-    font-size: 36px;
-    color: #000000;
+  font-size: 36px;
 }
+
 .font-style-hyperopia {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .font-size-hyperopia-selector {
-    height: 60px;
-    width: 310px;
+  height: 60px;
+  width: 310px;
 }
+
 .font-size-hyperopia-scroll {
-    height: 25px;
-    width: 450px;
+  height: 25px;
+  width: 450px;
 }
+
 .font-size-hyperopia-scroll::-moz-range-thumb {
-    height: 42px;
-    width: 42px;
+  height: 42px;
+  width: 42px;
 }
+
 .font-size-hyperopia-scroll::-webkit-slider-thumb {
-    height: 42px;
-    width: 42px;
+  height: 42px;
+  width: 42px;
 }
+
 .font-size-hyperopia-radio {
-    height: 45px;
-    width: 45px;
+  height: 45px;
+  width: 45px;
 }
 
 
@@ -228,167 +269,195 @@ app-quiz.font-size-basic-text {
 
 //FONT SIZE 1
 .font-size-1-text {
-    font-size: 27px;
-    color: #000000;
+  font-size: 27px;
 }
+
 .font-size-1-subtitle {
-    font-size: 35px;
+  font-size: 35px;
 }
+
 .font-size-1-title {
-    font-size: 45px;
+  font-size: 45px;
 }
+
 .font-size-1-subtext {
-    font-size: 17px;
+  font-size: 17px;
 }
+
 .font-size-1-button {
-    font-size: 21px;
-    color: #000000;
+  font-size: 21px;
 }
+
 .font-size-1-selector {
-    height: 32px;
-    width: 215px;
+  height: 32px;
+  width: 215px;
 }
+
 .font-size-1-scroll {
-    height: 10px;
-    width: 300px;
+  height: 10px;
+  width: 300px;
 }
+
 .font-size-1-scroll::-moz-range-thumb {
-    height: 27px;
-    width: 27px;
+  height: 27px;
+  width: 27px;
 }
+
 .font-size-1-scroll::-webkit-slider-thumb {
-    height: 27px;
-    width: 27px;
+  height: 27px;
+  width: 27px;
 }
+
 .font-size-1-radio {
-    height: 30px;
-    width: 30px;
+  height: 30px;
+  width: 30px;
 }
 
 
 
 
 //FONT SIZE 2
-.font-size-2-text{
-    font-size: 32px;
-    color: #000000;
+.font-size-2-text {
+  font-size: 32px;
 }
+
 .font-size-2-subtitle {
-    font-size: 40px;
+  font-size: 40px;
 }
+
 .font-size-2-title {
-    font-size: 50px;
+  font-size: 50px;
 }
-.font-size-2-subtext{
-    font-size: 22px
+
+.font-size-2-subtext {
+  font-size: 22px
 }
+
 .font-size-2-button {
-    font-size: 26px;
-    color: #000000;
+  font-size: 26px;
 }
+
 .font-size-2-selector {
-    height: 37px;
-    width: 250px;
+  height: 37px;
+  width: 250px;
 }
+
 .font-size-2-scroll {
-    height: 15px;
-    width: 350px;
+  height: 15px;
+  width: 350px;
 }
+
 .font-size-2-scroll::-moz-range-thumb {
-    height: 32px;
-    width: 32px;
+  height: 32px;
+  width: 32px;
 }
+
 .font-size-2-scroll::-webkit-slider-thumb {
-    height: 32px;
-    width: 32px;
+  height: 32px;
+  width: 32px;
 }
+
 .font-size-2-radio {
-    height: 35px;
-    width: 35px;
+  height: 35px;
+  width: 35px;
 }
 
 
 
 
 //FONT SIZE 3
-.font-size-3-text{
-    font-size: 37px;
-    color: #000000;
+.font-size-3-text {
+  font-size: 37px;
 }
+
 .font-size-3-subtitle {
-    font-size: 45px;
+  font-size: 45px;
 }
+
 .font-size-3-title {
-    font-size: 55px;
+  font-size: 55px;
 }
-.font-size-3-subtext{
-    font-size: 27px
+
+.font-size-3-subtext {
+  font-size: 27px
 }
+
 .font-size-3-button {
-    font-size: 31px;
-    color: #000000;
+  font-size: 31px;
 }
+
 .font-size-3-selector {
-    height: 42px;
-    width: 285px;
+  height: 42px;
+  width: 285px;
 }
+
 .font-size-3-scroll {
-    height: 20px;
-    width: 400px;
+  height: 20px;
+  width: 400px;
 }
+
 .font-size-3-scroll::-moz-range-thumb {
-    height: 37px;
-    width: 37px;
+  height: 37px;
+  width: 37px;
 }
+
 .font-size-3-scroll::-webkit-slider-thumb {
-    height: 37px;
-    width: 37px;
+  height: 37px;
+  width: 37px;
 }
+
 .font-size-3-radio {
-    height: 40px;
-    width: 40px;
+  height: 40px;
+  width: 40px;
 }
 
 
 
 
 //FONT SIZE 4
-.font-size-4-text{
-    font-size: 42px;
-    color: #000000;
+.font-size-4-text {
+  font-size: 42px;
 }
+
 .font-size-4-subtitle {
-    font-size: 50px;
+  font-size: 50px;
 }
+
 .font-size-4-title {
-    font-size: 60px;
+  font-size: 60px;
 }
-.font-size-4-subtext{
-    font-size: 32px
+
+.font-size-4-subtext {
+  font-size: 32px
 }
+
 .font-size-4-button {
-    font-size: 36px;
-    color: #000000;
+  font-size: 36px;
 }
+
 .font-size-4-selector {
-    height: 47px;
-    width: 320px;
+  height: 47px;
+  width: 320px;
 }
+
 .font-size-4-scroll {
-    height: 25px;
-    width: 450px;
+  height: 25px;
+  width: 450px;
 }
+
 .font-size-4-scroll::-moz-range-thumb {
-    height: 42px;
-    width: 42px;
+  height: 42px;
+  width: 42px;
 }
+
 .font-size-4-scroll::-webkit-slider-thumb {
-    height: 42px;
-    width: 42px;
+  height: 42px;
+  width: 42px;
 }
+
 .font-size-4-radio {
-    height: 45px;
-    width: 45px;
+  height: 45px;
+  width: 45px;
 }
 
 
@@ -396,24 +465,30 @@ app-quiz.font-size-basic-text {
 // FONT STYLES
 
 
-.font-style-arial{
-    font-family: Arial;
+.font-style-arial {
+  font-family: Arial;
 }
-.font-style-fantasy{
-    font-family: fantasy;
+
+.font-style-fantasy {
+  font-family: fantasy;
 }
+
 .font-style-lucida {
-    font-family: 'Lucida Grande';
+  font-family: 'Lucida Grande';
 }
+
 .font-style-times {
-    font-family:'Times New Roman';
+  font-family: 'Times New Roman';
 }
+
 .font-style-monospace {
-    font-family: monospace;
+  font-family: monospace;
 }
+
 .font-style-franklin {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .font-style-segoe {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

@@ -5,11 +5,12 @@
     "\\front\\src",
     "\\front\\src\\app",
     "\\front\\src\\app\\header",
-    "\\front\\src\\app\\quizzes",
-    "\\front\\src\\app\\quizzes\\quiz-form",
+    "\\front\\src\\app\\quizzes\\quiz-sort",
     "\\front\\src\\app\\settings",
-    "\\front\\src\\models"
+    "\\front\\src\\app\\settings\\mainSettings",
+    "\\front\\src\\app\\settings\\specialSettings",
+    "\\front\\src\\styles"
   ],
-  "SelectedNode": "\\front\\src\\app\\header\\header.component.scss",
+  "SelectedNode": "\\front\\src\\app\\settings\\mainSettings\\mainSettings.component.html",
   "PreviewInSolutionExplorer": false
 }
