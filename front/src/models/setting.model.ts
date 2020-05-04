@@ -6,6 +6,7 @@ export interface Setting {
     fontSizeSubtitle: String;
     fontSizeTitle: String;
     fontSizeSubtext: String;
+    fontSizeAnswer: String;
     fontSizeButton: String;
     selectorSize: String;
     radioRadius: String;
