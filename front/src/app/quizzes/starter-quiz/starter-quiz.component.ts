@@ -28,6 +28,7 @@ export class StarterComponent implements OnInit {
     private correctAnswer: Answer[]
     public nbMaxAnswerDisp = 6
     public currentFirstAnswerDisp = 0
+    public currentFirstCorrectAnswerDisp = 0
 
     constructor(
         private quizService: QuizService,
@@ -59,6 +60,7 @@ export class StarterComponent implements OnInit {
         this.quiz = quiz
         this.question = this.quiz.questions[this.index]
         this.currentFirstAnswerDisp = 0
+        this.currentFirstCorrectAnswerDisp = 0
         this.initQuestion()
       });
     }
@@ -83,6 +85,8 @@ export class StarterComponent implements OnInit {
     setAnswer(answer: Answer) {
         this.index++
         this.answerSelected = answer;
+        if (!answer.isCorrect)
+          this.correctAnswer.push(answer);
         this.updateScore()
         if (this.index == this.quiz.questions.length) {
           this.inProgress = true
@@ -99,19 +103,6 @@ export class StarterComponent implements OnInit {
           this.correctAnswer.push(answer)
         }
       })
-    }
-
-    getValueCorrectAnswer(): string {
-      let correctAnswer: Answer
-      this.correctAnswer.forEach((answer) => {
-        if (answer == this.answerSelected) {
-          correctAnswer = answer
-        }
-      })
-      if (correctAnswer == undefined) {
-        correctAnswer = this.correctAnswer[0]
-      }
-      return correctAnswer.value
     }
 
     restart() {
@@ -163,5 +154,20 @@ export class StarterComponent implements OnInit {
     moveMinDisp(number: number) {
       if (this.currentFirstAnswerDisp + number >= 0 && this.currentFirstAnswerDisp + number < this.question.answers.length) 
         this.currentFirstAnswerDisp += number
+    }
+
+    getCurrentCorrectAnswer() {
+      let val =  this.currentFirstCorrectAnswerDisp / this.nbMaxAnswerDisp + 1
+      return val
+    }
+
+    getTotalCorrectAnswer() {
+      let val = (this.correctAnswer.length-1) / this.nbMaxAnswerDisp + 1
+      return Math.floor(val)
+    }
+
+    moveCorrectMinDisp(number: number) {
+      if (this.currentFirstCorrectAnswerDisp + number >= 0 && this.currentFirstCorrectAnswerDisp + number < this.correctAnswer.length) 
+        this.currentFirstCorrectAnswerDisp += number
     }
 }
