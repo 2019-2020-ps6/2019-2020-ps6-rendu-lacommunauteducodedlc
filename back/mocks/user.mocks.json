@@ -1,0 +1,56 @@
+[
+  {
+    "userName": "Sylvie",
+    "id": 1588054769455,
+    "icon": "fa-grin",
+    "settingsId": 1588054769455
+  },
+  {
+    "userName": "Daniel",
+    "id": 1588054783982,
+    "icon": "fa-laugh-beam",
+    "settingsId": 1588054783982
+  },
+  {
+    "userName": "Dominique",
+    "id": 1588054812912,
+    "icon": "fa-surprise",
+    "settingsId": 1588054812913
+  },
+  {
+    "userName": "Mauricette",
+    "id": 1588056210680,
+    "icon": "fa-grin-hearts",
+    "settingsId": 1588056210681
+  },
+  {
+    "userName": "Lucie",
+    "id": 1588056249161,
+    "icon": "fa-grin-hearts",
+    "settingsId": 1588056249161
+  },
+  {
+    "userName": "Ludovic",
+    "id": 1588056272970,
+    "icon": "fa-grin-tongue-wink",
+    "settingsId": 1588056272970
+  },
+  {
+    "userName": "Ryana",
+    "id": 1588056294595,
+    "icon": "fa-grin-squint",
+    "settingsId": 1588056294595
+  },
+  {
+    "userName": "Frederic",
+    "id": 1588056307888,
+    "icon": "fa-grin-tears",
+    "settingsId": 1588056307888
+  },
+  {
+    "userName": "Charly",
+    "id": 1588063348637,
+    "icon": "fa-grin-stars",
+    "settingsId": 1588063348638
+  }
+]
