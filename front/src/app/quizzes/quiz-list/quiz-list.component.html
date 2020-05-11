@@ -1,19 +1,19 @@
 <div class="quiz-list">
     <div class="creation-and-filter {{ setting.colorCard }}">
         <app-quiz-form *ngIf="!navigation.userId"></app-quiz-form>
-        <app-quiz-sort [quizList]="quizList"></app-quiz-sort>
+        <app-quiz-sort [quizListIn]="quizListConst" (quizListOut)="sortChangeDetected($event)"></app-quiz-sort>
     </div>
     <div class="container-display">
       <div class="container-quiz">
-          <div class="quiz {{setting.fontSizeText}}" *ngFor="let quiz of quizList; let i=index" >
+          <div class="quiz {{setting.fontSizeText}}" *ngFor="let quiz of quizListDisplay; let i=index" >
               <!--Inputs & Output allow communication between parent & child components.-->
               <!--More information: https://angular.io/guide/component-interaction-->
               <app-quiz *ngIf="i>=currentFirstQuizDisp && i<currentFirstQuizDisp+nbMaxQuizDisp" [quiz]="quiz" [modifAvailable]="!navigation.userId" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
           </div>
       </div>
     </div>
-    <div *ngIf="quizList.length<=nbMaxQuizDisp"></div>
-    <div *ngIf="quizList.length>nbMaxQuizDisp" id="up-down-ans-buttons">
+    <div *ngIf="quizListDisplay.length<=nbMaxQuizDisp"></div>
+    <div *ngIf="quizListDisplay.length>nbMaxQuizDisp" id="up-down-ans-buttons">
       <i class="fas fa-arrow-circle-up button" (click)="moveMinDisp(-nbMaxQuizDisp)"></i>
       <p class="{{ this.setting.fontSizeText }} {{ this.setting.fontStyle }} ">{{ this.getCurrentPage() }}/{{ this.getTotalPage() }}</p>
       <i class="fas fa-arrow-circle-down button" (click)="moveMinDisp(nbMaxQuizDisp)"></i>

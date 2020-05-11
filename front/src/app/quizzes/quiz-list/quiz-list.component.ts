@@ -13,7 +13,8 @@ import {NavigationService} from "../../../services/navigation.service";
 })
 export class QuizListComponent implements OnInit {
 
-  public quizList: Quiz[] = [];
+  public quizListDisplay: Quiz[] = [];
+  public quizListConst: Quiz[] = [];
   public setting: Setting;
 
   public nbMaxQuizDisp = 6;
@@ -23,7 +24,10 @@ export class QuizListComponent implements OnInit {
               private settingService: SettingService,
               public route : ActivatedRoute,
               public navigation: NavigationService) {
-    this.quizService.quizzes$.subscribe((quiz) => this.quizList = quiz);
+    this.quizService.quizzes$.subscribe((quiz) => {
+      this.quizListDisplay = quiz;
+      this.quizListConst = quiz;
+    });
     this.settingService.settings$.subscribe((setting) => {
       this.setting = setting;
       if (setting)  this.nbMaxQuizDisp = setting.questionNumber;
@@ -40,13 +44,13 @@ export class QuizListComponent implements OnInit {
   }
 
   deleteQuiz(quiz: Quiz) {
-    this.quizList.slice(this.quizList.indexOf(quiz), 1);
+    this.quizListDisplay.slice(this.quizListDisplay.indexOf(quiz), 1);
     console.log('Was deleted : ', quiz);
     this.quizService.deleteQuiz(quiz);
   }
 
   moveMinDisp(number: number) {
-    if (this.currentFirstQuizDisp+number>=0 && this.currentFirstQuizDisp+number<this.quizList.length) this.currentFirstQuizDisp+=number;
+    if (this.currentFirstQuizDisp+number>=0 && this.currentFirstQuizDisp+number<this.quizListDisplay.length) this.currentFirstQuizDisp+=number;
   }
 
   getCurrentPage() {
@@ -55,7 +59,11 @@ export class QuizListComponent implements OnInit {
   }
 
   getTotalPage() {
-    let val = (this.quizList.length-1)/this.nbMaxQuizDisp +1;
+    let val = (this.quizListDisplay.length-1)/this.nbMaxQuizDisp +1;
     return Math.floor(val);
+  }
+
+  sortChangeDetected(newList: Quiz[]) {
+    this.quizListDisplay = newList;
   }
 }

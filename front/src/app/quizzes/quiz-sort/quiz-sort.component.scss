@@ -1,1 +1,13 @@
+@import '../../../styles/central.style.scss';
 
+.stars-container{
+  display: flex;
+}
+
+.stars i:hover{
+  cursor: pointer;
+}
+
+.stars i{
+  font-size: 1.4em;
+}
