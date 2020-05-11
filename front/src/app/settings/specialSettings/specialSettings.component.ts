@@ -31,7 +31,7 @@ export class SpecialSettingsComponent implements OnInit {
   hyperopiaQuestionNumber: number = 2;
 
   basicAnswerNumber: number = 6;
-  presbyopiaAnswerNumber: number = 4;
+  presbyopiaAnswerNumber: number = 3;
   myopiaAnswerNumber: number = 3;
   astigmatismAnswerNumber: number = 2;
   hyperopiaAnswerNumber: number = 1;

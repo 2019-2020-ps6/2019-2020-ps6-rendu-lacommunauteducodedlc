@@ -42,6 +42,7 @@ export class SettingService {
                     fontSizeSubtitle : "font-size-basic-subtitle",
                     fontSizeTitle : "font-size-basic-title",
                     fontSizeSubtext: "font-size-basic-subtext",
+                    fontSizeAnswer: "font-size-basic-answer",
                     fontSizeButton : "font-size-basic-button",
                     fontStyle : "font-style-basic",
                     colorBackground : "color-basic-background",
@@ -79,6 +80,7 @@ export class SettingService {
     let fontSubtitle:String = fontSize+"-subtitle";
     let fontTitle:String = fontSize+"-title";
     let fontSubtext:String = fontSize+"-subtext";
+    let fontAnswer:String = fontSize+"-answer";
     let fontButton:String = fontSize+"-button";
     let fontSelector:String = fontSize+"-selector";
     let fontRadio:String = fontSize+"-radio";
@@ -88,6 +90,7 @@ export class SettingService {
     this.setting.fontSizeSubtitle = fontSubtitle;
     this.setting.fontSizeTitle = fontTitle;
     this.setting.fontSizeSubtext = fontSubtext;
+    this.setting.fontSizeAnswer = fontAnswer;
 
     this.setting.fontSizeButton = fontButton;
     this.setting.radioRadius = fontRadio;

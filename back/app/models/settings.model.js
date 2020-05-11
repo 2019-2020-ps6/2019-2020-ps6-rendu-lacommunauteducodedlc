@@ -10,6 +10,7 @@ module.exports = new BaseModel('Settings', {
   fontSizeSubtitle: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-subtitle'),
   fontSizeTitle: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-title'),
   fontSizeSubtext: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-subtext'),
+  fontSizeAnswer: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-answer'),
   fontSizeButton: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-button'),
   selectorSize: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-selector'),
   radioRadius: Joi.string().allow('', null).empty(['', null]).default('font-size-basic-radio'),

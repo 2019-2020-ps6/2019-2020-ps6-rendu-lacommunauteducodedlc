@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\back",
+    "\\back\\app",
+    "\\back\\app\\models",
     "\\front",
     "\\front\\src",
     "\\front\\src\\app",
-    "\\front\\src\\app\\header",
-    "\\front\\src\\app\\quizzes\\quiz-sort",
+    "\\front\\src\\app\\quizzes",
+    "\\front\\src\\app\\quizzes\\starter-quiz",
     "\\front\\src\\app\\settings",
-    "\\front\\src\\app\\settings\\mainSettings",
-    "\\front\\src\\app\\settings\\specialSettings",
-    "\\front\\src\\styles"
+    "\\front\\src\\app\\settings\\specialSettings"
   ],
-  "SelectedNode": "\\front\\src\\app\\settings\\mainSettings\\mainSettings.component.html",
+  "SelectedNode": "\\back\\app\\models\\settings.model.js",
   "PreviewInSolutionExplorer": false
 }

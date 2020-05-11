@@ -24,8 +24,10 @@ questionNumber3: number = 2;
 questionNumber4: number = 2;
 
 answerNumber0: number = 6;
-answerNumber1: number = 3;
-answerNumber2: number = 1;
+answerNumber1: number = 4;
+answerNumber2: number = 3;
+answerNumber3: number = 2;
+answerNumber4: number = 1;
 
 
   constructor(
@@ -83,9 +85,10 @@ answerNumber2: number = 1;
 
   adaptAnswerNumber(value: String) {
     switch (value) {
-      case "2": 
-      case "3": this.settingService.setAnswerNumber(this.answerNumber1); break;
-      case "4": this.settingService.setAnswerNumber(this.answerNumber2); break;
+      case"1": this.settingService.setAnswerNumber(this.answerNumber1); break;
+      case "2": this.settingService.setAnswerNumber(this.answerNumber2); break;
+      case "3": this.settingService.setAnswerNumber(this.answerNumber3); break;
+      case "4": this.settingService.setAnswerNumber(this.answerNumber4); break;
       default: this.settingService.setAnswerNumber(this.answerNumber0); 
     }
   }
