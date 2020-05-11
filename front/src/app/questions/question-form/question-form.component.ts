@@ -84,6 +84,8 @@ export class QuestionFormComponent implements OnChanges {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const questionFromForm: Question = this.questionForm.getRawValue() as Question;
 
+    if(this.checkError(questionFromForm)) return;
+
     if (!questionFromForm.answers.find((ans)=> ans.isCorrect)) {
       this.printMessage("Au moins une réponse doit être correcte");
       return;
@@ -148,5 +150,22 @@ export class QuestionFormComponent implements OnChanges {
 
   private printMessage(msg: string) {
     document.getElementById("msg-question-form").innerHTML = msg;
+  }
+
+  /**
+   * Return True if error find, false else
+   * @param question to check
+   */
+  private checkError(question: Question) {
+    const ANS_LENGTH_LIMIT = 75;
+
+    for(let i=0;i<this.answers.length;i++){
+      if(question.answers.find((ans)=>ans.value.length>ANS_LENGTH_LIMIT)){
+        this.printMessage("Les réponses ne peuvent pas dépasser "+ANS_LENGTH_LIMIT+" caractères.");
+        return true;
+      }
+    }
+
+    return false;
   }
 }
