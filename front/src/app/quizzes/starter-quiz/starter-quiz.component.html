@@ -19,7 +19,7 @@
         <div class="question {{setting.fontSizeSubtitle}}">{{question.label}}</div>
         <div *ngIf="!answered()" class="answer-container">
             <div class="answer" *ngFor="let answer of question.answers; let i = index">
-                <button *ngIf="i >= currentFirstAnswerDisp && i < currentFirstAnswerDisp + nbMaxAnswerDisp" class="button-card {{setting.fontSizeButton}} {{setting.colorButton}} button-answer" (click)="setAnswer(answer)"> {{ answer.value }} </button>
+                <button *ngIf="i >= currentFirstAnswerDisp && i < currentFirstAnswerDisp + nbMaxAnswerDisp" class="button-card {{setting.fontSizeAnswer}} {{setting.colorButton}} button-answer" (click)="setAnswer(answer)"> {{ answer.value }} </button>
             </div>
         </div>
         <div *ngIf="!answered() && question.answers.length <= nbMaxAnswerDisp"></div>
@@ -30,9 +30,9 @@
         </div>
         <div *ngIf="answered() && correctAnswer.length > 0" class="answer-container-2">
             <div *ngFor="let answer of correctAnswer">
-                <button class="answer button-card-answser {{setting.fontSizeButton}} {{setting.colorYes}} element" DISABLED> <i class="fas fa-check"></i> {{ answer.value }}</button>
+                <button class="answer button-card-answser {{setting.fontSizeAnswer}} {{setting.colorYes}} element" DISABLED> <i class="fas fa-check"></i> {{ answer.value }}</button>
             </div>
-            <div><button *ngIf="!answerSelected.isCorrect" class="answer button-card-answser {{setting.fontSizeButton}} {{setting.colorNo}} element" DISABLED> <i class="fas fa-times"></i> {{ answerSelected.value }} </button></div>
+            <div><button *ngIf="!answerSelected.isCorrect" class="answer button-card-answser {{setting.fontSizeAnswer}} {{setting.colorNo}} element" DISABLED> <i class="fas fa-times"></i> {{ answerSelected.value }} </button></div>
         </div>
         <div *ngIf="answered() && correctAnswer.length == 0" class="answer-container-2">
             <p class="{{ setting.fontSizeText }}">Il n'y a pas de bonne réponse <i class="fas fa-smile-wink {{ setting.fontSizeText }}"></i></p>
