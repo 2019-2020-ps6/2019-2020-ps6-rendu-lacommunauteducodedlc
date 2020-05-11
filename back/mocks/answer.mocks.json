@@ -362,19 +362,19 @@
   {
     "value": "Oui",
     "isCorrect": false,
-    "id": 1589197612196,
+    "id": 1589212127243,
     "questionId": 1587807633789
   },
   {
-    "value": "Chaque person !",
+    "value": "Chaque personnes peut choisir de les aimer ou non !",
     "isCorrect": true,
-    "id": 1589197612200,
+    "id": 1589212127245,
     "questionId": 1587807633789
   },
   {
     "value": "Non",
     "isCorrect": false,
-    "id": 1589197612202,
+    "id": 1589212127248,
     "questionId": 1587807633789
   }
 ]
