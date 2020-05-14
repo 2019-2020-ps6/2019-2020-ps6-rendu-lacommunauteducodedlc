@@ -1,6 +1,6 @@
 <div class="quiz-list">
     <div class="creation-and-filter {{ setting.colorCard }}">
-        <app-quiz-form *ngIf="!navigation.userId"></app-quiz-form>
+        <app-quiz-form *ngIf="!navigation.userId" (newQuiz)="this.lastNewQuiz=$event"></app-quiz-form>
         <app-quiz-sort [quizListIn]="quizListConst" (quizListOut)="sortChangeDetected($event)"></app-quiz-sort>
     </div>
     <div class="container-display">

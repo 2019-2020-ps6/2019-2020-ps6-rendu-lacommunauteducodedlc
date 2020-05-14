@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { QuizService } from '../../../services/quiz.service';
@@ -15,6 +15,8 @@ export class QuizFormComponent implements OnInit {
 
   // Note: We are using here ReactiveForms to create our form. Be careful when you look for some documentation to
   // avoid TemplateDrivenForm (another type of form)
+  @Output()
+  newQuiz : EventEmitter<number> = new EventEmitter<number>();
 
   /**
    * QuizForm: Object which manages the form in our component.
@@ -51,6 +53,8 @@ export class QuizFormComponent implements OnInit {
     });
     quizToCreate.id = Math.round(maxId) + 1;
     quizToCreate.difficulty = 1;
+
+    this.newQuiz.emit(quizToCreate.id);
 
     // Do you need to log your object here in your class? Uncomment the code below
     // and open your console in your browser by pressing F12 and choose the tab "Console".

@@ -24,7 +24,9 @@ export class UserListComponent implements OnInit {
               private settingService: SettingService,
               private route: ActivatedRoute,
               private navigation: NavigationService) {
-    this.userService.users$.subscribe((users) => this.userList = users);
+    this.userService.users$.subscribe((users) => {
+      this.userList = users
+    });
     this.settingService.settings$.subscribe((setting) => {
       this.setting = setting;
     });
@@ -52,5 +54,10 @@ export class UserListComponent implements OnInit {
   changeCurrentFirst(i : number){
     if (this.currentFirst+i<0) return;
     this.currentFirst+=i;
+  }
+
+  userAdded() {
+    while ((this.currentFirst+=(this.nbMaxDisplay-1))<this.userList.length);
+    this.currentFirst-=(this.nbMaxDisplay-1);
   }
 }
