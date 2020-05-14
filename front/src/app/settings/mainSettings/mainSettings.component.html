@@ -16,7 +16,6 @@
     <button class="button-setting {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="setDefault()"> Remettre les réglages par défaut</button>
   </div>
 
-  <br>
   <div class="enonce {{setting.fontSizeText}} {{setting.fontStyle}}">Police d'écriture :</div>
   <div class="scrollSize {{setting.fontSizeText}}">
     <select class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" id="values" (change)="setFont($event.target.value)">
