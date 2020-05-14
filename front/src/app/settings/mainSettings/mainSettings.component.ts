@@ -109,4 +109,12 @@ answerNumber4: number = 1;
   compareSicknessColor(sickness : String): boolean {
     return this.setting.colorBackground.toString()==="color-"+sickness+"-background";
   }
+
+  setDefault() {
+      this.settingService.changeFontSize("font-size-basic");
+      this.setFont("basic");
+      this.adaptQuestionNumber("basic");
+      this.adaptAnswerNumber("basic");
+      this.setColors("basic");
+  }
 }
