@@ -17,6 +17,17 @@
   top: 0%;
 }
 
+.button-setting {
+  position: relative;
+  max-width: 35%;
+  left: 2%;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px #aaa;
+}
+
 .scrollSize {
   position: relative;
   margin: 1%;

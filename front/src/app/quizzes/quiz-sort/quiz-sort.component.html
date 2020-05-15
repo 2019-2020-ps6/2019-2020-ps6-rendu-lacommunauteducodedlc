@@ -1,8 +1,31 @@
 <div class="quiz-sort">
   <h2 class="{{setting.fontSizeText}} {{setting.fontStyle}}">Trier par :</h2>
-  <select id="theme" (change)="sortBy($event.target.value)" class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}">
+  <select (change)="this.sortedBy = $event.target.value ; emitChanges()" class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}">
     <option *ngFor="let currentSorter of SORT_LIST" [value]="currentSorter" [selected]="currentSorter=='DATE'" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       {{currentSorter}}
     </option>
   </select>
+
+  <br>
+
+  <h2 class="{{setting.fontSizeText}} {{setting.fontStyle}}">Filter par thème :</h2>
+  <select (change)="this.filteredBy = $event.target.value ; emitChanges()" class="{{setting.selectorSize}} {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}">
+    <option class="{{setting.fontSizeText}} {{setting.fontStyle}}"></option>
+    <option *ngFor="let currentTheme of THEME_LIST" [value]="currentTheme" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
+      {{currentTheme}}
+    </option>
+  </select>
+
+  <br>
+  <h2 class="{{setting.fontSizeText}} {{setting.fontStyle}}">Filter par niveau :</h2>
+  <div class = "stars-container">
+    <div class="stars {{setting.fontSizeText}} {{setting.fontStyle}}" *ngFor="let i of [1,2,3,4,5]">
+      <i *ngIf="i<=diffFilter" (click)="this.diffFilter=i; emitChanges()" class="fas fa-star"></i>
+      <i *ngIf="i>diffFilter" (click)="this.diffFilter=i; emitChanges()" class="far fa-star"></i>
+    </div>
+    <div class="stars {{setting.fontSizeText}} {{setting.fontStyle}}">
+      <i (click)="this.diffFilter=-1; emitChanges()" class="fas fa-times"></i>
+    </div>
+  </div>
+
 </div>
