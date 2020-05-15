@@ -19,6 +19,12 @@
     </button>
   </div>
   <div class="buttons_right buttons">
+    <div *ngIf="!this.navigation.userId" class="user-name {{setting.fontStyle }} {{ setting.fontSizeText}}">
+      Admin
+    </div>
+    <div *ngIf="this.navigation.userId" class="user-name {{setting.fontStyle }} {{ setting.fontSizeText}}">
+      {{ getUserName() }}
+    </div>
     <button *ngIf="!this.navigation.userId" routerLink="/user-list" class="log_button button header-button {{setting.colorButton}}">
       <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
         Connexion<i class="fas fa-sign-in-alt"></i>
