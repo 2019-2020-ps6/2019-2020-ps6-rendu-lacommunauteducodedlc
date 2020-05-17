@@ -20,11 +20,25 @@ i {
 }
 
 .button-valid-user{
-  font-size: large;
+  width: 100%;
 }
 
 input[type="text"]{
   border: none;
   border-bottom: 2px solid black;
   background: none;
+  width: 100%;
+}
+
+button{
+  border-radius: 5px;
+  border: none;
+}
+
+form {
+  width: min-content;
+}
+
+.arrow{
+
 }
