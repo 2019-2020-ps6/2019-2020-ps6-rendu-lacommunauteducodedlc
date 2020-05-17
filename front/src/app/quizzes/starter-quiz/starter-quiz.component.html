@@ -25,19 +25,25 @@
         <div *ngIf="!answered() && question.answers.length <= nbMaxAnswerDisp"></div>
         <div class="navigation {{ setting.fontSizeText }}" *ngIf="!answered() && question.answers.length > nbMaxAnswerDisp">
             <i class="fas fa-arrow-circle-left" (click)="moveMinDisp(-nbMaxAnswerDisp)"></i>
-            <p class="page">{{ getCurrentAnswer() }}/{{ getTotalAnswer() }}</p>
+            <p class="page">Réponse {{ getCurrentAnswer() }}/{{ getTotalAnswer() }}</p>
             <i class="fas fa-arrow-circle-right" (click)="moveMinDisp(nbMaxAnswerDisp)"></i>
         </div>
         <div *ngIf="answered() && correctAnswer.length > 0" class="answer-container">
-            <div *ngFor="let answer of correctAnswer; let i = index" class="answer-result">
-                <button *ngIf="i >= currentFirstCorrectAnswerDisp && i < currentFirstCorrectAnswerDisp + nbMaxAnswerDisp && answer.isCorrect" class="result-answer button-card-answser {{setting.fontSizeAnswer}} {{setting.colorYes}} button-answer" DISABLED> <i class="fas fa-check"></i> {{ answer.value }}</button>
-                <button *ngIf="i >= currentFirstCorrectAnswerDisp && i < currentFirstCorrectAnswerDisp + nbMaxAnswerDisp && !answer.isCorrect" class="result-answer button-card-answser {{setting.fontSizeAnswer}} {{setting.colorNo}} button-answer" DISABLED> <i class="fas fa-times"></i> {{ answer.value }} </button>
+        <div *ngFor="let answer of correctAnswer; let i = index" class="answer-result {{setting.fontSizeButton}}">
+            <div *ngIf="isSelectedAnswer(answer) && i >= currentFirstCorrectAnswerDisp && i < currentFirstCorrectAnswerDisp + nbMaxAnswerDisp">Vous avez répondu : </div>
+                <button *ngIf="i >= currentFirstCorrectAnswerDisp && i < currentFirstCorrectAnswerDisp + nbMaxAnswerDisp && 
+                    answer.isCorrect" class="result-answer button-card-answser {{setting.colorYes}} {{setting.fontSizeAnswer}} 
+                    button-answer" DISABLED> <i class="fas fa-check"></i> {{ answer.value }}</button>
+                <button *ngIf="i >= currentFirstCorrectAnswerDisp && i < currentFirstCorrectAnswerDisp + nbMaxAnswerDisp && 
+                    !answer.isCorrect" class="result-answer button-card-answser {{setting.fontSizeAnswer}} {{setting.colorNo}}
+                     button-answer" DISABLED> <i class="fas fa-times"></i> {{ answer.value }} </button>
             </div>
+
         </div>
         <div *ngIf="answered() && correctAnswer.length <= nbMaxAnswerDisp"></div>
-        <div class="navigation {{ setting.fontSizeText }}" *ngIf="answered() && correctAnswer.length > nbMaxAnswerDisp">
+        <div class="navigation {{setting.fontSizeButton}}" *ngIf="answered() && correctAnswer.length > nbMaxAnswerDisp">
             <i class="fas fa-arrow-circle-left" (click)="moveCorrectMinDisp(-nbMaxAnswerDisp)"></i>
-            <p class="page">{{ getCurrentCorrectAnswer() }}/{{ getTotalCorrectAnswer() }}</p>
+            <p class="page">Correction {{ getCurrentCorrectAnswer() }}/{{ getTotalCorrectAnswer() }}</p>
             <i class="fas fa-arrow-circle-right" (click)="moveCorrectMinDisp(nbMaxAnswerDisp)"></i>
         </div>
         <div *ngIf="answered() && !inProgress" class="next">
