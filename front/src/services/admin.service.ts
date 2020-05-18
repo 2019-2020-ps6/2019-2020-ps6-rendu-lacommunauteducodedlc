@@ -49,7 +49,10 @@ export class AdminService {
     this.httpClient.post<Admin>(this.url + '/admins', copy, httpOptions)
       .pipe(
         catchError(this.handleError)
-      ).subscribe((quiz1) => this.admins.push(admin));
+      ).subscribe((quiz1) => {
+        this.admins.push(admin);
+        this.admins$.next(this.admins);
+      });
   }
 
   // deleteUser(admin: Admin) {

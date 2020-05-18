@@ -42,7 +42,7 @@ export class AdminSignInComponent implements OnInit {
   }
 
   private connexion(id) {
-    this.navigation.adminId = id;
+    this.navigation.setAdminId(id);
     this.navigation.navigate("/user-list");
   }
 }

@@ -14,7 +14,7 @@
     <label for="password" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       Mot de passe
       <br>
-      <input type="text" id="password" [formControlName]="'password'" placeholder="Mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkPsw($event.toString())">
+      <input type="password" id="password" [formControlName]="'password'" placeholder="Mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkPsw($event.toString())">
       <br>
       {{this.pswErrorMsg}}
     </label>
@@ -22,7 +22,7 @@
     <label for="confirmPassword" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       Confirmer le mot de passe
       <br>
-      <input type="text" id="confirmPassword" [formControlName]="'confirmPassword'" placeholder="Confirmer votre mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkPsw($event.toString())">
+      <input type="password" id="confirmPassword" [formControlName]="'confirmPassword'" placeholder="Confirmer votre mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkPsw($event.toString())">
     </label>
     <br>
     <br>
