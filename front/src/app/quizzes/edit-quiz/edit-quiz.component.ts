@@ -41,7 +41,7 @@ export class EditQuizComponent implements OnInit {
       this.quiz = quiz;
       this.initForm();
     });
-    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
+    this.navigation.update(this.route)
   }
 
   initForm(): void {

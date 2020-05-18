@@ -6,7 +6,7 @@
   <div class="user-list">
 
     <div class="block-items user" *ngFor="let user of userList; let i = index">
-      <app-user *ngIf="i>=currentFirst && i<currentFirst+nbMaxDisplay-1" [user]="user" (userSelected)="userSelected($event)" (userDeleted)="deleteUser(user)"></app-user>
+      <app-user *ngIf="i>=currentFirst && i<currentFirst+nbMaxDisplay-1" [user]="user" (userSelected)="userSelected(user.id)" (userDeleted)="deleteUser(user)"></app-user>
     </div>
 
     <app-user-form class="block-items {{setting.colorBackground}}" *ngIf="this.formDisplay" (formDone)="setFormDisplay(!$event);userAdded()"></app-user-form>

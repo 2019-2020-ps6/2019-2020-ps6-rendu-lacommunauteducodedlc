@@ -46,7 +46,7 @@ export class SpecialSettingsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
+    this.navigation.update(this.route)
   }
 
   public setFont(sickness: String, checked: boolean) {

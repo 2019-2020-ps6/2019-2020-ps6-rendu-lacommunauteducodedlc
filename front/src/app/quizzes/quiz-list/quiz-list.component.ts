@@ -44,7 +44,7 @@ export class QuizListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
+    this.navigation.update(this.route);
   }
 
   quizSelected(selected: boolean) {

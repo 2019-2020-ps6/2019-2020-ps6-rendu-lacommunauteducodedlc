@@ -17,11 +17,16 @@ const subRoutes: Routes = [
   {path: 'start-quiz/:id', component: StarterComponent}
 ];
 
+let userPath;
 const routes: Routes = [
-  {path: 'user/:userId', children: subRoutes.concat(
-      {path: '', redirectTo: 'quiz-list', pathMatch: 'full' })},
   {path: '', children: subRoutes.concat(
-      {path: '', redirectTo: '/user-list', pathMatch: 'full' })},
+      {path: '', redirectTo: '/admin-sign', pathMatch: 'full' })},
+  userPath = {path: 'user/:userId', children: subRoutes.concat(
+      {path: '', redirectTo: 'quiz-list', pathMatch: 'full' })},
+  {path: 'admin/:adminId', children: subRoutes.concat(
+      {path: '', redirectTo: 'user-list', pathMatch: 'full' },
+      {path: 'user-list', component: UserListComponent},
+      userPath)},
   {path: 'user-list', component: UserListComponent},
   {path: 'admin-sign', component: AdminSignComponent}
 ];

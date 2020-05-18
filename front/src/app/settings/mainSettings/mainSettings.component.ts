@@ -40,7 +40,7 @@ answerNumber4: number = 1;
   }
 
   ngOnInit() {
-    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
+    this.navigation.update(this.route)
   }
 
   changeSize(value: string) {
@@ -89,7 +89,7 @@ answerNumber4: number = 1;
       case "2": this.settingService.setAnswerNumber(this.answerNumber2); break;
       case "3": this.settingService.setAnswerNumber(this.answerNumber3); break;
       case "4": this.settingService.setAnswerNumber(this.answerNumber4); break;
-      default: this.settingService.setAnswerNumber(this.answerNumber0); 
+      default: this.settingService.setAnswerNumber(this.answerNumber0);
     }
   }
 
