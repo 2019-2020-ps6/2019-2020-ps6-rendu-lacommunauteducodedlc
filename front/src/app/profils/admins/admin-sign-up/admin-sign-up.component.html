@@ -1,0 +1,30 @@
+<div class="card {{setting.colorCard}}">
+  <h2 class="{{setting.fontSizeTitle}} {{setting.fontStyle}}">Créer un compte</h2>
+  <form class="quiz-form" [formGroup]="quizForm">
+    <label for="adminId" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
+      Identifiant
+      <br>
+      <input type="text" id="adminId" [formControlName]="'adminId'" placeholder="Identifiant" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkId($event.toString())">
+      <br>
+      {{this.idErrorMsg}}
+    </label>
+    <br>
+    <label for="password" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
+      Mot de passe
+      <br>
+      <input type="text" id="password" [formControlName]="'password'" placeholder="Mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkPsw($event.toString())">
+      <br>
+      {{this.pswErrorMsg}}
+    </label>
+    <br>
+    <label for="confirmPassword" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
+      Confirmer le mot de passe
+      <br>
+      <input type="text" id="confirmPassword" [formControlName]="'confirmPassword'" placeholder="Confirmer votre mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkPsw($event.toString())">
+    </label>
+    <br>
+    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}} {{getButtonStyle(!this.currentTextInput)}}" (click)="addAdmin()">CONFIRMER</button>
+  </form>
+</div>
+<!-- Uncomment below to see your form structure and how it changes-->
+<!--<br><br>{{quizForm.getRawValue() | json}}-->

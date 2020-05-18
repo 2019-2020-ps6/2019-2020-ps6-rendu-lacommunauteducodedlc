@@ -7,6 +7,7 @@ import { MainSettingsComponent } from './settings/mainSettings/mainSettings.comp
 import { StarterComponent } from './quizzes/starter-quiz/starter-quiz.component';
 import { Quiz } from '../models/quiz.model';
 import {UserListComponent} from "./profils/users/user-list/user-list.component";
+import {AdminSignComponent} from "./profils/admins/admin-sign/admin-sign.component";
 
 const subRoutes: Routes = [
   {path: 'quiz-list', component: QuizListComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
       {path: '', redirectTo: 'quiz-list', pathMatch: 'full' })},
   {path: '', children: subRoutes.concat(
       {path: '', redirectTo: '/user-list', pathMatch: 'full' })},
-  {path: 'user-list', component: UserListComponent}
+  {path: 'user-list', component: UserListComponent},
+  {path: 'admin-sign', component: AdminSignComponent}
 ];
 
 @NgModule({

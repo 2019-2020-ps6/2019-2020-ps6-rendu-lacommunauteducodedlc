@@ -1,0 +1,9 @@
+<div class="">
+  <div *ngIf="!inOrUp" id="sign-in">
+    <app-sign-in></app-sign-in>
+    <button (click)="switchUpIn()">S'inscrire</button>
+  </div>
+  <div *ngIf="inOrUp" id="sign-up">
+    <app-sign-up (signUpDone)="switchUpIn()"></app-sign-up>
+  </div>
+</div>
