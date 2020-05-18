@@ -23,6 +23,7 @@ import {UserFormComponent} from "./profils/users/user-form/user-form.component";
 import {AdminSignInComponent} from "./profils/admins/admin-sign-in/admin-sign-in.component";
 import {AdminSignUpComponent} from "./profils/admins/admin-sign-up/admin-sign-up.component";
 import {AdminSignComponent} from "./profils/admins/admin-sign/admin-sign.component";
+import {AdminHomeComponent} from "./profils/admins/admin-home/admin-home.component";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {AdminSignComponent} from "./profils/admins/admin-sign/admin-sign.compone
     UserFormComponent,
     AdminSignInComponent,
     AdminSignUpComponent,
-    AdminSignComponent
+    AdminSignComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

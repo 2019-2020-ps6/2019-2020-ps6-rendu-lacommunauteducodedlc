@@ -10,7 +10,14 @@
       </div>
         <!--<div class="button_txt">Réglages</div>-->
     </button>
-    <button *ngIf="!this.navigation.userId" class="home_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/quiz-list')">
+    <button *ngIf="!this.navigation.adminId && !this.navigation.userId" class="home_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/quiz-list')">
+      <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
+        Accueil<i class="fas fa-home"></i>
+<!--        <img src="https://img.icons8.com/material-rounded/24/000000/home-page.png" />-->
+      </div>
+        <!--<div class="button_txt">Accueil</div>-->
+    </button>
+    <button *ngIf="this.navigation.adminId && !this.navigation.userId" class="home_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/admin-home')">
       <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
         Accueil<i class="fas fa-home"></i>
 <!--        <img src="https://img.icons8.com/material-rounded/24/000000/home-page.png" />-->
