@@ -1,7 +1,7 @@
 <div class="quiz-list">
     <div class="creation-and-filter {{ setting.colorCard }}">
-      <div class="deconnexion">
-        <button *ngIf="this.navigation.userId" (click)="this.navigation.setUserId(undefined);this.navigation.navigate('/user-list')" 
+      <div *ngIf="this.navigation.userId" class="deconnexion">
+        <button (click)="this.navigation.setUserId(undefined);this.navigation.navigate('/user-list')" 
             class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">CHANGEMENT DE COMPTE
         </button>
       </div>
