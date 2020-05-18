@@ -1,7 +1,12 @@
 <div class="quiz-list">
     <div class="creation-and-filter {{ setting.colorCard }}">
-        <app-quiz-form *ngIf="!navigation.userId" (newQuiz)="this.lastNewQuiz=$event"></app-quiz-form>
-        <app-quiz-sort [quizListIn]="quizListConst" (quizListOut)="sortChangeDetected($event)"></app-quiz-sort>
+      <div class="deconnexion">
+        <button *ngIf="this.navigation.userId" (click)="this.navigation.setUserId(undefined);this.navigation.navigate('/user-list')" 
+            class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">CHANGEMENT DE COMPTE
+        </button>
+      </div>
+      <app-quiz-form *ngIf="!navigation.userId" (newQuiz)="this.lastNewQuiz=$event"></app-quiz-form>
+      <app-quiz-sort [quizListIn]="quizListConst" (quizListOut)="sortChangeDetected($event)"></app-quiz-sort>
     </div>
     <div class="container-display">
       <div class="container-quiz">
