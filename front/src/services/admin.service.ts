@@ -45,6 +45,7 @@ export class AdminService {
     // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
     const copy = JSON.parse(JSON.stringify(admin));
     console.log(admin);
+    delete copy.confirmPassword
     this.httpClient.post<Admin>(this.url + '/admins', copy, httpOptions)
       .pipe(
         catchError(this.handleError)
