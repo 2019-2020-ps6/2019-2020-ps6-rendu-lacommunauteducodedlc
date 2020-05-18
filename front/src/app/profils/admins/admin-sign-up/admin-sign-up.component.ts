@@ -25,8 +25,6 @@ export class AdminSignUpComponent implements OnInit {
   @Output()
   signUpDone: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  public currentTextInput: string;
-
   public quizForm: FormGroup;
   public setting: Setting;
   public idErrorMsg: string;
@@ -62,10 +60,6 @@ export class AdminSignUpComponent implements OnInit {
       password: [''],
       confirmPassword: ['']
     });
-  }
-
-  getButtonStyle(disabled: boolean){
-    return (disabled) ? 'disabled' : '';
   }
 
   checkId(idAdmin: string) {

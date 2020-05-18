@@ -1,9 +1,10 @@
-<div class="">
-  <div *ngIf="!inOrUp" id="sign-in">
+<div class="sign-container">
+  <div *ngIf="!inOrUp" id="sign-in" class="sign-container">
     <app-sign-in></app-sign-in>
-    <button (click)="switchUpIn()">S'inscrire</button>
+    <button id="inscription" class="button-card {{this.setting.fontSizeButton}} {{this.setting.colorButton}}" (click)="switchUpIn()">S'inscrire</button>
   </div>
-  <div *ngIf="inOrUp" id="sign-up">
+  <div *ngIf="inOrUp" id="sign-up" class="sign-container">
+    <button id="cancel-button" class="button-card {{this.setting.fontSizeButton}} {{this.setting.colorButton}}" (click)="switchUpIn()">Annuler</button>
     <app-sign-up (signUpDone)="switchUpIn()"></app-sign-up>
   </div>
 </div>

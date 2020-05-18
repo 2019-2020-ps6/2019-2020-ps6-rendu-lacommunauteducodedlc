@@ -1,5 +1,7 @@
-<div class="card {{setting.colorCard}}">
-  <h2 class="{{setting.fontSizeTitle}} {{setting.fontStyle}}">Créer un compte</h2>
+<div class="container card {{setting.colorCard}}">
+  <div class="title {{setting.colorHeader}}">
+    <h2 class="{{setting.fontSizeTitle}} {{setting.fontStyle}}">Créer un compte</h2>
+  </div>
   <form class="quiz-form" [formGroup]="quizForm">
     <label for="adminId" class="{{setting.fontSizeText}} {{setting.fontStyle}}">
       Identifiant
@@ -23,7 +25,8 @@
       <input type="text" id="confirmPassword" [formControlName]="'confirmPassword'" placeholder="Confirmer votre mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="checkPsw($event.toString())">
     </label>
     <br>
-    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}} {{getButtonStyle(!this.currentTextInput)}}" (click)="addAdmin()">CONFIRMER</button>
+    <br>
+    <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="addAdmin()">CONFIRMER</button>
   </form>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->

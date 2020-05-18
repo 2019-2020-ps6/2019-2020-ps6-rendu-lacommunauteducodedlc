@@ -1,5 +1,5 @@
-<div class="card {{setting.colorCard}}">
-  <div class="{{setting.colorHeader}}">
+<div class="card container {{setting.colorCard}}">
+  <div class="title {{setting.colorHeader}}">
     <h2 class="{{setting.fontSizeTitle}} {{setting.fontStyle}}">SE CONNECTER</h2>
   </div>
   <div>
@@ -7,10 +7,12 @@
     <br>
     <input type="text" id="adminId" placeholder="Identifiant" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="this.currentAdminId=$event.toString()">
   </div>
+  <br>
   <div>
     Mot de passe
     <br>
     <input type="password" id="password" placeholder="Mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (ngModelChange)="this.currentPassword=$event.toString()">
   </div>
-  <button (click)="askConnexion()">SE CONNECTER</button>
+  <br>
+  <button class="button-card {{setting.colorButton}} {{setting.fontSizeButton}}" (click)="askConnexion()">SE CONNECTER</button>
 </div>
