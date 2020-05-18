@@ -1,11 +1,11 @@
 <div class="quiz-list">
     <div class="creation-and-filter {{ setting.colorCard }}">
       <div *ngIf="this.navigation.userId" class="deconnexion">
-        <button (click)="this.navigation.setUserId(undefined);this.navigation.navigate('/admin-home')" 
+        <button (click)="this.navigation.setUserId(undefined);this.navigation.navigate('/admin-home')"
             class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}">CHANGEMENT DE COMPTE
         </button>
       </div>
-      <app-quiz-form *ngIf="!navigation.userId" (newQuiz)="this.lastNewQuiz=$event"></app-quiz-form>
+      <app-quiz-form *ngIf="navigation.adminId && !navigation.userId" (newQuiz)="this.lastNewQuiz=$event"></app-quiz-form>
       <app-quiz-sort [quizListIn]="quizListConst" (quizListOut)="sortChangeDetected($event)"></app-quiz-sort>
     </div>
     <div class="container-display">
@@ -13,7 +13,7 @@
           <div class="quiz {{setting.fontSizeText}}" *ngFor="let quiz of quizListDisplay; let i=index" >
               <!--Inputs & Output allow communication between parent & child components.-->
               <!--More information: https://angular.io/guide/component-interaction-->
-              <app-quiz *ngIf="i>=currentFirstQuizDisp && i<currentFirstQuizDisp+nbMaxQuizDisp" [quiz]="quiz" [modifAvailable]="!navigation.userId" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
+              <app-quiz *ngIf="i>=currentFirstQuizDisp && i<currentFirstQuizDisp+nbMaxQuizDisp" [quiz]="quiz" [modifAvailable]="navigation.adminId && !navigation.userId" (quizSelected)="quizSelected($event)" (quizToDeleted)="deleteQuiz($event)"></app-quiz>
           </div>
       </div>
     </div>
