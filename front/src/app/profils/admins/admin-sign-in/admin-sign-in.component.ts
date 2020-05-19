@@ -36,13 +36,23 @@ export class AdminSignInComponent implements OnInit {
 
   askConnexion() {
     const admin = this.adminService.containIdAdmin(this.currentAdminId);
-    if (!admin) return;
-    if (this.currentPassword !== admin.password) return;
+    if (!admin) {
+      this.dispError("Identifiant inconnue");
+      return;
+    }
+    if (this.currentPassword !== admin.password) {
+      this.dispError("Mauvais mot de passe");
+      return;
+    }
     this.connexion(admin.id);
   }
 
   private connexion(id) {
     this.navigation.setAdminId(id);
     this.navigation.navigate("/admin-home");
+  }
+
+  private dispError(msg: string) {
+    document.getElementById("errorMsg").innerHTML = msg;
   }
 }

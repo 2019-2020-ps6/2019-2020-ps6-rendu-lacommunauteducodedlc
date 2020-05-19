@@ -28,3 +28,8 @@ button{
   width: 80%;
   min-width: max-content;
 }
+
+#errorMsg{
+  font-style: italic;
+  text-decoration: underline black solid;
+}
