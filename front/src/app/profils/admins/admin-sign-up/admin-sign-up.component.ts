@@ -43,8 +43,8 @@ export class AdminSignUpComponent implements OnInit {
   }
 
   addAdmin() {
-    this.checkId(document.getElementById("adminId").value)
-    this.checkPsw(document.getElementById("password").value)
+    this.checkId((<HTMLInputElement>document.getElementById("adminId")).value)
+    this.checkPsw((<HTMLInputElement>document.getElementById("password")).value)
     if(this.idErrorMsg || this.pswErrorMsg) return;
     const adminToCreate: Admin = this.quizForm.getRawValue() as Admin;
     adminToCreate.id = Date.now();
@@ -89,6 +89,6 @@ export class AdminSignUpComponent implements OnInit {
   }
 
   pwdsEquals() : boolean{
-    return document.getElementById("password").value === document.getElementById("confirmPassword").value;
+    return (<HTMLInputElement>document.getElementById("password")).value === (<HTMLInputElement>document.getElementById("confirmPassword")).value;
   }
 }
