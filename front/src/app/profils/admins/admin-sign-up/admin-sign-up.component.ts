@@ -43,6 +43,8 @@ export class AdminSignUpComponent implements OnInit {
   }
 
   addAdmin() {
+    this.checkId(document.getElementById("adminId").value)
+    this.checkPsw(document.getElementById("password").value)
     if(this.idErrorMsg || this.pswErrorMsg) return;
     const adminToCreate: Admin = this.quizForm.getRawValue() as Admin;
     adminToCreate.id = Date.now();
@@ -79,7 +81,6 @@ export class AdminSignUpComponent implements OnInit {
       this.pswErrorMsg = "Le mot de passe ne peut pas être vide"
       return;
     }
-
     if (!this.pwdsEquals()){
       this.pswErrorMsg = "Les mots de passes doivent être identique"
       return;
@@ -88,6 +89,6 @@ export class AdminSignUpComponent implements OnInit {
   }
 
   pwdsEquals() : boolean{
-    return document.getElementById("password").innerText === document.getElementById("confirmPassword").innerText;
+    return document.getElementById("password").value === document.getElementById("confirmPassword").value;
   }
 }
