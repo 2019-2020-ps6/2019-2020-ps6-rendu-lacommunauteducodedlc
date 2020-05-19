@@ -36,6 +36,7 @@
   <div class="edit-bar-shape {{ setting.colorCard }}"></div>
   <div *ngIf="this.quiz != null" id="edit-body">
     <app-question-form *ngIf="this.question != null" [quiz]="quiz" [question]="question" (modificationEnded)="resetQuestion($event)"></app-question-form>
+    <p *ngIf="!this.question" class="{{setting.fontStyle}} {{setting.fontSizeSubtitle}}">Sélectionner une question ci-dessous pour la modifier</p>
     <app-question-list [quiz]="quiz" (questionSelected)="selectQuestion($event)"></app-question-list>
     <button type="submit" class="button-card {{setting.fontSizeButton}} {{setting.fontStyle}} {{setting.colorButton}}" (click)="newQuestion()">Nouvelle question</button>
   </div>
