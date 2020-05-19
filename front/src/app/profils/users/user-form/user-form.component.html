@@ -6,7 +6,7 @@
       <i class="fas fa-chevron-right arrow button" (click)="changeIcon(-1)"></i>
     </div>
     <label for="userName" class="flex-line {{setting.fontSizeText}} {{setting.fontStyle}}">
-      <input type="text" id="userName" [formControlName]="'userName'" class="{{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" placeholder="Your name..">
+      <input type="text" id="userName" [formControlName]="'userName'" class="{{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" placeholder="Prénom accueillis...">
     </label>
     <button class="button button-valid-user {{this.setting.fontStyle}} {{this.setting.fontSizeButton}} {{this.setting.colorButton}}" (click)="addUser()">Valider</button>
   </form>

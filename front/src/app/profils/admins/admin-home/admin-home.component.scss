@@ -1,1 +1,31 @@
 @import '../../../../styles/central.style.scss';
+
+.admin-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.big-round-button {
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 50%;
+    border: none;
+    box-shadow:2px 2px 5px #aaa;
+    margin: 2px;
+    min-height: 8em;
+    min-width: 8em;
+    font-size: 50px;
+}
+
+.fa-book, .fa-user-circle {
+    font-size: 2em;
+}
+
+.big-round-button:hover {
+    cursor: pointer;
+    background-color: #f1e2b8;
+  }
