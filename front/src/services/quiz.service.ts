@@ -50,7 +50,10 @@ export class QuizService {
     this.httpClient.post<Quiz>(this.url + '/quizzes', copy, httpOptions)
       .pipe(
         catchError(handleError)
-      ).subscribe((quiz1) => this.quizzes.push(quiz));
+      ).subscribe((quiz1) => {
+        this.quizzes.push(quiz);
+        this.quizzes$.next(this.quizzes);
+      });
   }
 
   deleteQuiz(quiz: Quiz) {

@@ -1,0 +1,29 @@
+@import '../../../../styles/central.style.scss';
+
+.card{
+  width: min-content;
+}
+
+button.disabled {
+  background: ThreeDShadow;
+}
+
+button.disabled:hover {
+  cursor: initial;
+  background: ButtonShadow;
+}
+
+.title{
+  width: max-content;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 20px;
+}
+
+.container{
+  text-align: center;
+}
+
+form{
+  margin: 0;
+}

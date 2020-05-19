@@ -1,0 +1,18 @@
+<div class="card container {{setting.colorCard}} {{setting.fontStyle}} {{setting.fontSizeText}}">
+  <div class="title {{setting.colorHeader}}">
+    <h2 class="{{setting.fontSizeTitle}} {{setting.fontStyle}}">SE CONNECTER</h2>
+  </div>
+  <div>
+    Identifiant
+    <br>
+    <input type="text" id="adminId" placeholder="Identifiant" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (change)="this.currentAdminId=$event.target.value">
+  </div>
+  <br>
+  <div>
+    Mot de passe
+    <br>
+    <input type="password" id="password" placeholder="Mot de passe" class="input-custom {{setting.fontSizeText}} {{setting.fontStyle}} {{setting.colorButton}}" (change)="this.currentPassword=$event.target.value">
+  </div>
+  <br>
+  <button class="button-card {{setting.colorButton}} {{setting.fontSizeButton}}" (click)="askConnexion()">SE CONNECTER</button>
+</div>

@@ -1,6 +1,6 @@
 <div class="header {{setting.colorHeader}}">
 
-  <h1 class="title {{setting.fontSizeTitle}} {{setting.fontStyle}}">PolyQuiz</h1>
+  <h1 class="title {{setting.fontSizeTitle}} {{setting.fontStyle}}" ><a href="">PolyQuiz</a></h1>
 
   <div class="buttons_left buttons">
     <button class="settings_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/settings')">
@@ -10,34 +10,48 @@
       </div>
         <!--<div class="button_txt">Réglages</div>-->
     </button>
-    <button class="home_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/quiz-list')">
+    <button *ngIf="!this.navigation.adminId && !this.navigation.userId" class="home_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/quiz-list')">
       <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
         Accueil<i class="fas fa-home"></i>
 <!--        <img src="https://img.icons8.com/material-rounded/24/000000/home-page.png" />-->
       </div>
         <!--<div class="button_txt">Accueil</div>-->
     </button>
+    <button *ngIf="this.navigation.adminId && !this.navigation.userId" class="home_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/admin-home')">
+      <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
+        Accueil<i class="fas fa-home"></i>
+<!--        <img src="https://img.icons8.com/material-rounded/24/000000/home-page.png" />-->
+      </div>
+        <!--<div class="button_txt">Accueil</div>-->
+    </button>
+    <button *ngIf="this.navigation.userId" class="home_button button header-button {{setting.colorButton}}" (click)="navigation.navigate('/quiz-list')">
+      <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
+        Quiz<i class="fas fa-book"></i>
+<!--        <img src="https://img.icons8.com/material-rounded/24/000000/home-page.png" />-->
+      </div>
+        <!--<div class="button_txt">Accueil</div>-->
+    </button>
   </div>
   <div class="buttons_right buttons">
-    <div *ngIf="!this.navigation.userId" class="user-name {{setting.fontStyle }} {{ setting.fontSizeText}}">
+    <div *ngIf="this.navigation.adminId && !this.navigation.userId" class="user-name {{setting.fontStyle }} {{ setting.fontSizeText}}">
       Admin
     </div>
     <div *ngIf="this.navigation.userId" class="user-name {{setting.fontStyle }} {{ setting.fontSizeText}}">
       {{ getUserName() }}
     </div>
-    <button *ngIf="!this.navigation.userId" routerLink="/user-list" class="log_button button header-button {{setting.colorButton}}">
+    <button *ngIf="!this.navigation.adminId && !this.navigation.userId" (click)="this.navigation.setUserId(undefined);this.navigation.navigate('/')" class="log_button button header-button {{setting.colorButton}}">
       <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
         Connexion<i class="fas fa-sign-in-alt"></i>
 <!--        <img src="https://img.icons8.com/material-outlined/24/000000/export.png" />-->
       </div>
         <!--<div class="button_txt">Accueil</div>-->
     </button>
-    <button *ngIf="this.navigation.userId" routerLink="/user-list" class="log_button button header-button {{setting.colorButton}}">
+    <button *ngIf="this.navigation.adminId && !this.navigation.userId" (click)="this.navigation.setUserId(undefined); this.navigation.setAdminId(undefined);this.navigation.navigate('/')" class="log_button button header-button {{setting.colorButton}}">
       <div class="centrer {{setting.fontStyle }} {{ setting.fontSizeText}}">
         Déconnexion<i class="fas fa-sign-out-alt"></i>
-<!--        <img src="https://img.icons8.com/material-outlined/24/000000/export.png" />-->
+        <!--        <img src="https://img.icons8.com/material-outlined/24/000000/export.png" />-->
       </div>
-        <!--<div class="button_txt">Accueil</div>-->
+      <!--<div class="button_txt">Accueil</div>-->
     </button>
   </div>
 </div>

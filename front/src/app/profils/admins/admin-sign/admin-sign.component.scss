@@ -1,0 +1,47 @@
+@import '../../../../styles/central.style.scss';
+
+.card{
+  width: min-content;
+}
+
+.input-custom {
+  max-width: 8em ;
+}
+
+button.disabled {
+  background: ThreeDShadow;
+}
+
+button.disabled:hover {
+  cursor: initial;
+  background: ButtonShadow;
+}
+
+.sign-container{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#sign-in{
+  width: auto;
+}
+
+#inscription{
+  width: 80%;
+}
+
+#sign-in app-sign-in{
+  min-width: 50%;
+}
+
+#sign-up{
+  min-width: 50%;
+}
+
+#cancel-button{
+  position: absolute;
+  margin: 20px;
+  left: 20px;
+}

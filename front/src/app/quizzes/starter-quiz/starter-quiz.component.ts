@@ -50,9 +50,9 @@ export class StarterComponent implements OnInit {
     ngOnInit() {
         this.getQuiz();
         console.log(this.quiz);
-        this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
+      this.navigation.update(this.route)
     }
-  
+
     getQuiz(): void {
       const id = +this.route.snapshot.paramMap.get('id');
       this.quizService.getQuiz(id).subscribe(quiz => {
@@ -152,7 +152,7 @@ export class StarterComponent implements OnInit {
     }
 
     moveMinDisp(number: number) {
-      if (this.currentFirstAnswerDisp + number >= 0 && this.currentFirstAnswerDisp + number < this.question.answers.length) 
+      if (this.currentFirstAnswerDisp + number >= 0 && this.currentFirstAnswerDisp + number < this.question.answers.length)
         this.currentFirstAnswerDisp += number
     }
 
@@ -167,7 +167,7 @@ export class StarterComponent implements OnInit {
     }
 
     moveCorrectMinDisp(number: number) {
-      if (this.currentFirstCorrectAnswerDisp + number >= 0 && this.currentFirstCorrectAnswerDisp + number < this.correctAnswer.length) 
+      if (this.currentFirstCorrectAnswerDisp + number >= 0 && this.currentFirstCorrectAnswerDisp + number < this.correctAnswer.length)
         this.currentFirstCorrectAnswerDisp += number
     }
 }

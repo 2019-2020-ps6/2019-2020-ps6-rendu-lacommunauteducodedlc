@@ -33,11 +33,12 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navigation.setUserId(this.route.snapshot.paramMap.get("userId"))
+    this.navigation.update(this.route)
   }
 
-  userSelected(selected: boolean) {
-
+  userSelected(selectedId: number) {
+      this.navigation.setUserId(selectedId.toString())
+      this.navigation.navigate('/quiz-list')
   }
 
   deleteUser(user: User) {

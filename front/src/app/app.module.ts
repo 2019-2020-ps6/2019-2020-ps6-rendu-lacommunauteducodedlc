@@ -20,6 +20,10 @@ import {QuizSortComponent} from "./quizzes/quiz-sort/quiz-sort.component";
 import {UserComponent} from "./profils/users/user/user.component";
 import {UserListComponent} from "./profils/users/user-list/user-list.component";
 import {UserFormComponent} from "./profils/users/user-form/user-form.component";
+import {AdminSignInComponent} from "./profils/admins/admin-sign-in/admin-sign-in.component";
+import {AdminSignUpComponent} from "./profils/admins/admin-sign-up/admin-sign-up.component";
+import {AdminSignComponent} from "./profils/admins/admin-sign/admin-sign.component";
+import {AdminHomeComponent} from "./profils/admins/admin-home/admin-home.component";
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import {UserFormComponent} from "./profils/users/user-form/user-form.component";
     QuizSortComponent,
     UserComponent,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    AdminSignInComponent,
+    AdminSignUpComponent,
+    AdminSignComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,
