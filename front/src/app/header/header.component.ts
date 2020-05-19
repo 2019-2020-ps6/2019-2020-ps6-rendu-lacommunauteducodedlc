@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
               private route: ActivatedRoute,
               private navigation: NavigationService,
               private user: UserService) {
-    console.log(route)
     this.settingService.settings$.subscribe((setting) => this.setting = setting);
 
    }
