@@ -38,27 +38,7 @@ export class SettingService {
   public settings$: BehaviorSubject<Setting> = new BehaviorSubject(this.setting);
 
   constructor(private httpClient: HttpClient, private userService: UserService) {
-    this.setting = {fontSizeText : "font-size-basic-text",
-                    fontSizeSubtitle : "font-size-basic-subtitle",
-                    fontSizeTitle : "font-size-basic-title",
-                    fontSizeSubtext: "font-size-basic-subtext",
-                    fontSizeAnswer: "font-size-basic-answer",
-                    fontSizeButton : "font-size-basic-button",
-                    fontStyle : "font-style-basic",
-                    colorBackground : "color-basic-background",
-                    colorHeader : "color-basic-header",
-                    colorYes : "color-basic-yes",
-                    colorNo : "color-basic-no",
-                    colorButton : "color-basic-button",
-                    colorCard : "color-basic-card",
-                    colorScroll : "color-basic-scroll",
-                    selectorSize : "font-size-basic-selector",
-                    scrollSize : "font-size-basic-scroll",
-                    radioRadius: "font-size-basic-radio",
-                    questionNumber: 6,
-                    answerNumber: 6,
-                  };
-    this.updateSettings(this.setting);
+    this.setDefaultSettings();
     this.getUserSetting();
   }
 
@@ -225,22 +205,33 @@ export class SettingService {
   }
 
   private setDefaultSettings() {
-    if(!this.userSetting) return;
+    if(!this.userSetting && this.setting) return;
     this.userSetting = false;
     if(this.preSubSetting) this.preSubSetting.unsubscribe();
-    this.defaultSub = this.httpClient.get<Setting>(this.url + '/settings/default').subscribe((settings) => {
-      if(!settings) return;
-      if(this.defaultSub) {
-        this.defaultSub.unsubscribe();
-      }
-      if(this.userSetting) return;
-      this.setting =  {...this.setting, ...settings};
-      this.settings$.next(this.setting);
-    });
+    this.setting = {fontSizeText : "font-size-basic-text",
+      fontSizeSubtitle : "font-size-basic-subtitle",
+      fontSizeTitle : "font-size-basic-title",
+      fontSizeSubtext: "font-size-basic-subtext",
+      fontSizeAnswer: "font-size-basic-answer",
+      fontSizeButton : "font-size-basic-button",
+      fontStyle : "font-style-basic",
+      colorBackground : "color-basic-background",
+      colorHeader : "color-basic-header",
+      colorYes : "color-basic-yes",
+      colorNo : "color-basic-no",
+      colorButton : "color-basic-button",
+      colorCard : "color-basic-card",
+      colorScroll : "color-basic-scroll",
+      selectorSize : "font-size-basic-selector",
+      scrollSize : "font-size-basic-scroll",
+      radioRadius: "font-size-basic-radio",
+      questionNumber: 6,
+      answerNumber: 6,
+    };
+    this.updateSettings(this.setting);
   }
 
   private getSettings(settingsId: number) {
-
     this.userSetting = true;
     this.httpClient.get<Setting>(this.url + '/settings/'+settingsId).subscribe((settings) => {
       if(!settings) return;
